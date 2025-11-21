@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late-Night Buyouts | Private Parties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#2B1D1A',
+                        linen: '#FAF8F6',
+                        coral: '#E3A587',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2B1D1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3d2a26;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E3A587;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+<body class="bg-espresso text-linen font-sans antialiased selection:bg-coral selection:text-espresso">
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+                poster="https://saltyzebrabistro.com/wp-content/uploads/2025/11/60578.jpg"
+            >
+                <source src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/LOCALS-VIDEO-EDIT.mov" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight text-linen">
+                Late-Night Buyouts,<br>
+                <span class="text-coral italic">Done Right.</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 max-w-2xl mx-auto text-linen/90 font-light leading-relaxed">
+                Private after-hours parties with your music, your crowd, and our full bar. Cozy, dark, moody—and all yours. Dates fill fast.
+            </p>
+            <button onclick="document.getElementById('inquiry').scrollIntoView({behavior: 'smooth'})" 
+                class="bg-linen text-espresso hover:bg-coral hover:text-espresso transition-all duration-300 py-4 px-8 rounded text-lg font-semibold tracking-wide">
+                Hold My Night (72-Hour Courtesy Hold)
+            </button>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <div class="bg-[#221715] border-b border-white/5 py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center">
+            <p class="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-coral">
+                Hosting Tequesta's best nights since 2021
+            </p>
+            <div class="flex gap-1 text-coral">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Book (3 Icons) -->
+    <section class="py-16 md:py-24 bg-espresso">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center text-center p-8 border border-white/5 rounded-lg hover:border-coral/30 transition-colors duration-500 group">
+                    <div class="mb-6 p-4 bg-white/5 rounded-full text-coral group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11.536 16.464l-1.415-1.414L8.707 16.464 10.121 17.88l-1.415 1.414L7.293 17.88l1.414-1.415-1.414-1.414L5.879 16.464 3.05 13.636a6 6 0 118.486-8.486z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Private Access</h3>
+                    <p class="text-white/60 leading-relaxed">The entire venue, exclusively yours. No strangers, just your crew.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 border border-white/5 rounded-lg hover:border-coral/30 transition-colors duration-500 group">
+                    <div class="mb-6 p-4 bg-white/5 rounded-full text-coral group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Full Bar</h3>
+                    <p class="text-white/60 leading-relaxed">Premium spirits, craft cocktails, and skilled bartenders at your service.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 border border-white/5 rounded-lg hover:border-coral/30 transition-colors duration-500 group">
+                    <div class="mb-6 p-4 bg-white/5 rounded-full text-coral group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Stage & Sound</h3>
+                    <p class="text-white/60 leading-relaxed">Professional gear for DJs or bands. Plug in and play.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spaces Band -->
+    <section class="py-0 bg-[#221715]">
+        <div class="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[500px]">
+            <div class="group relative overflow-hidden h-[400px] md:h-full">
+                <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/IMG_0278.jpg" alt="Stage and Sound" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+                    <h3 class="text-3xl font-serif font-bold text-coral mb-2">Stage & Sound</h3>
+                    <p class="text-white/80 text-lg">Equipped for live performances and DJ sets.</p>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden h-[400px] md:h-full">
+                <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/patio-nighttime-locals-pub.jpeg" alt="Outdoor Patio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+                    <h3 class="text-3xl font-serif font-bold text-coral mb-2">Outdoor Patio Hang</h3>
+                    <p class="text-white/80 text-lg">Perfect for cooling down and conversation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Line -->
+    <section class="py-10 border-y border-white/10 bg-espresso">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-lg md:text-xl font-light text-linen/90">
+                <span class="flex items-center gap-2"><span class="text-coral">●</span> 20–65 guests</span>
+                <span class="hidden md:inline text-white/20">|</span>
+                <span class="flex items-center gap-2"><span class="text-coral">●</span> 11:30p–1:30a typical</span>
+                <span class="hidden md:inline text-white/20">|</span>
+                <span class="flex items-center gap-2"><span class="text-coral">●</span> $2,000 F&B minimum</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- House Rules -->
+    <div class="bg-[#1a110f] py-4">
+        <div class="container mx-auto px-4 flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs md:text-sm text-white/40 uppercase tracking-widest font-semibold">
+            <span>Security on site</span>
+            <span class="text-coral/50 hidden sm:inline">•</span>
+            <span>DJ welcome</span>
+            <span class="text-coral/50 hidden sm:inline">•</span>
+            <span>Final call 15 min before end</span>
+            <span class="text-coral/50 hidden sm:inline">•</span>
+            <span>Noise mindful of neighbors</span>
+            <span class="text-coral/50 hidden sm:inline">•</span>
+            <span>21+ for open bar</span>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-espresso">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-center text-3xl md:text-4xl mb-12 font-serif">Words from Hosts</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white/5 p-8 rounded-lg border border-white/5">
+                    <div class="flex gap-1 mb-4 text-coral">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-white/90 mb-6 italic">"The absolute best spot in Tequesta for a private party. The staff handled everything."</p>
+                    <p class="text-coral font-semibold text-sm uppercase tracking-wider">— Sarah M.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-lg border border-white/5 hidden md:block">
+                    <div class="flex gap-1 mb-4 text-coral">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-white/90 mb-6 italic">"We rented the space for my 30th. Having the full bar and stage to ourselves made it a night to remember."</p>
+                    <p class="text-coral font-semibold text-sm uppercase tracking-wider">— James P.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-lg border border-white/5 hidden lg:block">
+                    <div class="flex gap-1 mb-4 text-coral">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-white/90 mb-6 italic">"Seamless booking process and the atmosphere is unmatched. A true hidden gem."</p>
+                    <p class="text-coral font-semibold text-sm uppercase tracking-wider">— Elena R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-[#221715]">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-10 text-center font-serif">Common Questions</h2>
+            <div class="space-y-4" id="faq-container">
+                <div class="border border-white/10 rounded-lg overflow-hidden bg-espresso">
+                    <button class="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-medium text-lg">Is there a rental fee?</span>
+                        <svg class="w-5 h-5 text-coral transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-white/70">
+                        <div class="p-5 pt-0 border-t border-white/10 mt-4">
+                            No, there is no venue rental fee. We simply require a $2,000 food & beverage minimum spend.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-white/10 rounded-lg overflow-hidden bg-espresso">
+                    <button class="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-medium text-lg">What are the typical hours?</span>
+                        <svg class="w-5 h-5 text-coral transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-white/70">
+                        <div class="p-5 pt-0 border-t border-white/10 mt-4">
+                            Our standard private buyout hours are from 11:30 PM to 1:30 AM, perfect for after-hours celebrations.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-white/10 rounded-lg overflow-hidden bg-espresso">
+                    <button class="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleFAQ(this)">
+                        <span class="font-medium text-lg">Can we bring our own DJ?</span>
+                        <svg class="w-5 h-5 text-coral transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-white/70">
+                        <div class="p-5 pt-0 border-t border-white/10 mt-4">
+                             Absolutely. We welcome DJs and live bands. Our stage comes equipped with professional sound equipment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 bg-espresso">
+         <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="h-80 overflow-hidden rounded-lg">
+                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/espresso-martinis-and-jupiter-magpic.jpeg" alt="Atmosphere" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-105">
+                </div>
+                <div class="h-80 overflow-hidden rounded-lg">
+                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/one-more-round-sign.jpeg" alt="Venue Sign" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-105">
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section id="inquiry" class="py-24 bg-espresso relative">
+        <div class="container mx-auto px-4 max-w-xl">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-serif mb-4 text-linen">Reserve Your Night</h2>
+                <p class="text-coral tracking-wide">72-Hour Courtesy Hold • No Credit Card Required</p>
+            </div>
+
+            <div class="bg-linen text-espresso rounded-xl shadow-2xl overflow-hidden p-6 md:p-10 relative min-h-[480px]">
+                
+                <div id="form-success" class="hidden absolute inset-0 bg-linen z-50 flex flex-col items-center justify-center text-center p-8 animate-fade-in">
+                    <div class="w-20 h-20 bg-coral rounded-full flex items-center justify-center mb-6 shadow-lg">
+                        <svg class="w-10 h-10 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-serif mb-4 text-espresso">Request Received</h3>
+                    <p class="text-espresso/80 mb-8 text-lg leading-relaxed">
+                        We've marked your date for a 72-hour courtesy hold. Our events team will contact you shortly to finalize details.
+                    </p>
+                    <button onclick="window.location.reload()" class="px-6 py-2 border-2 border-espresso text-espresso hover:bg-espresso hover:text-linen transition-colors rounded font-semibold">
+                        Return Home
+                    </button>
+                </div>
+
+                <div id="form-progress" class="flex items-center justify-center gap-4 mb-8 text-sm font-bold uppercase tracking-wider">
+                    <span id="step1-indicator" class="text-espresso transition-colors duration-300">1. Date & Guests</span>
+                    <span class="text-espresso/20">/</span>
+                    <span id="step2-indicator" class="text-espresso/40 transition-colors duration-300">2. Details</span>
+                </div>
+
+                <form id="booking-form" action="https://formspree.io/f/xrbdgweg" method="POST" onsubmit="handleFormSubmit(event)">
+                    
+                    <!-- Hidden Tracking Fields -->
+                    <input type="hidden" name="utm_source" value="">
+                    <input type="hidden" name="utm_medium" value="">
+                    <input type="hidden" name="utm_campaign" value="">
+                    <input type="hidden" name="utm_term" value="">
+                    <input type="hidden" name="source_page" value="Late Night Buyout">
+                    <input type="hidden" name="form_id" value="latenight">
+
+                    <!-- Step 1 -->
+                    <div id="step1" class="space-y-6 transition-opacity duration-300">
+                        <div>
+                            <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-espresso/70">Preferred Date</label>
+                            <input type="date" id="date" name="date" required class="w-full p-4 bg-white border border-espresso/10 rounded-lg focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral text-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-espresso/70">Guest Count (Number)</label>
+                            <input type="number" id="guests" name="guests" required min="1" placeholder="e.g. 40" class="w-full p-4 bg-white border border-espresso/10 rounded-lg focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral text-lg">
+                        </div>
+                        <button type="button" onclick="nextStep()" class="w-full bg-espresso text-linen hover:bg-coral hover:text-espresso transition-colors py-4 rounded font-bold text-lg mt-4 flex items-center justify-center gap-2">
+                            Continue 
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div id="step2" class="hidden space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold mb-1 text-espresso/70">Name</label>
+                                <input type="text" name="name" required class="w-full p-3 bg-white border border-espresso/10 rounded focus:border-coral focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-1 text-espresso/70">Phone</label>
+                                <input type="tel" name="phone" required class="w-full p-3 bg-white border border-espresso/10 rounded focus:border-coral focus:outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-1 text-espresso/70">Email</label>
+                            <input type="email" name="email" required class="w-full p-3 bg-white border border-espresso/10 rounded focus:border-coral focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-1 text-espresso/70">Notes</label>
+                            <textarea name="notes" rows="3" class="w-full p-3 bg-white border border-espresso/10 rounded focus:border-coral focus:outline-none resize-none"></textarea>
+                        </div>
+                        <div class="flex gap-3 pt-2">
+                            <button type="button" onclick="prevStep()" class="px-6 py-3 border border-espresso/20 text-espresso hover:bg-espresso/5 rounded font-semibold">Back</button>
+                            <button type="submit" class="flex-1 bg-espresso text-linen hover:bg-coral hover:text-espresso transition-colors py-3 rounded font-bold text-lg shadow-lg">Hold My Night</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Mobile Footer -->
+    <div id="sticky-footer" class="fixed bottom-0 left-0 w-full p-4 bg-espresso border-t border-coral/20 md:hidden z-40 transition-transform duration-300 translate-y-0 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+        <button onclick="document.getElementById('inquiry').scrollIntoView({behavior: 'smooth'})" class="w-full bg-linen text-espresso hover:bg-coral py-4 rounded font-bold text-lg shadow-lg flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            Check Date Availability
+        </button>
+    </div>
+
+    <script>
+        // FAQ Logic
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            
+            document.querySelectorAll('#faq-container > div > div').forEach(el => {
+                if(el !== content){
+                    el.style.maxHeight = '0px';
+                    el.parentElement.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.classList.remove('rotate-180');
+            } else{
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Form Logic
+        function nextStep() {
+            const date = document.getElementById('date').value;
+            const guests = document.getElementById('guests').value;
+            
+            if(!date || !guests) {
+                alert('Please select a date and guest count.');
+                return;
+            }
+
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('step2').classList.add('fade-in');
+            
+            document.getElementById('step1-indicator').classList.replace('text-espresso', 'text-espresso/40');
+            document.getElementById('step2-indicator').classList.replace('text-espresso/40', 'text-espresso');
+        }
+
+        function prevStep() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step1').classList.remove('hidden');
+            document.getElementById('step1').classList.add('fade-in');
+
+            document.getElementById('step2-indicator').classList.replace('text-espresso', 'text-espresso/40');
+            document.getElementById('step1-indicator').classList.replace('text-espresso/40', 'text-espresso');
+        }
+
+        function handleFormSubmit(e) {
+            // PreventDefault removed to allow Formspree redirection
+            // e.preventDefault(); 
+            
+            // The form will submit naturally to the Formspree URL
+        }
+
+        // Sticky Footer Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const footer = document.getElementById('sticky-footer');
+                if (entry.isIntersecting) {
+                    footer.classList.add('translate-y-full');
+                } else {
+                    footer.classList.remove('translate-y-full');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const formTarget = document.getElementById('inquiry');
+        if(formTarget) observer.observe(formTarget);
+    </script>
+</body>
+</html>
