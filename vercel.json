@@ -2,6 +2,10 @@
   "public": true,
   "routes": [
     { 
+      "src": "/datenight-diners.html", 
+      "dest": "/datenight-diners.html" 
+    },
+    { 
       "src": "/daytime-events.html", 
       "dest": "/daytime-events.html" 
     },
