@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfect Date Night | The Salty Zebra Bistro</title>
+    <meta name="description"
+        content="Experience casual fine dining in Jupiter. Hand-rolled pastas, fresh seafood, and an intimate atmosphere perfect for your next date night.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#264653',
+                            body: '#5e6e75',
+                            linen: '#FAF7F2', // Main background - White Linen
+                            peach: '#FFF0EB', // Secondary background - Light Peach
+                            teal: '#2A9D8F', // Accent Teal (Classy with Coral)
+                            deepTeal: '#1D3944', // Darker accent for text
+                            coral: '#FF6F61', // Main Accent / CTA (Required)
+                            coralHover: '#E55A4F',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- React & Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+
+<body class="bg-brand-linen text-brand-body antialiased">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // --- CONSTANTS ---
+        const LINKS = {
+            RESERVATION: "https://www.opentable.com/r/the-salty-zebra-jupiter-inlet#reserve",
+            HOME: "/",
+            DAYTIME_EVENTS: "/daytime-events.html",
+            MAIN_SITE: "https://www.saltyzebrabistro.com"
+        };
+
+        const CONTACT_INFO = {
+            ADDRESS: "2133 US-1, Jupiter, FL 33477",
+            HOURS: "Open Tue-Sat: 5pm - 9pm"
+        };
+
+        const IMAGES = {
+            // Using a placeholder that fits the dark/intimate/seafood vibe
+            HERO: "https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_iek9whiek9whiek9-e1763902651454.jpg",
+            HERO_VIDEO: "https://videos.files.wordpress.com/LgF6n52O/date-night-video-30-sec.mov",
+            FOOD_FEATURE: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            COCKTAIL: "https://saltyzebrabistro.com/wp-content/uploads/2025/06/sz-19-1.webp",
+            VEGAN: "https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_e47d5ge47d5ge47d-e1763903320426.jpg",
+            DESSERT: "https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_7vs2bs7vs2bs7vs2-e1763903540685.jpg",
+            AMBIANCE: "https://saltyzebrabistro.com/wp-content/uploads/2025/11/Generated-Image-November-13-2025-3_44AM-e1763410081324.webp"
+        };
+
+        // --- COMPONENTS ---
+
+        // 1. Button Component
+        const Button = ({ href, children, className = '', isSmall = false }) => {
+            return (
+                <a
+                    href={href}
+                    className={`
+                inline-block
+                bg-brand-coral hover:bg-brand-coralHover
+                text-white font-bold uppercase tracking-widest
+                rounded-sm shadow-md transition-all duration-300 ease-in-out
+                hover:-translate-y-0.5 hover:shadow-lg
+                border-none cursor-pointer text-center
+                ${isSmall ? 'py-3 px-6 text-xs' : 'py-4 px-10 text-sm md:text-base'}
+                ${className}
+              `}
+                >
+                    {children}
+                </a>
+            );
+        };
+
+        // 2. Hero Component
+        const Hero = () => {
+            return (
+                <header className="relative h-[85vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
+                    {/* Video Background */}
+                    <div className="absolute inset-0 z-0">
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            poster={IMAGES.HERO}
+                            className="absolute w-full h-full object-cover"
+                        >
+                            <source src={IMAGES.HERO_VIDEO} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-brand-deepTeal/50 mix-blend-multiply"></div>
+                        <div className="absolute inset-0 bg-black/20"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-10 max-w-4xl px-5 animate-[fadeIn_1.5s_ease-out]">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg leading-tight tracking-tight">
+                            Date Night, <span className="text-brand-coral italic font-serif">Done Right.</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md">
+                            Escape the ordinary. Experience casual fine dining where European technique meets Jupiter's coastal soul.
+                        </p>
+                        <Button href={LINKS.RESERVATION}>
+                            Book Your Table
+                        </Button>
+                    </div>
+                </header>
+            );
+        };
+
+        // 3. Features Component
+        const Features = () => {
+            return (
+                <section className="py-24 bg-brand-peach">
+                    <div className="max-w-6xl mx-auto px-5">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-brand-deepTeal mb-4">Why We're Jupiter's Favorite Date Spot</h2>
+                            <div className="w-24 h-1 bg-brand-coral mx-auto mb-6"></div>
+                            <p className="text-brand-body text-lg max-w-2xl mx-auto">Sophisticated enough to impress, relaxed enough to be yourself.</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            <div className="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-teal">
+                                <h3 className="text-xl font-bold text-brand-deepTeal mb-4 uppercase tracking-wide">Casual Fine Dining</h3>
+                                <p className="text-brand-body leading-relaxed">
+                                    We blend the precision of a scratch kitchen with neighborhood warmth. Enjoy high-end dishes without the stuffy dress code.
+                                </p>
+                            </div>
+
+                            <div className="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-coral">
+                                <h3 className="text-xl font-bold text-brand-deepTeal mb-4 uppercase tracking-wide">Chef-Driven Menu</h3>
+                                <p className="text-brand-body leading-relaxed">
+                                    From our signature <strong>Steak Au Poivre</strong> to hand-rolled pastas, every plate is crafted with intention and local ingredients.
+                                </p>
+                            </div>
+
+                            <div className="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-teal">
+                                <h3 className="text-xl font-bold text-brand-deepTeal mb-4 uppercase tracking-wide">Intimate Ambiance</h3>
+                                <p className="text-brand-body leading-relaxed">
+                                    Dim lighting, curated playlists, and exceptional service create the perfect setting for conversation and connection.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="text-center mt-12">
+                            <Button href={LINKS.RESERVATION} isSmall>
+                                Reserve Your Table
+                            </Button>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // 3.5 Photo Grid Component
+        const PhotoGrid = () => {
+            return (
+                <section className="py-0">
+                    <div className="grid grid-cols-1 md:grid-cols-3 h-96 md:h-80">
+                        <div className="relative h-full group overflow-hidden">
+                            <img
+                                src={IMAGES.COCKTAIL}
+                                alt="Signature Cocktail"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                        </div>
+                        <div className="relative h-full group overflow-hidden">
+                            <img
+                                src={IMAGES.VEGAN}
+                                alt="Vegan Special"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                        </div>
+                        <div className="relative h-full group overflow-hidden">
+                            <img
+                                src={IMAGES.DESSERT}
+                                alt="Decadent Dessert"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // 4. Menu Components
+        const MenuItem = ({ name, price, description, tag }) => (
+            <div className="mb-8 break-inside-avoid">
+                <div className="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                    <h4 className="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                        {name}
+                        {tag && <span className="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">{tag}</span>}
+                    </h4>
+                    <span className="text-brand-teal font-serif font-bold text-lg ml-4">{price}</span>
+                </div>
+                {description && <p className="text-sm text-brand-body italic">{description}</p>}
+            </div>
+        );
+
+        const SectionTitle = ({ title, subtitle }) => (
+            <div className="text-center mb-12 mt-16 first:mt-0">
+                <h3 className="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">{title}</h3>
+                {subtitle && <p className="text-brand-deepTeal font-serif italic opacity-70">{subtitle}</p>}
+                <div className="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+            </div>
+        );
+
+        const Menu = () => {
+            return (
+                <section className="py-24 bg-brand-linen">
+                    <div className="max-w-5xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-bold text-brand-deepTeal mb-6 font-serif">Dinner Menu</h2>
+                            <p className="text-brand-body max-w-2xl mx-auto text-lg">
+                                A culinary journey featuring local ingredients, European techniques, and bold flavors.
+                            </p>
+                        </div>
+
+                        {/* TO START */}
+                        <SectionTitle title="To Start" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                            <MenuItem
+                                name="Six Cold Water Oysters"
+                                price={28}
+                                description="Passionfruit-Pink Peppercorn Mignotte"
+                            />
+                            <MenuItem
+                                name="Pistachio Whipped Feta"
+                                price={16}
+                                description="Mint, Chives, Bread by Johnny Sourdough"
+                            />
+                            <MenuItem
+                                name="Bread Service"
+                                price={15}
+                                description="Locally Sourced Assorted Breads From Bread by Johnny. Calabrian Butter, Seasonal Jam, Roasted Garlic Oil"
+                            />
+                            <MenuItem
+                                name="Beet & Citrus Salad"
+                                price={18}
+                                description="Orange Braised Beets, Florida Citrus, Feta, Pistachios, Ricotta, Orange Espelette Vinaigrette"
+                                tag="V"
+                            />
+                            <MenuItem
+                                name="Chicken Bites"
+                                price={10}
+                                description="Togarashi Citrus Aioli"
+                            />
+                            <MenuItem
+                                name="Crispy Brussels"
+                                price={12}
+                                description="Truffle Honey, Bacon, Balsamic"
+                            />
+                            <MenuItem
+                                name="Mushroom Pate"
+                                price={14}
+                                description="Maitake Mushroom, Sweet n' Sour Blueberry, Crispy Cordyceps, Sourdough"
+                            />
+                            <MenuItem
+                                name="Bruschetta"
+                                price={16}
+                                description="Stracciatella, Concasse Tomato, Garlic, Basil, Balsamic. Bread by Johnny Sourdough"
+                            />
+                            <MenuItem
+                                name="Melted Brie"
+                                price={16}
+                                description="Orange Blossom Honey, Bee Pollen, Cinnamon Raisin Toast"
+                            />
+                            <MenuItem
+                                name="Colab Farms Market Salad"
+                                price={16}
+                                description="Local Greens, Market Vegetables, Champagne Vinaigrette, Marcelli Formaggi Pecorino"
+                                tag="V"
+                            />
+                            <MenuItem
+                                name="Burgundy Escargot"
+                                price={20}
+                                description="Pernod Garlic-Parsley Butter"
+                            />
+                        </div>
+
+                        {/* HANDMADE PASTA */}
+                        <SectionTitle title="Handmade Pasta" subtitle="Gluten-Free Pasta +$3" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                            <MenuItem
+                                name="Colorado Lamb Ragout"
+                                price={38}
+                                description="Danny Kay's Campanella Pasta, Braised Lamb, Marcelli Formaggi Pecorino"
+                            />
+                            <MenuItem
+                                name="Cauliflower Bolognese"
+                                price={28}
+                                description="Tagliatelle Pasta, 24 Month Parmesan, Torn Basil"
+                                tag="V"
+                            />
+                            <MenuItem
+                                name="Lobster Miso Ramen"
+                                price={48}
+                                description="Danny Kay's Kombu Bucatini, Maine Lobster, Kimchi, Colab Farms Turnip, Six Minute Egg"
+                            />
+                        </div>
+
+                        {/* CHEF'S PLATES */}
+                        <SectionTitle title="Chef's Plates" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                            <MenuItem
+                                name="Sweet Potato Crusted Black Grouper"
+                                price={44}
+                                description="Sweet potato puree, Colab Farms Baby Bok Choy, Crispy Maitake Mushrooms"
+                            />
+                            <MenuItem
+                                name="Steak Au Poivre"
+                                price={55}
+                                description="10 Oz Chatel Farms Prime Strip, Onion Scarpaccia, Gratitude Gardens Mushrooms, Cognac-Bone Marrow Au Poivre Sauce"
+                            />
+                            <MenuItem
+                                name="Chicken & Mashed Potatoes"
+                                price={32}
+                                description="Sunbird Farms Chicken Breast, Housemade Chicken Thigh Sausage, Potato Puree, Chicken Jus, Local Greens"
+                            />
+                            <MenuItem
+                                name="Local Vegetable Curry"
+                                price={28}
+                                description="Malaysian Curry, Kai Kai Veg, Bean Sprouts, Coconut Squash"
+                                tag="V"
+                            />
+                            <MenuItem
+                                name="Bistro Burger"
+                                price={25}
+                                description="1/2 LB CBS Blend, Gruyere, Sweet & Sour Onions, Au Poivre Sauce, Parmesan Potato Wedges"
+                            />
+                            <MenuItem
+                                name="Dr Jurgielwicz Duck"
+                                price={36}
+                                description="Dry Aged Honey Glazed Duck Breast, Leg & Thigh Crispy Roulade, Cured Butternut Squash, Fennel Puree, Tart Cherry, Mole Jus"
+                            />
+                        </div>
+
+                        {/* SWEETS */}
+                        <SectionTitle title="Sweets" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                            <MenuItem
+                                name="Brioche Bread Pudding"
+                                price={10}
+                                description="Date & Guinness, Toffee Sauce, Tres Leches Ice Cream"
+                            />
+                            <MenuItem
+                                name="Orange Blossom Creme Brulee"
+                                price={8}
+                                description="Kai Kai Farms Burnt Orange Blossom, Custard"
+                            />
+                            <MenuItem
+                                name="Mini Key Lime Pie"
+                                price={7}
+                                description="Vanilla Whipped Cream, Black Lime Powder"
+                            />
+                            <MenuItem
+                                name="One Big Scoop"
+                                price={6}
+                                description="Vanilla Tres Leches Ice Cream, Candied Cacao Nib, Dulce"
+                            />
+                            <MenuItem
+                                name="Sorbet"
+                                price={5}
+                                description="House made Rotating Selection"
+                            />
+                        </div>
+
+                        {/* DRINKS CONTAINER */}
+                        <div className="mt-20 p-8 md:p-16 bg-white shadow-xl rounded-sm border-t-8 border-brand-teal">
+
+                            <SectionTitle title="Seasonal Cocktails" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                                <MenuItem name="The Pink Zebra" price={14} description="Ketel One Vodka, Vanilla Liqueur, Pineapple, Lychee, Lemon, Tropical Bitters" />
+                                <MenuItem name="Eau de Lust" price={14} description="Bandido Blanco Tequila, Elderflower Liqueur, Grapefruit, Lemon" />
+                                <MenuItem name="Sinner" price={16} description="Diplomatico Reserva Rum, Salted-Black Cardamom Caramel, Chocolate Bitters, Black Walnut Bitters" />
+                                <MenuItem name="Undone" price={15} description="Buffalo Trace Bourbon, Aperol, Pineapple, Citrus" />
+                                <MenuItem name="The Naked Almond" price={15} description="Toasted Almond Grey Goose Vodka, Espresso, Coffee Liqueur, Orange-Vanilla Bean Liqueur" />
+                                <MenuItem name="Elderflower Fizz" price={10} description="Fresh Lychee, Elderflower Cordial, Ginger, Lime, Sparkling Water (Non-Alcoholic)" />
+                            </div>
+
+                            <SectionTitle title="Wines By The Glass" />
+
+                            <div className="mb-10">
+                                <h4 className="text-brand-deepTeal font-bold mb-6 text-center uppercase tracking-widest text-sm border-b border-brand-peach pb-2 max-w-xs mx-auto">Sparkling & Rosé</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                                    <MenuItem name="Jeio Brut Prosecco, Italy" price="12/46" />
+                                    <MenuItem name="Maison Fabre Provence Rosé, France" price="12/46" />
+                                </div>
+                            </div>
+
+                            <div className="mb-10">
+                                <h4 className="text-brand-deepTeal font-bold mb-6 text-center uppercase tracking-widest text-sm border-b border-brand-peach pb-2 max-w-xs mx-auto">Solid Whites</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                                    <MenuItem name="Mezzacana Pinot Grigio 2022, Italy" price="12/54" />
+                                    <MenuItem name="Frenzy Sauvignon Blanc, Marlborough" price="12/46" />
+                                    <MenuItem name="Serge Laporte Sancerre, Loire Valley" price="20/78" />
+                                    <MenuItem name="Annabella Chardonnay, Sonoma" price="14/46" />
+                                    <MenuItem name="Mylonas Assyrtiko, Greece" price="15/58" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 className="text-brand-deepTeal font-bold mb-6 text-center uppercase tracking-widest text-sm border-b border-brand-peach pb-2 max-w-xs mx-auto">Solid Reds</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                                    <MenuItem name="Maison Noir 'O.P.P.' Pinot Noir, Willamette Valley" price="12/46" />
+                                    <MenuItem name="Collequieto Montepulciano 2021, Abruzzo" price="14/54" />
+                                    <MenuItem name="Miguel Torres 'Cordillera' Cabernet Sauvignon 2021, Chile" price="15/58" />
+                                    <MenuItem name="Jordan Cabernet Sauvignon 2020, Sonoma" price={25} />
+                                    <MenuItem name="Cyril Coperet Fleurie 'Campagne' 2023 Beaujolais" price="17/64" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="text-center mt-20">
+                            <Button href={LINKS.RESERVATION}>Reserve Your Table Now</Button>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // 5. Testimonials Component
+        const Testimonials = () => {
+            return (
+                <section className="py-24 bg-brand-deepTeal relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#FAF7F2 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+
+                    {/* Ambiance Background Image */}
+                    <div
+                        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+                        style={{ backgroundImage: `url('${IMAGES.AMBIANCE}')` }}
+                    ></div>
+                    <div className="absolute inset-0 z-0 bg-brand-deepTeal/80"></div>
+
+                    <div className="max-w-4xl mx-auto px-5 relative z-10 text-center">
+                        <div className="text-brand-coral text-6xl font-serif mb-6">“</div>
+                        <p className="text-2xl md:text-3xl text-brand-linen font-serif italic leading-relaxed mb-10">
+                            The most romantic spot in Jupiter. The food was incredible, but the atmosphere was what made the night unforgettable.
+                        </p>
+                        <div className="flex items-center justify-center gap-4">
+                            <div className="w-12 h-12 bg-brand-peach rounded-full flex items-center justify-center text-brand-deepTeal font-bold">
+                                S
+                            </div>
+                            <div className="text-left">
+                                <p className="text-brand-linen font-bold uppercase tracking-widest text-sm">Sarah & Mike</p>
+                                <p className="text-brand-teal text-xs">Jupiter Locals</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // 6. Footer Component
+        const Footer = () => {
+            return (
+                <footer className="bg-brand-dark py-16 text-center border-t border-brand-teal/20">
+                    <div className="max-w-6xl mx-auto px-5">
+                        <h2 className="text-3xl font-serif text-white mb-6">The Salty Zebra Bistro</h2>
+                        <p className="text-brand-teal mb-10 leading-relaxed text-lg">
+                            {CONTACT_INFO.ADDRESS}
+                            <br />
+                            {CONTACT_INFO.HOURS}
+                        </p>
+
+                        <div className="mb-16">
+                            <Button href={LINKS.RESERVATION} className="w-full sm:w-auto">
+                                Secure Your Table
+                            </Button>
+                        </div>
+
+                        <div className="text-sm text-brand-linen/70 space-y-2 sm:space-y-0">
+                            <p className="mb-4 text-brand-linen/50 uppercase tracking-wider text-xs">Looking for something else?</p>
+                            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+                                <a href={LINKS.HOME} className="hover:text-brand-coral transition-colors duration-300">
+                                    Private Night Events
+                                </a>
+                                <span className="hidden sm:inline text-brand-teal">•</span>
+                                <a href={LINKS.DAYTIME_EVENTS} className="hover:text-brand-coral transition-colors duration-300">
+                                    Daytime Showers & Brunch
+                                </a>
+                                <span className="hidden sm:inline text-brand-teal">•</span>
+                                <a href={LINKS.MAIN_SITE} className="hover:text-brand-coral transition-colors duration-300">
+                                    Main Website
+                                </a>
+                            </div>
+                        </div>
+
+                        <p className="text-xs text-brand-teal/50 mt-16 font-light">
+                            &copy; {new Date().getFullYear()} The Salty Zebra Bistro. All rights reserved.
+                        </p>
+                    </div>
+                </footer>
+            );
+        };
+
+        // --- MAIN APP COMPONENT ---
+        const App = () => {
+            return (
+                <div className="font-sans text-brand-body">
+                    <Hero />
+                    <Features />
+                    <PhotoGrid />
+                    <Menu />
+                    <Testimonials />
+                    <Footer />
+                </div>
+            );
+        };
+
+        // --- RENDER ---
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
