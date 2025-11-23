@@ -14,6 +14,10 @@
       "dest": "/index.html"
     },
     {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
       "src": "/late-night",
       "dest": "/index.html"
     },
