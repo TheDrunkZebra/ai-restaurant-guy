@@ -1,21 +1,25 @@
 {
   "public": true,
   "routes": [
-    { 
-      "src": "/datenight-diners.html", 
-      "dest": "/datenight-diners.html" 
+    {
+      "src": "/datenight-diners.html",
+      "dest": "/datenight-diners.html"
     },
-    { 
-      "src": "/daytime-events.html", 
-      "dest": "/daytime-events.html" 
+    {
+      "src": "/daytime-events.html",
+      "dest": "/daytime-events.html"
     },
-    { 
-      "src": "/index.html", 
-      "dest": "/index.html" 
+    {
+      "src": "/index.html",
+      "dest": "/index.html"
     },
-    { 
-      "src": "/", 
-      "dest": "/index.html" 
+    {
+      "src": "/late-night",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/",
+      "dest": "/datenight-diners.html"
     }
   ]
 }
