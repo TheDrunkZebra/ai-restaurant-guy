@@ -69,36 +69,45 @@
       "name": "The Salty Zebra Bistro",
       "description": "Experience casual fine dining in Jupiter. Hand-rolled pastas, fresh seafood, and an intimate atmosphere perfect for your next date night.",
       "image": [
-        "https://go.saltyzebrabistro.com/assets/interior-bar.jpg"
+        "https://go.saltyzebrabistro.com/images/bar-interior.jpg"
       ],
       "@id": "https://go.saltyzebrabistro.com",
       "url": "https://go.saltyzebrabistro.com",
-      "telephone": "",
+      "telephone": "561-250-6350",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2133 US-1",
+        "streetAddress": "377 Tequesta Dr",
         "addressLocality": "Jupiter",
         "addressRegion": "FL",
-        "postalCode": "33477",
+        "postalCode": "33469",
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 26.9535,
-        "longitude": -80.0818
+        "latitude": 26.9634,
+        "longitude": -80.0944
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "17:00",
-        "closes": "21:00"
-      },
+      "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "17:00",
+            "closes": "20:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "17:00",
+            "closes": "21:00"
+        }
+      ],
       "sameAs": [
         "https://www.saltyzebrabistro.com",
         "https://www.opentable.com/r/the-salty-zebra-jupiter-inlet"
@@ -157,8 +166,7 @@
     <!-- Hero Section -->
     <header class="relative h-[85vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="assets/interior-bar.jpg" alt="Intimate Date Night Atmosphere"
-                class="w-full h-full object-cover" />
+            <img src="images/couple-walking.jpg" alt="Intimate Date Night Atmosphere" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-brand-deepTeal/50 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-black/20"></div>
         </div>
@@ -195,8 +203,7 @@
                     class="bg-brand-linen p-8 rounded-sm shadow-lg relative transform transition duration-300 hover:-translate-y-2">
                     <div class="text-brand-coral text-4xl font-serif absolute top-4 left-6">"</div>
                     <div class="flex text-brand-gold mb-4 mt-4 space-x-1">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                     <p class="text-brand-deepTeal mb-6 italic leading-relaxed text-sm md:text-base">
                         "I had the most unexpectedly incredible dinner last night... The chef personally came out to
                         present the dish... If you haven't been to The Salty Zebra yet, you're missing out. This place
@@ -217,8 +224,7 @@
                     class="bg-brand-linen p-8 rounded-sm shadow-lg relative transform transition duration-300 hover:-translate-y-2">
                     <div class="text-brand-coral text-4xl font-serif absolute top-4 left-6">"</div>
                     <div class="flex text-brand-gold mb-4 mt-4 space-x-1">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                     <p class="text-brand-deepTeal mb-6 italic leading-relaxed text-sm md:text-base">
                         "One of the best experiences we've had at a restaurant... Every single dish was delicious! You
                         can feel the quality of the ingredients and the passion that is put into their food. We will
@@ -240,8 +246,7 @@
                     class="bg-brand-linen p-8 rounded-sm shadow-lg relative transform transition duration-300 hover:-translate-y-2">
                     <div class="text-brand-coral text-4xl font-serif absolute top-4 left-6">"</div>
                     <div class="flex text-brand-gold mb-4 mt-4 space-x-1">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                     <p class="text-brand-deepTeal mb-6 italic leading-relaxed text-sm md:text-base">
                         "My first time here with my husband. The staff is amazing... The Chef is wonderful, I had the
                         grouper and my husband had a homemade pasta dish. Excellent. It's a must visit."
@@ -261,6 +266,18 @@
             <div class="text-center mt-12">
                 <p class="text-brand-teal/70 italic text-sm mb-2">Join us and experience it for yourself.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Visual Interlude -->
+    <section
+        class="relative h-[60vh] min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover flex items-center justify-center"
+        style="background-image: url('images/bar-interior.jpg')">
+        <div class="absolute inset-0 bg-brand-deepTeal/40"></div>
+        <div class="relative z-10 text-center px-5">
+            <h2 class="text-4xl md:text-6xl font-serif text-white italic drop-shadow-xl mb-4">Set the Mood</h2>
+            <p class="text-white text-lg md:text-xl tracking-widest uppercase font-bold">Your Evening Awaits</p>
+        </div>
     </section>
 
     <!-- Features Section -->
@@ -294,7 +311,7 @@
     <section class="py-0">
         <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 h-auto md:h-[800px]">
             <div class="relative h-80 md:h-full group overflow-hidden">
-                <img src="assets/lobster-linguini.jpg" alt="Lobster Linguini"
+                <img src="images/lobster-pasta.jpg" alt="Lobster Linguini"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div
                     class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
@@ -304,7 +321,7 @@
                 </div>
             </div>
             <div class="relative h-80 md:h-full group overflow-hidden">
-                <img src="assets/layered-dessert.jpg" alt="Homemade Cake"
+                <img src="images/cake-dessert.jpg" alt="Homemade Cake"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div
                     class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
@@ -314,7 +331,7 @@
                 </div>
             </div>
             <div class="relative h-80 md:h-full group overflow-hidden">
-                <img src="assets/hero-couple.jpg" alt="Couple Walking"
+                <img src="images/couple-walking.jpg" alt="Couple Walking"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div
                     class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
@@ -324,7 +341,7 @@
                 </div>
             </div>
             <div class="relative h-80 md:h-full group overflow-hidden">
-                <img src="assets/vegan-dish.jpg" alt="Chef's Special"
+                <img src="images/plated-dish.jpg" alt="Chef's Special"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div
                     class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
@@ -334,7 +351,7 @@
                 </div>
             </div>
             <div class="relative h-80 md:h-full group overflow-hidden">
-                <img src="assets/pumpkin-dessert.jpg" alt="Decadent Dessert"
+                <img src="images/pumpkin-dessert.jpg" alt="Decadent Dessert"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div
                     class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
@@ -344,7 +361,7 @@
                 </div>
             </div>
             <div class="relative h-80 md:h-full group overflow-hidden">
-                <img src="assets/interior-bar.jpg" alt="Couples at Bar"
+                <img src="images/bar-interior.jpg" alt="Bar Interior"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div
                     class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
@@ -906,9 +923,11 @@
         <div class="max-w-6xl mx-auto px-5">
             <h2 class="text-3xl font-serif text-white mb-6">The Salty Zebra Bistro</h2>
             <p class="text-brand-teal mb-10 leading-relaxed text-lg">
-                2133 US-1, Jupiter, FL 33477
+                377 Tequesta Dr, Jupiter, FL 33469
                 <br />
-                Open Tue-Sat: 5pm - 9pm
+                561-250-6350
+                <br />
+                Open Tue-Thu: 5pm - 8pm, Fri-Sat: 5pm - 9pm
             </p>
 
             <div class="mb-16">
@@ -922,8 +941,7 @@
             <div class="text-sm text-brand-linen/70 space-y-2 sm:space-y-0">
                 <p class="mb-4 text-brand-linen/50 uppercase tracking-wider text-xs">Looking for something else?</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                    <a href="/private-events.html" class="hover:text-brand-coral transition-colors duration-300">Private
-                        Night Events</a>
+                    <a href="/" class="hover:text-brand-coral transition-colors duration-300">Private Night Events</a>
                     <span class="hidden sm:inline text-brand-teal">•</span>
                     <a href="/daytime-events.html" class="hover:text-brand-coral transition-colors duration-300">Daytime
                         Showers & Brunch</a>
