@@ -1,29 +1,26 @@
 {
-  "public": true,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/datenight-diners.html",
-      "dest": "/datenight-diners.html"
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "go.saltyzebrabistro.com"
+        }
+      ],
+      "destination": "/daytime-events.html"
     },
     {
-      "src": "/daytime-events.html",
-      "dest": "/daytime-events.html"
+      "source": "/",
+      "destination": "/datenight-diners.html"
     },
     {
-      "src": "/index.html",
-      "dest": "/index.html"
+      "source": "/late-night",
+      "destination": "/late-night.html"
     },
     {
-      "src": "/about",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/late-night",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/",
-      "dest": "/datenight-diners.html"
+      "source": "/about",
+      "destination": "/about.html"
     }
   ]
 }
