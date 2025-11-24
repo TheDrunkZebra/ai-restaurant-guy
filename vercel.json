@@ -11,6 +11,16 @@
       "destination": "/daytime-events.html"
     },
     {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "go.saltyzebrabistro.com"
+        }
+      ],
+      "destination": "/daytime-events.html"
+    },
+    {
       "source": "/",
       "has": [
         {
