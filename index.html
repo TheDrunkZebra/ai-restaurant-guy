@@ -3,13 +3,953 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=/datenight-diners.html">
-    <title>Redirecting...</title>
-    <script>window.location.href = "/datenight-diners.html"</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfect Date Night | The Salty Zebra Bistro</title>
+    <meta name="description"
+        content="Experience casual fine dining in Jupiter. Hand-rolled pastas, fresh seafood, and an intimate atmosphere perfect for your next date night.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#264653',
+                            body: '#5e6e75',
+                            linen: '#FAF7F2',
+                            peach: '#FFF0EB',
+                            teal: '#2A9D8F',
+                            deepTeal: '#1D3944',
+                            coral: '#FF6F61',
+                            coralHover: '#E55A4F',
+                            gold: '#D4AF37',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Salty Zebra Bistro",
+      "description": "Experience casual fine dining in Jupiter. Hand-rolled pastas, fresh seafood, and an intimate atmosphere perfect for your next date night.",
+      "image": [
+        "https://go.saltyzebrabistro.com/assets/interior-bar.jpg"
+      ],
+      "@id": "https://go.saltyzebrabistro.com",
+      "url": "https://go.saltyzebrabistro.com",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2133 US-1",
+        "addressLocality": "Jupiter",
+        "addressRegion": "FL",
+        "postalCode": "33477",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.9535,
+        "longitude": -80.0818
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "17:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://www.saltyzebrabistro.com",
+        "https://www.opentable.com/r/the-salty-zebra-jupiter-inlet"
+      ],
+      "priceRange": "$$$",
+      "servesCuisine": ["American", "Seafood", "Casual Fine Dining"],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Dinner Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "To Start",
+            "hasMenuItem": [
+               { "@type": "MenuItem", "name": "Six Cold Water Oysters", "offers": { "@type": "Offer", "price": "28", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Pistachio Whipped Feta", "offers": { "@type": "Offer", "price": "16", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Bread Service", "offers": { "@type": "Offer", "price": "15", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Beet & Citrus Salad", "offers": { "@type": "Offer", "price": "18", "priceCurrency": "USD" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Handmade Pasta",
+            "hasMenuItem": [
+               { "@type": "MenuItem", "name": "Colorado Lamb Ragout", "offers": { "@type": "Offer", "price": "38", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Cauliflower Bolognese", "offers": { "@type": "Offer", "price": "28", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Lobster Miso Ramen", "offers": { "@type": "Offer", "price": "48", "priceCurrency": "USD" } }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Chef's Plates",
+            "hasMenuItem": [
+               { "@type": "MenuItem", "name": "Sweet Potato Crusted Black Grouper", "offers": { "@type": "Offer", "price": "44", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Steak Au Poivre", "offers": { "@type": "Offer", "price": "55", "priceCurrency": "USD" } },
+               { "@type": "MenuItem", "name": "Chicken & Mashed Potatoes", "offers": { "@type": "Offer", "price": "32", "priceCurrency": "USD" } }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
 </head>
 
-<body>
-    <p>If you are not redirected, <a href="/datenight-diners.html">click here</a>.</p>
+<body class="w-full overflow-x-hidden font-sans text-brand-body bg-brand-linen">
+
+    <!-- Hero Section -->
+    <header class="relative h-[85vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero-couple.jpg" alt="Intimate Date Night Atmosphere" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-brand-deepTeal/50 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl px-5 animate-fadeIn">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg leading-tight tracking-tight">
+                Date Night, <span class="text-brand-coral italic font-serif">Done Right.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md">
+                Escape the ordinary. Experience casual fine dining where European technique meets Jupiter's coastal
+                soul.
+            </p>
+            <a href="https://www.opentable.com/r/the-salty-zebra-jupiter-inlet#reserve" target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-brand-coral hover:bg-brand-coralHover text-white font-bold uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg border-none cursor-pointer text-center py-4 px-10 text-sm md:text-base">
+                Book Your Table
+            </a>
+        </div>
+    </header>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-brand-deepTeal relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5"
+            style="background-image: radial-gradient(#FAF7F2 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="max-w-7xl mx-auto px-5 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Jupiter's Hidden Gem for Date Night</h2>
+                <div class="w-24 h-1 bg-brand-coral mx-auto mb-6"></div>
+                <p class="text-brand-teal/80 text-lg max-w-2xl mx-auto">Sophisticated enough to impress, relaxed enough
+                    to be yourself.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div
+                    class="bg-brand-linen p-8 rounded-sm shadow-lg relative transform transition duration-300 hover:-translate-y-2">
+                    <div class="text-brand-coral text-4xl font-serif absolute top-4 left-6">"</div>
+                    <div class="flex text-brand-gold mb-4 mt-4 space-x-1">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-brand-deepTeal mb-6 italic leading-relaxed text-sm md:text-base">
+                        "I had the most unexpectedly incredible dinner last night... The chef personally came out to
+                        present the dish... If you haven't been to The Salty Zebra yet, you're missing out. This place
+                        is doing something special."
+                    </p>
+                    <div class="flex justify-between items-end border-t border-brand-teal/10 pt-4">
+                        <div>
+                            <p class="font-bold text-brand-deepTeal uppercase tracking-wider text-xs">Sabrina Gielen</p>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest">on Google</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/mimBTVrtoXsf8dwN9" target="_blank" rel="noreferrer"
+                            class="text-brand-coral hover:text-brand-deepTeal text-[10px] font-bold uppercase tracking-widest border-b border-brand-coral hover:border-brand-deepTeal pb-0.5 transition-colors">Read
+                            Review</a>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div
+                    class="bg-brand-linen p-8 rounded-sm shadow-lg relative transform transition duration-300 hover:-translate-y-2">
+                    <div class="text-brand-coral text-4xl font-serif absolute top-4 left-6">"</div>
+                    <div class="flex text-brand-gold mb-4 mt-4 space-x-1">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-brand-deepTeal mb-6 italic leading-relaxed text-sm md:text-base">
+                        "One of the best experiences we've had at a restaurant... Every single dish was delicious! You
+                        can feel the quality of the ingredients and the passion that is put into their food. We will
+                        definitely come back!"
+                    </p>
+                    <div class="flex justify-between items-end border-t border-brand-teal/10 pt-4">
+                        <div>
+                            <p class="font-bold text-brand-deepTeal uppercase tracking-wider text-xs">Adriana Ochoa
+                                García</p>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest">on Google</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/G12VRD5nCeSLBXK86" target="_blank" rel="noreferrer"
+                            class="text-brand-coral hover:text-brand-deepTeal text-[10px] font-bold uppercase tracking-widest border-b border-brand-coral hover:border-brand-deepTeal pb-0.5 transition-colors">Read
+                            Review</a>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div
+                    class="bg-brand-linen p-8 rounded-sm shadow-lg relative transform transition duration-300 hover:-translate-y-2">
+                    <div class="text-brand-coral text-4xl font-serif absolute top-4 left-6">"</div>
+                    <div class="flex text-brand-gold mb-4 mt-4 space-x-1">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-brand-deepTeal mb-6 italic leading-relaxed text-sm md:text-base">
+                        "My first time here with my husband. The staff is amazing... The Chef is wonderful, I had the
+                        grouper and my husband had a homemade pasta dish. Excellent. It's a must visit."
+                    </p>
+                    <div class="flex justify-between items-end border-t border-brand-teal/10 pt-4">
+                        <div>
+                            <p class="font-bold text-brand-deepTeal uppercase tracking-wider text-xs">Elizabeth McCabe
+                            </p>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest">on Google</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/tMBWptLLBuTYquBZA" target="_blank" rel="noreferrer"
+                            class="text-brand-coral hover:text-brand-deepTeal text-[10px] font-bold uppercase tracking-widest border-b border-brand-coral hover:border-brand-deepTeal pb-0.5 transition-colors">Read
+                            Review</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-brand-teal/70 italic text-sm mb-2">Join us and experience it for yourself.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Interlude -->
+    <section
+        class="relative h-[60vh] min-h-[400px] bg-fixed bg-center bg-no-repeat bg-cover flex items-center justify-center"
+        style="background-image: url('assets/interior-bar.jpg')">
+        <div class="absolute inset-0 bg-brand-deepTeal/40"></div>
+        <div class="relative z-10 text-center px-5">
+            <h2 class="text-4xl md:text-6xl font-serif text-white italic drop-shadow-xl mb-4">Set the Mood</h2>
+            <p class="text-white text-lg md:text-xl tracking-widest uppercase font-bold">Your Evening Awaits</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-brand-peach">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div
+                    class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-teal">
+                    <h3 class="text-xl font-bold text-brand-deepTeal mb-4 uppercase tracking-wide">Casual Fine Dining
+                    </h3>
+                    <p class="text-brand-body leading-relaxed">We blend the precision of a scratch kitchen with
+                        neighborhood warmth. Enjoy high-end dishes without the stuffy dress code.</p>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-coral">
+                    <h3 class="text-xl font-bold text-brand-deepTeal mb-4 uppercase tracking-wide">Chef-Driven Menu</h3>
+                    <p class="text-brand-body leading-relaxed">From our signature <strong>Steak Au Poivre</strong> to
+                        hand-rolled pastas, every plate is crafted with intention and local ingredients.</p>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-brand-teal">
+                    <h3 class="text-xl font-bold text-brand-deepTeal mb-4 uppercase tracking-wide">Authentic Hospitality
+                    </h3>
+                    <p class="text-brand-body leading-relaxed">Warm and exceptional service without the pretense.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Grid -->
+    <section class="py-0">
+        <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 h-auto md:h-[800px]">
+            <div class="relative h-80 md:h-full group overflow-hidden">
+                <img src="assets/lobster-linguini.jpg" alt="Lobster Linguini"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
+                    <span
+                        class="text-white font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Lobster
+                        Miso Ramen</span>
+                </div>
+            </div>
+            <div class="relative h-80 md:h-full group overflow-hidden">
+                <img src="assets/layered-dessert.jpg" alt="Homemade Cake"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
+                    <span
+                        class="text-white font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Homemade
+                        Desserts</span>
+                </div>
+            </div>
+            <div class="relative h-80 md:h-full group overflow-hidden">
+                <img src="assets/hero-couple.jpg" alt="Couple Walking"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
+                    <span
+                        class="text-white font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Romantic
+                        Ambiance</span>
+                </div>
+            </div>
+            <div class="relative h-80 md:h-full group overflow-hidden">
+                <img src="assets/vegan-dish.jpg" alt="Chef's Special"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
+                    <span
+                        class="text-white font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Chef's
+                        Creations</span>
+                </div>
+            </div>
+            <div class="relative h-80 md:h-full group overflow-hidden">
+                <img src="assets/pumpkin-dessert.jpg" alt="Decadent Dessert"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
+                    <span
+                        class="text-white font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Sweet
+                        Endings</span>
+                </div>
+            </div>
+            <div class="relative h-80 md:h-full group overflow-hidden">
+                <img src="assets/interior-bar.jpg" alt="Couples at Bar"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 flex items-end p-6">
+                    <span
+                        class="text-white font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Intimate
+                        Seating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-24 bg-brand-linen">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-deepTeal mb-6 font-serif">Dinner Menu</h2>
+                <p class="text-brand-body max-w-2xl mx-auto text-lg">A culinary journey featuring local ingredients,
+                    European techniques, and bold flavors.</p>
+            </div>
+
+            <!-- TO START -->
+            <div class="text-center mb-12 mt-16 first:mt-0">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">To Start</h3>
+                <div class="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                <!-- Items -->
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Six Cold Water Oysters </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">28</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Passionfruit-Pink Peppercorn Mignotte</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Pistachio Whipped Feta </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">16</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Mint, Chives, Bread by Johnny Sourdough</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Bread Service <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">15</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Locally Sourced Assorted Breads From Bread by Johnny.
+                        Calabrian Butter, Seasonal Jam, Roasted Garlic Oil</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Beet & Citrus Salad <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">18</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Orange Braised Beets, Florida Citrus, Feta, Pistachios,
+                        Ricotta, Orange Espelette Vinaigrette</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Chicken Bites </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">10</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Togarashi Citrus Aioli</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Crispy Brussels </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">12</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Truffle Honey, Bacon, Balsamic</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Mushroom Pate <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">14</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Maitake Mushroom, Sweet n' Sour Blueberry, Crispy
+                        Cordyceps, Sourdough</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Bruschetta <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">16</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Stracciatella, Concasse Tomato, Garlic, Basil, Balsamic.
+                        Bread by Johnny Sourdough</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Melted Brie <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">16</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Orange Blossom Honey, Bee Pollen, Cinnamon Raisin Toast
+                    </p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Colab Farms Market Salad <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">16</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Local Greens, Market Vegetables, Champagne Vinaigrette,
+                        Marcelli Formaggi Pecorino</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Burgundy Escargot </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">20</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Pernod Garlic-Parsley Butter</p>
+                </div>
+            </div>
+
+            <!-- HANDMADE PASTA -->
+            <div class="text-center mb-12 mt-16 first:mt-0">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">Handmade
+                    Pasta</h3>
+                <p class="text-brand-deepTeal font-serif italic opacity-70">Gluten-Free Pasta +$3</p>
+                <div class="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Colorado Lamb Ragout </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">38</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Danny Kay's Campanella Pasta, Braised Lamb, Marcelli
+                        Formaggi Pecorino</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Cauliflower Bolognese <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">V</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">28</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Tagliatelle Pasta, 24 Month Parmesan, Torn Basil</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Lobster Miso Ramen </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">48</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Danny Kay's Kombu Bucatini, Maine Lobster, Kimchi, Colab
+                        Farms Turnip, Six Minute Egg</p>
+                </div>
+            </div>
+
+            <!-- CHEF'S PLATES -->
+            <div class="text-center mb-12 mt-16 first:mt-0">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">Chef's Plates
+                </h3>
+                <div class="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Sweet Potato Crusted Black Grouper </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">44</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Sweet potato puree, Colab Farms Baby Bok Choy, Crispy
+                        Maitake Mushrooms</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Steak Au Poivre </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">55</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">10 Oz Chatel Farms Prime Strip, Onion Scarpaccia,
+                        Gratitude Gardens Mushrooms, Cognac-Bone Marrow Au Poivre Sauce</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Chicken & Mashed Potatoes </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">32</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Sunbird Farms Chicken Breast, Housemade Chicken Thigh
+                        Sausage, Potato Puree, Chicken Jus, Local Greens</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Local Vegetable Curry <span
+                                class="text-[10px] text-white bg-brand-coral px-1.5 py-0.5 rounded-sm align-middle tracking-wider">VG</span>
+                        </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">28</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Malaysian Curry, Kai Kai Veg, Bean Sprouts, Coconut Squash
+                    </p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Bistro Burger </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">25</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">1/2 LB CBS Blend, Gruyere, Sweet & Sour Onions, Au Poivre
+                        Sauce, Parmesan Potato Wedges</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Dr Jurgielwicz Duck </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">36</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Dry Aged Honey Glazed Duck Breast, Leg & Thigh Crispy
+                        Roulade, Cured Butternut Squash, Fennel Puree, Tart Cherry, Mole Jus</p>
+                </div>
+            </div>
+
+            <!-- SWEETS -->
+            <div class="text-center mb-12 mt-16 first:mt-0">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">Sweets</h3>
+                <div class="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Brioche Bread Pudding </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">10</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Date & Guinness, Toffee Sauce, Tres Leches Ice Cream</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Orange Blossom Creme Brulee </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">8</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Kai Kai Farms Burnt Orange Blossom, Custard</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Mini Key Lime Pie </h4><span
+                            class="text-brand-teal font-serif font-bold text-lg ml-4">7</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Vanilla Whipped Cream, Black Lime Powder</p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            One Big Scoop </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">6</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">Vanilla Tres Leches Ice Cream, Candied Cacao Nib, Dulce
+                    </p>
+                </div>
+                <div class="mb-8 break-inside-avoid">
+                    <div
+                        class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                        <h4
+                            class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                            Sorbet </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">5</span>
+                    </div>
+                    <p class="text-sm text-brand-body italic">House made Rotating Selection</p>
+                </div>
+            </div>
+
+            <!-- DRINKS CONTAINER -->
+            <div class="mt-20 p-8 md:p-16 bg-white shadow-xl rounded-sm border-t-8 border-brand-teal">
+                <div class="text-center mb-12 mt-16 first:mt-0">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">Seasonal
+                        Cocktails</h3>
+                    <div class="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                    <div class="mb-8 break-inside-avoid">
+                        <div
+                            class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                            <h4
+                                class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                The Pink Zebra </h4><span
+                                class="text-brand-teal font-serif font-bold text-lg ml-4">14</span>
+                        </div>
+                        <p class="text-sm text-brand-body italic">Ketel One Vodka, Vanilla Liqueur, Pineapple, Lychee,
+                            Lemon, Tropical Bitters</p>
+                    </div>
+                    <div class="mb-8 break-inside-avoid">
+                        <div
+                            class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                            <h4
+                                class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                Eau de Lust </h4><span
+                                class="text-brand-teal font-serif font-bold text-lg ml-4">14</span>
+                        </div>
+                        <p class="text-sm text-brand-body italic">Bandido Blanco Tequila, Elderflower Liqueur,
+                            Grapefruit, Lemon</p>
+                    </div>
+                    <div class="mb-8 break-inside-avoid">
+                        <div
+                            class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                            <h4
+                                class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                Sinner </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">16</span>
+                        </div>
+                        <p class="text-sm text-brand-body italic">Diplomatico Reserva Rum, Salted-Black Cardamom
+                            Caramel, Chocolate Bitters</p>
+                    </div>
+                    <div class="mb-8 break-inside-avoid">
+                        <div
+                            class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                            <h4
+                                class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                Undone </h4><span class="text-brand-teal font-serif font-bold text-lg ml-4">15</span>
+                        </div>
+                        <p class="text-sm text-brand-body italic">Buffalo Trace Bourbon, Aperol, Pineapple, Citrus</p>
+                    </div>
+                    <div class="mb-8 break-inside-avoid">
+                        <div
+                            class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                            <h4
+                                class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                YOU'RE KILLING ME S'MORES </h4><span
+                                class="text-brand-teal font-serif font-bold text-lg ml-4">15</span>
+                        </div>
+                        <p class="text-sm text-brand-body italic">Cinnamon Infused Woodford Reserve Bourbon, fall spiced
+                            cordial, toasted marshmallow</p>
+                    </div>
+                    <div class="mb-8 break-inside-avoid">
+                        <div
+                            class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                            <h4
+                                class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                Elderflower Fizz </h4><span
+                                class="text-brand-teal font-serif font-bold text-lg ml-4">10</span>
+                        </div>
+                        <p class="text-sm text-brand-body italic">Fresh Lychee, Elderflower Cordial, Ginger, Lime,
+                            Sparkling Water (Non-Alcoholic)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mb-12 mt-16 first:mt-0">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-coral uppercase tracking-widest mb-2">Wines By
+                        The Glass</h3>
+                    <div class="w-12 h-0.5 bg-brand-teal/30 mx-auto mt-4"></div>
+                </div>
+
+                <div class="mb-10">
+                    <h4
+                        class="text-brand-deepTeal font-bold mb-6 text-center uppercase tracking-widest text-sm border-b border-brand-peach pb-2 max-w-xs mx-auto">
+                        Sparkling & Rosé</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Jeio Brut Prosecco, Italy </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">12/46</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Maison Fabre Provence Rosé, France </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">12/46</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h4
+                        class="text-brand-deepTeal font-bold mb-6 text-center uppercase tracking-widest text-sm border-b border-brand-peach pb-2 max-w-xs mx-auto">
+                        Solid Whites</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Mezzacana Pinot Grigio 2022, Italy </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">12/54</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Frenzy Sauvignon Blanc, Marlborough </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">12/46</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Serge Laporte Sancerre, Loire Valley </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">20/78</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Penfolds Chardonnay, Australia </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">14/46</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Mylonas Assyrtiko, Greece </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">15/58</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4
+                        class="text-brand-deepTeal font-bold mb-6 text-center uppercase tracking-widest text-sm border-b border-brand-peach pb-2 max-w-xs mx-auto">
+                        Solid Reds</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Maison Noir 'O.P.P.' Pinot Noir, Willamette Valley </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">12/46</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Collequieto Montepulciano 2021, Abruzzo </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">14/54</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Miguel Torres 'Cordillera' Cabernet Sauvignon 2021, Chile </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">15/58</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Jordan Cabernet Sauvignon 2020, Sonoma </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">25</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Cyril Coperet Fleurie 'Campagne' 2023 Beaujolais </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">17/64</span>
+                            </div>
+                        </div>
+                        <div class="mb-8 break-inside-avoid">
+                            <div
+                                class="flex justify-between items-baseline border-b border-brand-teal/20 pb-2 mb-2 border-dotted">
+                                <h4
+                                    class="text-lg font-bold text-brand-deepTeal uppercase tracking-wide flex items-center gap-2">
+                                    Caymus "The Walking Fool" Red Blend, Suisun Valley CA </h4><span
+                                    class="text-brand-teal font-serif font-bold text-lg ml-4">19</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-20">
+                <a href="https://www.opentable.com/r/the-salty-zebra-jupiter-inlet#reserve" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block bg-brand-coral hover:bg-brand-coralHover text-white font-bold uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg border-none cursor-pointer text-center py-4 px-10 text-sm md:text-base">
+                    Reserve Your Table Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-deepTeal py-20 border-t border-brand-teal/20 text-center">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="text-3xl font-serif text-white mb-6">The Salty Zebra Bistro</h2>
+            <p class="text-brand-teal mb-10 leading-relaxed text-lg">
+                2133 US-1, Jupiter, FL 33477
+                <br />
+                Open Tue-Sat: 5pm - 9pm
+            </p>
+
+            <div class="mb-16">
+                <a href="https://www.opentable.com/r/the-salty-zebra-jupiter-inlet#reserve" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block bg-brand-coral hover:bg-brand-coralHover text-white font-bold uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg border-none cursor-pointer text-center py-4 px-10 text-sm md:text-base w-full sm:w-auto">
+                    Secure Your Table
+                </a>
+            </div>
+
+            <div class="text-sm text-brand-linen/70 space-y-2 sm:space-y-0">
+                <p class="mb-4 text-brand-linen/50 uppercase tracking-wider text-xs">Looking for something else?</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="/private-events.html" class="hover:text-brand-coral transition-colors duration-300">Private
+                        Night Events</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="/daytime-events.html" class="hover:text-brand-coral transition-colors duration-300">Daytime
+                        Showers & Brunch</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="https://www.saltyzebrabistro.com"
+                        class="hover:text-brand-coral transition-colors duration-300">Main Website</a>
+                </div>
+            </div>
+
+            <p class="text-xs text-brand-teal/50 mt-16 font-light">
+                &copy; 2025 The Salty Zebra Bistro. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

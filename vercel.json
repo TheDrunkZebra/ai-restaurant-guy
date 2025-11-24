@@ -11,10 +11,6 @@
       "destination": "/daytime-events.html"
     },
     {
-      "source": "/",
-      "destination": "/datenight-diners.html"
-    },
-    {
       "source": "/daytime-events",
       "destination": "/daytime-events.html"
     },
