@@ -187,6 +187,42 @@
         </div>
     </header>
 
+    <!-- Navigation Section -->
+    <nav class="bg-white border-b border-brand-teal/20 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-5 py-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <a href="#menu" class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300">
+                    Menu
+                </a>
+                <span class="hidden md:inline text-brand-teal/30">|</span>
+                <div class="relative group">
+                    <button class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-1">
+                        Private Events
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-brand-teal/20 shadow-lg rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 min-w-[200px]">
+                        <a href="/daytime-events" class="block px-4 py-3 text-brand-deepTeal hover:bg-brand-peach hover:text-brand-coral transition-colors duration-300 text-sm uppercase tracking-wider">
+                            Daytime Showers & Brunch
+                        </a>
+                        <a href="/late-night" class="block px-4 py-3 text-brand-deepTeal hover:bg-brand-peach hover:text-brand-coral transition-colors duration-300 text-sm uppercase tracking-wider border-t border-brand-teal/10">
+                            Late Night Events
+                        </a>
+                    </div>
+                </div>
+                <span class="hidden md:inline text-brand-teal/30">|</span>
+                <a href="/about" class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300">
+                    About
+                </a>
+                <span class="hidden md:inline text-brand-teal/30">|</span>
+                <a href="/weekly-happenings" class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300">
+                    Weekly Happenings
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Testimonials Section -->
     <section class="py-24 bg-brand-deepTeal relative overflow-hidden">
         <div class="absolute inset-0 opacity-5"
@@ -366,7 +402,7 @@
     </section>
 
     <!-- Menu Section -->
-    <section class="py-24 bg-brand-linen">
+    <section id="menu" class="py-24 bg-brand-linen">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-brand-deepTeal mb-6 font-serif">Dinner Menu</h2>

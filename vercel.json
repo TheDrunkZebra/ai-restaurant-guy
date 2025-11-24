@@ -55,6 +55,10 @@
     {
       "source": "/private-events",
       "destination": "/private-events.html"
+    },
+    {
+      "source": "/weekly-happenings",
+      "destination": "/weekly-happenings.html"
     }
   ]
 }

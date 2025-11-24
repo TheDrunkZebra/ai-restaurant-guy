@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Happenings | The Salty Zebra Bistro</title>
+    <meta name="description"
+        content="Stay updated with the latest news, specials, and stories from The Salty Zebra Bistro in Jupiter, Florida.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#264653',
+                            body: '#5e6e75',
+                            linen: '#FAF7F2',
+                            peach: '#FFF0EB',
+                            teal: '#2A9D8F',
+                            deepTeal: '#1D3944',
+                            coral: '#FF6F61',
+                            coralHover: '#E55A4F',
+                            gold: '#D4AF37',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="w-full overflow-x-hidden font-sans text-brand-body bg-brand-linen">
+
+    <!-- Navigation Section -->
+    <nav class="bg-white border-b border-brand-teal/20 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-5 py-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <a href="/#menu" class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300">
+                    Menu
+                </a>
+                <span class="hidden md:inline text-brand-teal/30">|</span>
+                <div class="relative group">
+                    <button class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300 flex items-center gap-1">
+                        Private Events
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-brand-teal/20 shadow-lg rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 min-w-[200px]">
+                        <a href="/daytime-events" class="block px-4 py-3 text-brand-deepTeal hover:bg-brand-peach hover:text-brand-coral transition-colors duration-300 text-sm uppercase tracking-wider">
+                            Daytime Showers & Brunch
+                        </a>
+                        <a href="/late-night" class="block px-4 py-3 text-brand-deepTeal hover:bg-brand-peach hover:text-brand-coral transition-colors duration-300 text-sm uppercase tracking-wider border-t border-brand-teal/10">
+                            Late Night Events
+                        </a>
+                    </div>
+                </div>
+                <span class="hidden md:inline text-brand-teal/30">|</span>
+                <a href="/about" class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300">
+                    About
+                </a>
+                <span class="hidden md:inline text-brand-teal/30">|</span>
+                <a href="/weekly-happenings" class="text-brand-coral font-bold uppercase tracking-wider text-sm transition-colors duration-300">
+                    Weekly Happenings
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[50vh] min-h-[400px] flex items-center justify-center text-center overflow-hidden bg-brand-deepTeal">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/interior-bar.jpg" alt="The Salty Zebra Bistro" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 bg-brand-deepTeal/80"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl px-5 animate-fadeIn">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg leading-tight tracking-tight font-serif">
+                Weekly Happenings
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-6 font-serif italic">
+                Stories From the Zebra
+            </p>
+            <div class="w-24 h-1 bg-brand-coral mx-auto"></div>
+        </div>
+    </header>
+
+    <!-- Blog Posts Section -->
+    <section class="py-16 bg-brand-linen">
+        <div class="max-w-4xl mx-auto px-5">
+            
+            <!-- Blog Post -->
+            <article class="bg-white rounded-sm shadow-lg mb-12 overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <div class="mb-6">
+                        <span class="text-brand-coral text-sm font-bold uppercase tracking-widest">First Week July</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-deepTeal mt-4 mb-4 font-serif">
+                            Make Weeknights Count: Your New Rituals at The Salty Zebra
+                        </h2>
+                        <p class="text-brand-body text-sm">Published: July 2024</p>
+                    </div>
+
+                    <div class="prose prose-lg max-w-none text-brand-body leading-relaxed">
+                        <p class="text-lg mb-6">
+                            There's a certain thrill in pulling up to The Salty Zebra on a Tuesday and feeling the buzz as if it were Saturday night. We've always believed that good food and great company shouldn't wait for the weekend, and now we have the line‑up to prove it. Our latest slate of weeknight specials is designed to turn ordinary evenings into mini‑vacations—complete with free meals for the kids, half‑priced wine, live music, and an invitation to Palm Beach County's biggest culinary event.
+                        </p>
+
+                        <h3 class="text-2xl font-bold text-brand-deepTeal mt-8 mb-4 font-serif">Kids Eat Free Tuesdays</h3>
+                        <p class="mb-4">
+                            Parents often treat dining out like a weekend luxury because a midweek meal can feel like chaos. But research shows that family‑friendly promotions like "kids eat free" nights resonate with customers—and we agree. Every Tuesday, when you purchase an adult entrée, we'll feed your children for free. Picture them twirling house‑made pasta with a grin while you dive into our Colorado Lamb Ragout, slow‑braised in red wine and finished with torn basil. Or perhaps you're more of a Key West Yellowtail Snapper Puttanesca person; our fish comes straight from the folks at Cod & Capers and is simmered with olives, capers, and San Marzano tomatoes.
+                        </p>
+                        <p class="mb-6">
+                            Our Tuesday nights aren't just about saving a few bucks. They're about bringing the community together and letting families feel welcome. Plus, we've extended Happy Hour from 5–6 PM (Tuesday through Saturday) with $4 off craft cocktails, $8 glasses of wine and $2 premium oysters from Cod & Capers. There's no reason you can't sip a well‑balanced Negroni while your kids devour a hand‑tossed pizza.
+                        </p>
+
+                        <h3 class="text-2xl font-bold text-brand-deepTeal mt-8 mb-4 font-serif">Wine & Dine Wednesdays</h3>
+                        <p class="mb-4">
+                            Midweek romance is now a ritual. On Wednesdays we transform date night into a wine lover's paradise. All bottles from our 75‑label list are half‑price, so whether you're celebrating a milestone or just making it through hump day, you can pop something special. For anyone hungry enough to commit to two entrées, we'll throw in a complimentary appetizer. Choose from our Melted Brie with grilled baguette, the Heirloom Carrots with tahini and black garlic, or a seasonal Cauliflower Bolognese that proves vegetarian dishes can be as indulgent as beef.
+                        </p>
+                        <p class="mb-6">
+                            Promotions like these aren't random; industry experts highlight the power of targeted experiences like date‑night packages to drive repeat visits. We've taken that to heart by blending affordability with an upscale vibe. Order that bottle you've been eyeing and leave the cork fee to us.
+                        </p>
+
+                        <h3 class="text-2xl font-bold text-brand-deepTeal mt-8 mb-4 font-serif">Ladies' Night Thursdays</h3>
+                        <p class="mb-4">
+                            Traditionally, ladies' nights meant neon cocktails and bar napkins. We're rewriting the script. Happy hour runs all night on Thursdays with $8 house cocktails, natural wines by the glass and bar bites that go beyond fried mozzarella. Our plant‑forward appetizers such as Lion's Mane Malaysian Curry and Mushroom Pâté cater to the growing number of flexitarian diners—over 42% of Americans identify as flexitarians—who crave flavor without sacrifice. Of course, if you'd prefer to keep it classic, our bartenders will gladly shake up an Old Fashioned or a cucumber‑mint gin fizz. The point is to gather your crew, dress up (or down), and make the bar your living room.
+                        </p>
+
+                        <h3 class="text-2xl font-bold text-brand-deepTeal mt-8 mb-4 font-serif">Dinner & Dive Fridays</h3>
+                        <p class="mb-4">
+                            When Friday rolls around, you deserve a two‑part adventure. Start with dinner at The Salty Zebra—maybe our Maine Lobster Linguine or a Chef's Special like black truffle–crusted grouper. Then slip through the back door into our sister bar, Locals Pub, where live bands and DJs bring the weekend energy until late. This mash‑up of fine dining and dive‑bar vibes plays into the trend of experiential dining: customers today want more than a meal; they want a story to tell.
+                        </p>
+
+                        <h3 class="text-2xl font-bold text-brand-deepTeal mt-8 mb-4 font-serif">Flavor South Florida in September</h3>
+                        <p class="mb-6">
+                            As summer winds down, we're gearing up for Flavor South Florida (formerly Flavor Palm Beach)—Florida's largest restaurant month. From September 1–30, participating restaurants offer prix fixe menus ranging from $25 to $70, drawing locals and tourists to discover new favorites. We're excited to craft a special, chef‑curated menu showcasing our seasonal dishes, local seafood and Florida's bounty. No tickets are required; just make a reservation and enjoy the ride.
+                        </p>
+
+                        <div class="bg-brand-peach border-l-4 border-brand-coral p-6 my-8">
+                            <h3 class="text-xl font-bold text-brand-deepTeal mb-3 font-serif">The Offer: Your Weekday Reward</h3>
+                            <p class="mb-4">
+                                Here's the sweetener: reserve a table using your Off The Menu account for any of our weeknight specials, mention this post, and we'll take $10 off your bottle of wine or craft cocktail order. Whether you're a parent on Tuesday, a couple on Wednesday, a group of friends on Thursday or a music lover on Friday, we want to reward you for making weeknights feel like celebrations. Our marketing isn't AI‑generated hype—it's personalized hospitality informed by understanding what our guests value.
+                            </p>
+                            <p class="text-brand-deepTeal font-semibold italic">
+                                Join us this week and see why the party starts long before Saturday. Because at The Salty Zebra, every night has a reason to clink glasses.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-deepTeal py-20 border-t border-brand-teal/20 text-center">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="text-3xl font-serif text-white mb-6">The Salty Zebra Bistro</h2>
+            <p class="text-brand-teal mb-10 leading-relaxed text-lg">
+                377 Tequesta Dr, Jupiter, FL 33469 | 561-250-6350
+                <br />
+                Tue-Thur: 5pm - 8pm | Fri-Sat: 5pm - 9pm
+            </p>
+
+            <div class="mb-16">
+                <a href="https://www.opentable.com/r/the-salty-zebra-jupiter-inlet#reserve" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block bg-brand-coral hover:bg-brand-coralHover text-white font-bold uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg border-none cursor-pointer text-center py-4 px-10 text-sm md:text-base w-full sm:w-auto">
+                    Secure Your Table
+                </a>
+            </div>
+
+            <div class="text-sm text-brand-linen/70 space-y-2 sm:space-y-0">
+                <p class="mb-4 text-brand-linen/50 uppercase tracking-wider text-xs">Looking for something else?</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="/late-night" class="hover:text-brand-coral transition-colors duration-300">Private
+                        Night Events</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="/daytime-events" class="hover:text-brand-coral transition-colors duration-300">Daytime
+                        Showers & Brunch</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="https://www.saltyzebrabistro.com"
+                        class="hover:text-brand-coral transition-colors duration-300">Main Website</a>
+                </div>
+            </div>
+
+            <p class="text-xs text-brand-teal/50 mt-16 font-light">
+                &copy; 2025 The Salty Zebra Bistro. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
