@@ -21,6 +21,10 @@
     {
       "source": "/about",
       "destination": "/about.html"
+    },
+    {
+      "source": "/private-events",
+      "destination": "/private-events.html"
     }
   ]
 }
