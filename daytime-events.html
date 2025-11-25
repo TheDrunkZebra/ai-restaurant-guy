@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +8,81 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                light: '#7BE0CD',
-                DEFAULT: '#40C7A9', // Mint Green/Teal
-                dark: '#2E967E',
-              },
-              coral: {
-                light: '#FFF0EB', // Very light peach/sand for backgrounds
-                DEFAULT: '#FF6F61', // The requested Coral
-                dark: '#E05D52', // Slightly darker for text/borders
-              },
-              dark: '#4B5563', // Gray-600/700 tone (Charcoal)
-              light: '#FFFCF9' // Warm white / Seashell
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            animation: {
-                fadeIn: 'fadeIn 0.5s ease-in-out',
-            },
-            keyframes: {
-                fadeIn: {
-                    '0%': { opacity: '0', transform: 'translateY(10px)' },
-                    '100%': { opacity: '1', transform: 'translateY(0)' },
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#7BE0CD',
+                            DEFAULT: '#40C7A9', // Mint Green/Teal
+                            dark: '#2E967E',
+                        },
+                        coral: {
+                            light: '#FFF0EB', // Very light peach/sand for backgrounds
+                            DEFAULT: '#FF6F61', // The requested Coral
+                            dark: '#E05D52', // Slightly darker for text/borders
+                        },
+                        dark: '#4B5563', // Gray-600/700 tone (Charcoal)
+                        light: '#FFFCF9' // Warm white / Seashell
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 0.5s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
                 }
             }
-          }
         }
-      }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <style>
-      html { scroll-behavior: smooth; }
-      body { font-family: 'Inter', sans-serif; }
-      h1, h2, h3 { font-family: 'Playfair Display', serif; }
-      
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar { width: 10px; }
-      ::-webkit-scrollbar-track { background: #FFF0EB; }
-      ::-webkit-scrollbar-thumb { background: #FF6F61; border-radius: 5px; }
-      ::-webkit-scrollbar-thumb:hover { background: #E05D52; }
-      
-      .hidden { display: none; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFF0EB;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF6F61;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E05D52;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
@@ -65,12 +92,14 @@
 }
 </script>
 </head>
+
 <body class="min-h-screen bg-light text-gray-800 font-sans selection:bg-coral selection:text-white">
 
     <!-- HERO SECTION -->
     <header class="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_ixqgd2ixqgd2ixqg.jpg" alt="Ladies celebrating at brunch" class="w-full h-full object-cover">
+            <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_ixqgd2ixqgd2ixqg.jpg"
+                alt="Ladies celebrating at brunch" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
         </div>
 
@@ -78,14 +107,16 @@
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
                 Daytime Celebrations,<br /> Done Beautifully.
             </h1>
-            
+
             <div class="flex flex-col items-center space-y-4 mt-8">
-                <button onclick="document.getElementById('inquiry').scrollIntoView({behavior: 'smooth'})" class="bg-brand hover:bg-brand-dark text-white text-lg font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group">
+                <button onclick="document.getElementById('inquiry').scrollIntoView({behavior: 'smooth'})"
+                    class="bg-brand hover:bg-brand-dark text-white text-lg font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group">
                     Hold My Date (72-Hour Courtesy Hold)
                     <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                 </button>
-                
-                <div class="flex items-center space-x-2 bg-white/95 text-gray-800 px-4 py-2 rounded-full mt-4 shadow-md backdrop-blur-sm">
+
+                <div
+                    class="flex items-center space-x-2 bg-white/95 text-gray-800 px-4 py-2 rounded-full mt-4 shadow-md backdrop-blur-sm">
                     <div class="flex text-coral">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -96,7 +127,7 @@
                     <span class="text-sm font-bold">Loved by Local Hosts 4.8 on Google & Open Table</span>
                 </div>
             </div>
-            
+
             <p class="mt-6 text-sm text-white/90 font-medium tracking-wide uppercase animate-pulse drop-shadow-md">
                 Weekend dates are booking 90 days out
             </p>
@@ -109,35 +140,43 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
                 <!-- Icon 1 -->
                 <div class="flex flex-col items-center group">
-                    <div class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
+                    <div
+                        class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
                         <i data-lucide="sun" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-gray-800">Sunlit Coastal Setting</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Bright, airy spaces perfect for daytime photography.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Bright, airy spaces perfect for daytime
+                        photography.</p>
                 </div>
                 <!-- Icon 2 -->
                 <div class="flex flex-col items-center group">
-                    <div class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
+                    <div
+                        class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
                         <i data-lucide="utensils" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-gray-800">Chef-Curated Bites</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Seasonal menus crafted by our executive kitchen team.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Seasonal menus crafted by our executive kitchen
+                        team.</p>
                 </div>
                 <!-- Icon 3 -->
                 <div class="flex flex-col items-center group">
-                    <div class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
+                    <div
+                        class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
                         <i data-lucide="heart-handshake" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-gray-800">Seamless Service</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Dedicated staff so you can host without lifting a finger.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Dedicated staff so you can host without lifting a
+                        finger.</p>
                 </div>
                 <!-- Icon 4 -->
                 <div class="flex flex-col items-center group">
-                    <div class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
+                    <div
+                        class="bg-white p-4 rounded-full shadow-sm mb-4 text-brand group-hover:text-coral transition-colors duration-300">
                         <i data-lucide="sparkles" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-gray-800">Effortless Setup</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">We handle tables, linens, and cleanup. You just bring the guests.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">We handle tables, linens, and cleanup. You just
+                        bring the guests.</p>
                 </div>
             </div>
         </div>
@@ -156,22 +195,34 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Package 1 -->
-                <div class="relative p-8 bg-white rounded-2xl transition-all duration-300 border-transparent shadow-md hover:shadow-lg border-2">
+                <div
+                    class="relative p-8 bg-white rounded-2xl transition-all duration-300 border-transparent shadow-md hover:shadow-lg border-2">
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Brunch Social</h3>
                     <div class="flex items-baseline mb-6">
                         <span class="text-4xl font-bold text-brand">$60</span>
                         <span class="text-gray-500 ml-2">/ per guest</span>
                     </div>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">8 pieces per guest (Chef's Menu)</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">3-hour private venue use</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">Dedicated service staff</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">Standard linen & table setup</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">8 pieces per guest (Chef's Menu)</span>
+                        </li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">3-hour private venue use</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">Dedicated service staff</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">Standard linen & table setup</span></li>
                     </ul>
                 </div>
                 <!-- Package 2 -->
-                <div class="relative p-8 bg-white rounded-2xl transition-all duration-300 border-2 border-coral shadow-xl scale-105 z-10">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-coral text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-sm uppercase">
+                <div
+                    class="relative p-8 bg-white rounded-2xl transition-all duration-300 border-2 border-coral shadow-xl scale-105 z-10">
+                    <div
+                        class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-coral text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-sm uppercase">
                         Most Popular
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Signature Shower</h3>
@@ -180,11 +231,22 @@
                         <span class="text-gray-500 ml-2">/ per guest</span>
                     </div>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">10–11 pieces per guest + Main Course</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">Mimosa Bar + Coffee Included</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">Extended setup time</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">Custom menu every season</span></li>
-                        <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span class="text-gray-600 text-sm leading-relaxed">Upgraded linen options</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">10–11 pieces per guest + Main
+                                Course</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">Mimosa Bar + Coffee Included</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">Extended setup time</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">Custom menu every season</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2"
+                                class="w-5 h-5 text-brand mr-3 flex-shrink-0 mt-0.5"></i><span
+                                class="text-gray-600 text-sm leading-relaxed">Upgraded linen options</span></li>
                     </ul>
                 </div>
             </div>
@@ -202,7 +264,8 @@
                             <h2 class="text-3xl font-bold text-gray-800">Traveling Events</h2>
                         </div>
                         <p class="text-gray-600 leading-relaxed">
-                            Bring the celebration to your backyard or venue. Our traveling teams bring the same chef-driven quality and hospitality to you.
+                            Bring the celebration to your backyard or venue. Our traveling teams bring the same
+                            chef-driven quality and hospitality to you.
                         </p>
                     </div>
 
@@ -210,20 +273,24 @@
                         <div class="bg-coral-light p-6 rounded-xl border-l-4 border-coral">
                             <h3 class="text-xl font-bold mb-2 text-gray-800">VW Bar Cart Pop-Up</h3>
                             <p class="text-sm text-gray-600">
-                                Our signature vintage Volkswagen bar cart rolls up to your location. Fully staffed and equipped with signature cocktail recipes and unforgettable photo ops.
+                                Our signature vintage Volkswagen bar cart rolls up to your location. Fully staffed and
+                                equipped with signature cocktail recipes and unforgettable photo ops.
                             </p>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-brand">
                             <h3 class="text-xl font-bold mb-2 text-gray-800">At-Home Catering</h3>
                             <p class="text-sm text-gray-600">
-                                Servers + Portable Bar. Enjoy chef-driven fare at home. We provide servers, a portable bar, and full menu packages executed with care.
+                                Servers + Portable Bar. Enjoy chef-driven fare at home. We provide servers, a portable
+                                bar, and full menu packages executed with care.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-1/2 relative">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/IMG_0481-e1763762714621.jpg" alt="Portable Mimosa Bar Setup" class="w-full object-cover">
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/IMG_0481-e1763762714621.jpg"
+                            alt="Portable Mimosa Bar Setup" class="w-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                             <span class="text-white font-bold text-lg">Our Mobile Mimosa Station</span>
                         </div>
@@ -234,7 +301,8 @@
     </section>
 
     <!-- VENUE VIBE TRANSITION -->
-    <section class="relative py-24 bg-fixed bg-center bg-cover" style="background-image: url('https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_y90z9uy90z9uy90z-e1763762261596.jpg')">
+    <section class="relative py-24 bg-fixed bg-center bg-cover"
+        style="background-image: url('https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_y90z9uy90z9uy90z-e1763762261596.jpg')">
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="relative container mx-auto px-6 text-center text-white">
             <h2 class="text-4xl md:text-5xl font-serif mb-6 italic">"Two Worlds. One Door."</h2>
@@ -252,19 +320,27 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
                 <div class="relative h-64 rounded-xl overflow-hidden shadow-md group">
-                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_gy9p33gy9p33gy9p-e1763762450590.jpg" alt="Bride Smiling" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_gy9p33gy9p33gy9p-e1763762450590.jpg"
+                        alt="Bride Smiling"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <div class="relative h-64 rounded-xl overflow-hidden shadow-md group">
-                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_7bc5u47bc5u47bc5-e1763762317593.jpg" alt="Cocktail Setup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/Gemini_Generated_Image_7bc5u47bc5u47bc5-e1763762317593.jpg"
+                        alt="Cocktail Setup"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <div class="relative h-64 rounded-xl overflow-hidden shadow-md group">
-                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/white-wine-pour.jpeg" alt="Wine Pour" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/white-wine-pour.jpeg"
+                        alt="Wine Pour"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <div class="relative h-64 rounded-xl overflow-hidden shadow-md group">
-                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/bridal-shower-decorations.jpg" alt="Decor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/bridal-shower-decorations.jpg"
+                        alt="Decor"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
             </div>
@@ -272,7 +348,8 @@
             <div class="max-w-3xl mx-auto text-center bg-white p-10 rounded-2xl shadow-lg relative">
                 <i data-lucide="sparkles" class="w-10 h-10 text-coral absolute -top-5 -left-5"></i>
                 <blockquote class="text-2xl font-serif text-gray-800 italic mb-6">
-                    "Absolutely stunning daytime event — from the food to the staff, every detail was perfect. The espresso martini bar was a hit!"
+                    "Absolutely stunning daytime event — from the food to the staff, every detail was perfect. The
+                    espresso martini bar was a hit!"
                 </blockquote>
                 <cite class="not-italic font-bold text-brand">— Kelly S., Baby Shower Host</cite>
             </div>
@@ -283,17 +360,22 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2 order-2 md:order-1">
-                <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/IMG_0482-e1763762831116.jpeg" alt="Brunch Menu Display" class="rounded-2xl shadow-xl w-full">
+                <img src="https://saltyzebrabistro.com/wp-content/uploads/2025/11/IMG_0482-e1763762831116.jpeg"
+                    alt="Brunch Menu Display" class="rounded-2xl shadow-xl w-full">
             </div>
             <div class="md:w-1/2 order-1 md:order-2">
                 <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Menu</h2>
                 <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                    Like the seasons, our menu shifts and surprises — yet our core remains constant: a chef-driven experience built on quality, creativity, and a personal touch for every event.
+                    Like the seasons, our menu shifts and surprises — yet our core remains constant: a chef-driven
+                    experience built on quality, creativity, and a personal touch for every event.
                 </p>
                 <ul class="space-y-3">
-                    <li class="flex items-center text-gray-700"><i data-lucide="check-circle-2" class="text-brand mr-2 w-5 h-5"></i> Fresh, locally sourced ingredients</li>
-                    <li class="flex items-center text-gray-700"><i data-lucide="check-circle-2" class="text-brand mr-2 w-5 h-5"></i> Dietary accommodations available</li>
-                    <li class="flex items-center text-gray-700"><i data-lucide="check-circle-2" class="text-brand mr-2 w-5 h-5"></i> Beautiful, rustic presentation</li>
+                    <li class="flex items-center text-gray-700"><i data-lucide="check-circle-2"
+                            class="text-brand mr-2 w-5 h-5"></i> Fresh, locally sourced ingredients</li>
+                    <li class="flex items-center text-gray-700"><i data-lucide="check-circle-2"
+                            class="text-brand mr-2 w-5 h-5"></i> Dietary accommodations available</li>
+                    <li class="flex items-center text-gray-700"><i data-lucide="check-circle-2"
+                            class="text-brand mr-2 w-5 h-5"></i> Beautiful, rustic presentation</li>
                 </ul>
             </div>
         </div>
@@ -311,23 +393,30 @@
 
             <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden text-gray-800">
                 <div class="bg-brand p-4 text-center">
-                    <span id="step-indicator" class="text-white font-bold tracking-wide uppercase text-sm">Inquiry Form - Step 1 of 2</span>
+                    <span id="step-indicator" class="text-white font-bold tracking-wide uppercase text-sm">Inquiry Form
+                        - Step 1 of 2</span>
                 </div>
-                
+
                 <form action="https://formspree.io/f/xrbdgweg" method="POST" class="p-8">
                     <!-- STEP 1: Date and Guests Only -->
                     <div id="step-1" class="space-y-5">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-bold mb-2 text-gray-700">Preferred Date <span class="text-coral">*</span></label>
-                                <input type="date" name="date" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all">
+                                <label class="block text-sm font-bold mb-2 text-gray-700">Preferred Date <span
+                                        class="text-coral">*</span></label>
+                                <input type="date" name="date" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold mb-2 text-gray-700">Guest Count <span class="text-coral">*</span></label>
-                                <input type="number" name="guests" required min="1" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all" placeholder="Approx. #">
+                                <label class="block text-sm font-bold mb-2 text-gray-700">Guest Count <span
+                                        class="text-coral">*</span></label>
+                                <input type="number" name="guests" required min="1"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all"
+                                    placeholder="Approx. #">
                             </div>
                         </div>
-                        <button type="button" id="btn-next" class="w-full bg-coral hover:bg-coral-dark text-white font-bold py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex justify-center items-center">
+                        <button type="button" id="btn-next"
+                            class="w-full bg-coral hover:bg-coral-dark text-white font-bold py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex justify-center items-center">
                             Next Step <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                         </button>
                     </div>
@@ -335,20 +424,29 @@
                     <!-- STEP 2: Contact Info and Details -->
                     <div id="step-2" class="space-y-5 hidden animate-fadeIn">
                         <div>
-                            <label class="block text-sm font-bold mb-2 text-gray-700">Full Name <span class="text-coral">*</span></label>
-                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all" placeholder="Jane Doe">
+                            <label class="block text-sm font-bold mb-2 text-gray-700">Full Name <span
+                                    class="text-coral">*</span></label>
+                            <input type="text" name="name" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all"
+                                placeholder="Jane Doe">
                         </div>
                         <div>
-                            <label class="block text-sm font-bold mb-2 text-gray-700">Email Address <span class="text-coral">*</span></label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all" placeholder="jane@example.com">
+                            <label class="block text-sm font-bold mb-2 text-gray-700">Email Address <span
+                                    class="text-coral">*</span></label>
+                            <input type="email" name="email" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all"
+                                placeholder="jane@example.com">
                         </div>
                         <div>
                             <label class="block text-sm font-bold mb-2 text-gray-700">Phone Number</label>
-                            <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all" placeholder="(555) 123-4567">
+                            <input type="tel" name="phone"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all"
+                                placeholder="(555) 123-4567">
                         </div>
                         <div>
                             <label class="block text-sm font-bold mb-2 text-gray-700">Event Type</label>
-                            <select name="type" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all bg-white">
+                            <select name="type"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all bg-white">
                                 <option value="Shower">Baby/Bridal Shower</option>
                                 <option value="Brunch">Brunch Social</option>
                                 <option value="Corporate">Corporate Event</option>
@@ -356,19 +454,24 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-bold mb-2 text-gray-700">Anything else we should know?</label>
-                            <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all" placeholder="Any dietary restrictions or special requests?"></textarea>
+                            <label class="block text-sm font-bold mb-2 text-gray-700">Anything else we should
+                                know?</label>
+                            <textarea name="message" rows="4"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all"
+                                placeholder="Any dietary restrictions or special requests?"></textarea>
                         </div>
-                        
+
                         <!-- HIDDEN UTM FIELDS -->
                         <input type="hidden" name="_subject" value="New Daytime Event Inquiry">
                         <input type="hidden" name="_captcha" value="false">
 
                         <div class="flex gap-3">
-                            <button type="button" id="btn-back" class="w-1/3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-4 rounded-lg transition-all">
+                            <button type="button" id="btn-back"
+                                class="w-1/3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-4 rounded-lg transition-all">
                                 Back
                             </button>
-                            <button type="submit" class="w-2/3 bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <button type="submit"
+                                class="w-2/3 bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                                 Submit Inquiry
                             </button>
                         </div>
@@ -377,9 +480,10 @@
             </div>
         </div>
     </section>
-      
+
     <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
         <div class="container mx-auto px-6 text-center">
+            <img src="assets/logo-text-white.png" alt="The Salty Zebra Bistro" class="h-20 mx-auto mb-6 opacity-80" />
             <p>&copy; 2025 Daytime Private Events. All rights reserved.</p>
         </div>
     </footer>
@@ -419,4 +523,5 @@
         });
     </script>
 </body>
+
 </html>
