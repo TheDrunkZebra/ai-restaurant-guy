@@ -1,8 +1,9 @@
 import React from 'react';
 import HeroSection from './HeroSection';
 import ShopTheSystems from './ShopTheSystems';
-import RevenueRecoveryAudit from './RevenueRecoveryAudit';
 import CaseStudy from './CaseStudy';
+import BudgetDashboard from './BudgetDashboard';
+import RevenueRecoveryAudit from './RevenueRecoveryAudit';
 
 /**
  * The AI Restaurant Guy Landing Page
@@ -23,7 +24,10 @@ function App() {
       {/* Section 3: Case Study / ROI */}
       <CaseStudy />
 
-      {/* Section 4: Revenue Recovery Audit Form */}
+      {/* Section 4: Budget Architect Dashboard */}
+      <BudgetDashboard />
+
+      {/* Section 5: Revenue Recovery Audit Form */}
       <section id="revenue-recovery-audit">
         <RevenueRecoveryAudit />
       </section>
