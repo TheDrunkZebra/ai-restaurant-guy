@@ -2,3 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   MANILLA PAPER + TYPEWRITER FONT STYLING
+   Matching Salty Zebra FOH Bible Aesthetic
+   ============================================ */
+
+/* Manilla Paper Background Color */
+/* From Salty Zebra: #E7C9A9 (Linen/Manilla) */
+:root {
+  --manilla-paper: #E7C9A9;
+  --typewriter-font: 'Courier New', 'Courier', monospace;
+}
+
+/* All Tables: Manilla Paper Background + Typewriter Font */
+table,
+.table,
+.price-analysis-table,
+.insights-table,
+.manager-agent-table {
+  background-color: var(--manilla-paper) !important;
+  color: #000000 !important;
+  font-family: var(--typewriter-font) !important;
+  border-collapse: collapse;
+}
+
+/* Table Headers */
+table thead th,
+.table thead th,
+.price-analysis-table thead th,
+.insights-table thead th,
+.manager-agent-table thead th {
+  background-color: var(--manilla-paper) !important;
+  color: #000000 !important;
+  font-family: var(--typewriter-font) !important;
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
+  padding: 0.75rem 1rem;
+}
+
+/* Table Body Rows */
+table tbody td,
+.table tbody td,
+.price-analysis-table tbody td,
+.insights-table tbody td,
+.manager-agent-table tbody td {
+  background-color: var(--manilla-paper) !important;
+  color: #000000 !important;
+  font-family: var(--typewriter-font) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+}
+
+/* Table Row Hover */
+table tbody tr:hover,
+.table tbody tr:hover,
+.price-analysis-table tbody tr:hover,
+.insights-table tbody tr:hover,
+.manager-agent-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Table Borders */
+table,
+.table,
+.price-analysis-table,
+.insights-table,
+.manager-agent-table {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Typewriter Font Utility Class */
+.typewriter-font {
+  font-family: var(--typewriter-font) !important;
+}
+
+/* Manilla Paper Background Utility Class */
+.manilla-paper {
+  background-color: var(--manilla-paper) !important;
+  color: #000000 !important;
+}
+
+/* Combined Utility Class */
+.manilla-table {
+  background-color: var(--manilla-paper) !important;
+  color: #000000 !important;
+  font-family: var(--typewriter-font) !important;
+}
+
+/* Override Tailwind table styles when needed */
+.manilla-table table {
+  background-color: var(--manilla-paper) !important;
+}
+
+.manilla-table table th,
+.manilla-table table td {
+  background-color: var(--manilla-paper) !important;
+  color: #000000 !important;
+  font-family: var(--typewriter-font) !important;
+}
+
+
+
