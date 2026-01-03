@@ -10,7 +10,7 @@ import RevenueRecoveryAudit from './RevenueRecoveryAudit';
  */
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-[#0B0F14] text-[#F8FAFC]" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
       {/* Hero Section */}
       <HeroSection />
 
@@ -23,10 +23,10 @@ function App() {
       {/* Lead Capture */}
       <RevenueRecoveryAudit />
 
-      {/* Minimal Footer */}
-      <footer className="py-16 border-t border-white/5">
+      {/* Footer */}
+      <footer className="py-16 border-t border-[#1F2937] bg-[#0B0F14]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center text-slate-500 text-sm">
+          <div className="text-center text-[#94A3B8] text-sm">
             © 2025 The AI Restaurant Guy. Built for operators, by operators.
           </div>
         </div>
