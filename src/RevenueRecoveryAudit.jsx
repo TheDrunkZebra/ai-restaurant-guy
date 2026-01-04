@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 /**
- * Production-Ready Lead Capture Form
- * Clean, modern design with clear value proposition
+ * Professional Lead Capture Form
+ * Clean, modern design with excellent UX
  */
 const RevenueRecoveryAudit = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ const RevenueRecoveryAudit = () => {
     setSubmitStatus(null);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setFormData({ name: '', email: '', restaurantName: '' });
     } catch (error) {
@@ -35,20 +35,20 @@ const RevenueRecoveryAudit = () => {
   };
 
   return (
-    <section id="audit" className="py-24 lg:py-32 bg-gradient-to-b from-[#0B0F14] to-[#0E131B] border-t border-[#1F2937]/30">
+    <section id="audit" className="py-32 bg-[#0B0F14] border-t border-[#1F2937]/20">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-6 tracking-tight">
+        {/* Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#F8FAFC] mb-6 tracking-tight">
             Free <span className="text-[#00E0FF]">Revenue Audit</span>
           </h2>
-          <p className="text-xl text-[#94A3B8] font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#94A3B8] font-light leading-relaxed">
             Discover hidden revenue leaks in your vendor contracts. We analyze your invoices and deliver actionable insights.
           </p>
         </div>
 
         {/* Form Card */}
-        <div className="bg-[#0E131B]/60 backdrop-blur-sm border border-[#1F2937] rounded-2xl p-8 lg:p-12">
+        <div className="bg-[#0E131B]/40 backdrop-blur-sm border border-[#1F2937]/50 rounded-2xl p-10 lg:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <input
@@ -88,7 +88,7 @@ const RevenueRecoveryAudit = () => {
               className="w-full inline-flex items-center justify-center px-8 py-4 bg-[#00E0FF] text-[#0B0F14] rounded-xl font-bold text-lg hover:bg-[#08C7E5] transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#00E0FF]/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Submitting...' : 'Get Free Audit →'}
+              {isSubmitting ? 'Submitting...' : 'Get Free Audit'}
             </button>
 
             {submitStatus === 'success' && (
