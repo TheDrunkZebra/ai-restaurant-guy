@@ -7,9 +7,6 @@ const Footer = () => {
                 <p className="text-textSecondary mb-4">
                     &copy; {new Date().getFullYear()} The AI Restaurant Guy. All rights reserved.
                 </p>
-                <p className="text-sm text-textSecondary/50 font-mono">
-                    Wildly Refined. Zero Pretense.
-                </p>
             </div>
         </footer>
     );
