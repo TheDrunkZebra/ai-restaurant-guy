@@ -5,9 +5,12 @@ import CaseStudy from './sections/CaseStudy';
 import RevenueRecoveryAudit from './sections/RevenueRecoveryAudit';
 import Footer from './sections/Footer';
 
+import Navbar from './sections/Navbar';
+
 function App() {
   return (
     <div className="min-h-screen bg-background text-textPrimary selection:bg-primary selection:text-background">
+      <Navbar />
       <HeroSection />
       <ShopTheSystems />
       <CaseStudy />

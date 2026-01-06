@@ -32,20 +32,21 @@ const HeroSection = () => {
                         </div>
 
                         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6 text-textPrimary">
-                            Recover <span className="text-primary text-shadow-glow">$72k</span> in Hidden Revenue Your First Year
+                            Stop Guessing. <br />
+                            Recover <span className="text-primary text-shadow-glow">$72,400</span> in Lost Revenue This Year.
                         </h1>
 
                         <p className="text-xl text-textSecondary mb-8 leading-relaxed max-w-lg">
-                            Stop margin leaks before they kill your profit. Automate your operations and get 80+ hours back per month.
+                            Your margins are leaking. We plug the holes with dead-simple automation. No fluff. No "culinary journeys." Just profit.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
                             <a href="#audit" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-background bg-primary rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(0,224,255,0.3)] hover:shadow-[0_0_30px_rgba(0,224,255,0.5)]">
-                                Get Free Revenue Audit
+                                Claim My Free Revenue Audit
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </a>
                             <a href="#systems" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-textPrimary bg-surface border border-white/10 rounded-lg hover:bg-white/5 transition-all">
-                                View Systems
+                                See The Systems
                             </a>
                         </div>
 

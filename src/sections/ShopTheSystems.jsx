@@ -4,31 +4,35 @@ import { Check, ArrowRight } from 'lucide-react';
 const products = [
     {
         id: 1,
-        title: "Landing Page Builder",
+        title: "The Guest Magnet",
         price: "497",
-        description: "Professional restaurant landing pages in minutes. No developer needed.",
-        features: ["Mobile-responsive", "SEO optimized", "Free hosting"],
+        description: "Zero-fluff landing pages designed to convert. We don't do pretty; we do profitable.",
+        features: ["High-Conversion Framework", "Zieman CRO Logic", "Zero-Latency Hosting"],
+        addons: ["60-Day Copy Audit ($200 Value)", "Market Intelligence Pack"]
     },
     {
         id: 2,
         title: "Content Creation Engine",
         price: "997",
-        description: "Generate 30 days of platform-perfect content from a single menu upload.",
-        features: ["Multi-platform", "Brand voice trained", "Viral hooks"],
+        description: "One menu upload. 30 days of platform-perfect posts. Authentic UGC style only.",
+        features: ["UGC Visual Logic", "Seamus Style Training", "Viral Hook Library"],
+        addons: ["Engagement Auto-Pilot", "Custom Brand Voice Tuning"]
     },
     {
         id: 3,
         title: "Financial Intelligence",
         price: "2,997",
-        description: "Real-time prime cost tracking and automated vendor invoice auditing.",
-        features: ["Prime cost alerts", "Vendor audit", "Break-even analysis"],
+        description: "Stop bleeding cash. Real-time prime cost tracking and automated vendor auditing.",
+        features: ["Dead-Simple Dashboards", "Vendor Invoice Audit", "Leakage Alerts"],
+        addons: ["Profit Recovery Strategy ($1.5k Value)", "Prime Cost Shield"]
     },
     {
         id: 4,
         title: "ShiftPilot",
-        price: "97",
-        description: "Eliminate decision fatigue with AI-powered task prioritization.",
-        features: ["Role-based logic", "Time-blocking", "Auto-prioritization"],
+        price: "197",
+        description: "Task prioritization that actually works. 80+ hours saved per month, guaranteed.",
+        features: ["Scrappy Logic Engine", "Role-Based Priorities", "Auto-Scheduling"],
+        addons: ["Decision Fatigue Shield", "Unlimited Task Nodes"]
     }
 ];
 
@@ -57,20 +61,32 @@ const ShopTheSystems = () => {
 
                             <p className="text-textSecondary mb-8 min-h-[3rem]">{product.description}</p>
 
-                            <ul className="space-y-3 mb-8">
+                            <ul className="space-y-3 mb-6">
                                 {product.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-center text-sm">
                                         <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center mr-3">
                                             <Check className="w-3 h-3 text-secondary" />
                                         </div>
-                                        <span className="text-textPrimary">{feature}</span>
+                                        <span className="text-textPrimary font-medium">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
 
-                            <button className="w-full py-4 rounded-lg bg-white/5 border border-white/10 text-white font-semibold group-hover:bg-primary group-hover:text-background group-hover:border-primary transition-all flex items-center justify-center gap-2">
-                                Get Started
-                                <ArrowRight className="w-4 h-4" />
+                            <div className="mb-8 pt-6 border-t border-white/5">
+                                <p className="text-[10px] uppercase tracking-widest text-primary font-bold mb-3">Value Stack Add-ons:</p>
+                                <ul className="space-y-2">
+                                    {product.addons.map((addon, idx) => (
+                                        <li key={idx} className="text-xs text-textSecondary flex items-start gap-2 italic">
+                                            <span className="text-primary">+</span>
+                                            {addon}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <button className="w-full py-4 rounded-lg bg-white/5 border border-white/10 text-white font-bold group-hover:bg-primary group-hover:text-background group-hover:border-primary transition-all flex items-center justify-center gap-2">
+                                Add to My Operations
+                                <ArrowRight className="w-4 h-4 ml-2" />
                             </button>
                         </div>
                     ))}
