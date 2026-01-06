@@ -72,13 +72,14 @@ Build the complete React/Vite website with your beautiful design in the `apps/ai
 
 ### Visual Style:
 - **Reference:** Your previous design samples (the nice ones!)
-- **Colors:**
-  - Background: `#0B0F14`
-  - Surface: `#0E131B`
+- **Executive Design System:**
+  - Background: `#0D0D0E` (Matte Charcoal) - **UPDATED**
+  - Surface: `#0E131B` (or adjust for contrast with new background)
   - Primary: `#00E0FF` (Cyan)
-  - Secondary: `#9EF01A` (Green)
+  - Secondary: `#10B981` (Emerald Green) - **UPDATED** - The color of profit
   - Text Primary: `#F8FAFC`
   - Text Secondary: `#94A3B8`
+  - **Brand Text:** "THE AI RESTAURANT GUY" styled in Emerald Green
 
 ### Typography:
 - Font: Inter (sans-serif)
@@ -165,6 +166,21 @@ Build the complete React/Vite website with your beautiful design in the `apps/ai
 ### Current Code (For Reference):
 - `src/sections/HeroSection.jsx` - Current implementation
 - `src/sections/RevenueRecoveryAudit.jsx` - Current form (needs Good Friction fields)
+
+---
+
+## 🎨 REBRANDING: "THE PROFIT PROTOCOL"
+
+### **Rebrand Requirements:**
+- ✅ Replace all "Zebra Auditor" references → "The Profit Protocol"
+- ✅ Messaging: "Deploying the Protocol" (not "Running an Audit")
+- ✅ More exclusive, systematic positioning (Hormozi style)
+- ✅ Focus on systematic deployment vs. one-off audits
+
+### **Component Updates:**
+- RevenueRecoveryAudit.jsx → Update copy to "Deploy the Profit Protocol"
+- HeroSection.jsx → Update CTAs to reflect "Protocol" language
+- All forms → Use "Protocol" terminology
 
 ---
 
