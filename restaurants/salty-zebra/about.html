@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | The Salty Zebra Bistro</title>
+    <meta name="description"
+        content="Meet the locals behind The Salty Zebra Bistro. A scratch kitchen in Jupiter blending European technique with coastal hospitality.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#264653',
+                            body: '#5e6e75',
+                            linen: '#FAF7F2',
+                            peach: '#FFF0EB',
+                            teal: '#2A9D8F',
+                            deepTeal: '#1D3944',
+                            coral: '#FF6F61',
+                            coralHover: '#E55A4F',
+                            gold: '#D4AF37',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-brand-linen text-brand-body antialiased font-sans overflow-x-hidden">
+
+    <!-- NAVIGATION (Simple) -->
+    <nav class="absolute top-0 left-0 w-full z-50 p-6 flex justify-between items-center">
+        <a href="/" class="text-brand-deepTeal font-serif font-bold text-xl tracking-wider">The Salty Zebra</a>
+        <a href="/"
+            class="text-brand-deepTeal hover:text-brand-coral font-bold uppercase tracking-widest text-xs transition-colors">Back
+            to Home</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-[60vh] min-h-[500px] flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/interior-bar.jpg"
+                alt="The Salty Zebra Atmosphere" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-brand-deepTeal/60 mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl px-5 animate-fadeIn">
+            <h1
+                class="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg leading-tight tracking-tight font-serif">
+                Our Story
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md">
+                Casual fine dining where European technique meets Jupiter's coastal soul.
+            </p>
+        </div>
+    </header>
+
+    <!-- THE VISION -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-serif text-brand-deepTeal mb-6">Local Roots, Global Flavor</h2>
+                <div class="w-16 h-1 bg-brand-coral mb-8"></div>
+                <p class="text-brand-body leading-relaxed mb-6 text-lg">
+                    The Salty Zebra Bistro is the vision of long-time Jupiter locals, <strong>Stephanie and Seamus
+                        O'Brien</strong>.
+                    With deep roots in the local dining scene, they envisioned a place that married the precision of a
+                    chef-driven kitchen with the unpretentious warmth of a neighborhood gathering spot.
+                </p>
+                <p class="text-brand-body leading-relaxed text-lg">
+                    We believe that "fine dining" doesn't have to feel stiff. It should be about the quality of the
+                    ingredients, the care in the preparation, and the joy of sharing a meal.
+                </p>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 border-2 border-brand-teal/20 z-0 transform translate-x-4 translate-y-4">
+                </div>
+                <img src="assets/couple-formal-portrait.jpg"
+                    alt="Stephanie and Seamus O'Brien" class="relative z-10 shadow-xl w-full h-auto rounded-sm">
+            </div>
+        </div>
+    </section>
+
+    <!-- THE KITCHEN -->
+    <section class="py-24 bg-brand-peach relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-serif text-brand-deepTeal mb-6">The Scratch Kitchen</h2>
+            <p class="text-brand-body max-w-3xl mx-auto leading-relaxed text-lg mb-12">
+                Under the guidance of <strong>Executive Chef Michael Luth</strong>, our kitchen celebrates the
+                intersection of classic European techniques and Florida's seasonal bounty.
+            </p>
+
+            <!-- Chef Mike Video -->
+            <div class="mb-16 max-w-4xl mx-auto">
+                <div class="relative rounded-lg overflow-hidden shadow-2xl">
+                    <video class="w-full h-auto" controls poster="assets/lobster-linguini.jpg">
+                        <source src="assets/chef-mike-cooking.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-8 shadow-sm border-t-4 border-brand-teal">
+                    <h3 class="text-xl font-bold text-brand-deepTeal mb-3">Hand-Rolled Pasta</h3>
+                    <p class="text-brand-body">Every noodle is made in-house daily, ensuring the perfect texture and
+                        bite in dishes like our Colorado Lamb Ragout.</p>
+                </div>
+                <div class="bg-white p-8 shadow-sm border-t-4 border-brand-coral">
+                    <h3 class="text-xl font-bold text-brand-deepTeal mb-3">Local Sourcing</h3>
+                    <p class="text-brand-body">We partner with local purveyors like Colab Farms and Kai Kai Veg to bring
+                        the freshest Florida produce to your plate.</p>
+                </div>
+                <div class="bg-white p-8 shadow-sm border-t-4 border-brand-teal">
+                    <h3 class="text-xl font-bold text-brand-deepTeal mb-3">Chef-Driven</h3>
+                    <p class="text-brand-body">From our signature Steak Au Poivre to our daily rotating sorbets, every
+                        dish is crafted with intention and passion.</p>
+                </div>
+            </div>
+
+            <!-- Fish Tomato Soup Image -->
+            <div class="mt-16 max-w-3xl mx-auto">
+                <img src="assets/fish-tomato-soup.jpg" alt="Chef's Seasonal Creation" class="w-full h-auto rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-deepTeal py-20 border-t border-brand-teal/20 text-center">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="mb-6 flex justify-center">
+                <img src="assets/salty-zebra-logo-white.png" alt="The Salty Zebra Bistro Logo" class="h-16 md:h-20 w-auto">
+            </div>
+            <h2 class="text-3xl font-serif text-white mb-6">The Salty Zebra Bistro</h2>
+            <p class="text-brand-teal mb-10 leading-relaxed text-lg">
+                377 Tequesta Dr, Jupiter, FL 33469 | 561-250-6350
+                <br />
+                Tue-Thur: 5pm - 8pm | Fri-Sat: 5pm - 9pm
+            </p>
+
+            <div class="mb-16">
+                <a href="https://www.opentable.com/r/the-salty-zebra-jupiter-inlet#reserve" target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block bg-brand-coral hover:bg-brand-coralHover text-white font-bold uppercase tracking-widest rounded-sm shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg border-none cursor-pointer text-center py-4 px-10 text-sm md:text-base w-full sm:w-auto">
+                    Secure Your Table
+                </a>
+            </div>
+
+            <div class="text-sm text-brand-linen/70 space-y-2 sm:space-y-0">
+                <p class="mb-4 text-brand-linen/50 uppercase tracking-wider text-xs">Looking for something else?</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="/" class="hover:text-brand-coral transition-colors duration-300">Home</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="/late-night" class="hover:text-brand-coral transition-colors duration-300">Private
+                        Night Events</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="/daytime-events" class="hover:text-brand-coral transition-colors duration-300">Daytime
+                        Showers & Brunch</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="/about" class="hover:text-brand-coral transition-colors duration-300">About</a>
+                    <span class="hidden sm:inline text-brand-teal">•</span>
+                    <a href="/weekly-happenings" class="hover:text-brand-coral transition-colors duration-300">Weekly Happenings</a>
+                </div>
+            </div>
+
+            <p class="text-xs text-brand-teal/50 mt-16 font-light">
+                &copy; 2025 The Salty Zebra Bistro. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
