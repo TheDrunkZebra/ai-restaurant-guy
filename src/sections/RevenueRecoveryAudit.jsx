@@ -8,7 +8,9 @@ const RevenueRecoveryAudit = () => {
         email: '',
         phone: '',
         pos: '',
-        revenue: ''
+        revenue: '',
+        monthlyRevenue: '',
+        likelihoodOfSuccess: ''
     });
 
     const handleSubmit = (e) => {
@@ -81,12 +83,40 @@ const RevenueRecoveryAudit = () => {
                                 name="pos"
                                 className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:border-primary focus:outline-none text-textSecondary"
                                 onChange={handleChange}
+                                required
                             >
                                 <option value="">Select POS System</option>
                                 <option value="toast">Toast</option>
                                 <option value="square">Square</option>
                                 <option value="aloha">Aloha</option>
+                                <option value="resy">Resy</option>
+                                <option value="touchbistro">TouchBistro</option>
                                 <option value="other">Other</option>
+                            </select>
+                            <select
+                                name="monthlyRevenue"
+                                className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:border-primary focus:outline-none text-textSecondary"
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="">Monthly Revenue Range</option>
+                                <option value="under-50k">Under $50k</option>
+                                <option value="50k-100k">$50k - $100k</option>
+                                <option value="100k-250k">$100k - $250k</option>
+                                <option value="250k-500k">$250k - $500k</option>
+                                <option value="500k-plus">$500k+</option>
+                            </select>
+                            <select
+                                name="likelihoodOfSuccess"
+                                className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:border-primary focus:outline-none text-textSecondary"
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="">Likelihood of Implementing Changes</option>
+                                <option value="immediate">Immediate (This week)</option>
+                                <option value="this-month">This month</option>
+                                <option value="next-quarter">Next quarter</option>
+                                <option value="exploring">Still exploring</option>
                             </select>
 
                             <button className="w-full bg-primary text-background font-bold py-4 rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 mt-4">
