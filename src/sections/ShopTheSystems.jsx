@@ -1,85 +1,95 @@
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import {
+    Mail,
+    Star,
+    Camera,
+    Handshake,
+    BarChart3,
+    Gift,
+    DollarSign,
+    PartyPopper
+} from 'lucide-react';
 
-const products = [
+const systems = [
     {
-        id: 1,
-        title: "Landing Page Builder",
-        price: "497",
-        description: "Professional restaurant landing pages in minutes. No developer needed.",
-        features: ["Mobile-responsive", "SEO optimized", "Free hosting"],
+        icon: Mail,
+        title: "Newsletter Automation",
+        description: "grows list, sends campaigns, tracks redemptions."
     },
     {
-        id: 2,
-        title: "Content Creation Engine",
-        price: "997",
-        description: "Generate 30 days of platform-perfect content from a single menu upload.",
-        features: ["Multi-platform", "Brand voice trained", "Viral hooks"],
+        icon: Star,
+        title: "Review Management",
+        description: "replies, escalations, win‑back flows."
     },
     {
-        id: 3,
-        title: "Financial Intelligence",
-        price: "2,997",
-        description: "Real-time prime cost tracking and automated vendor invoice auditing.",
-        features: ["Prime cost alerts", "Vendor audit", "Break-even analysis"],
+        icon: Camera,
+        title: "Social Content",
+        description: "30‑day calendar that actually posts."
     },
     {
-        id: 4,
-        title: "ShiftPilot",
-        price: "97",
-        description: "Eliminate decision fatigue with AI-powered task prioritization.",
-        features: ["Role-based logic", "Time-blocking", "Auto-prioritization"],
+        icon: Handshake,
+        title: "Outreach & Partnerships",
+        description: "B2B/catering pipeline on autopilot."
+    },
+    {
+        icon: BarChart3,
+        title: "Ads Optimizer",
+        description: "daily budget shifts, creative testing."
+    },
+    {
+        icon: Gift,
+        title: "Loyalty & CRM",
+        description: "points, birthdays, reactivation offers."
+    },
+    {
+        icon: DollarSign,
+        title: "Financial Reports",
+        description: "weekly P&L, cash‑flow alerts."
+    },
+    {
+        icon: PartyPopper,
+        title: "Events & Catering",
+        description: "inquiry capture, quotes, follow‑ups."
     }
 ];
 
 const ShopTheSystems = () => {
     return (
-        <div id="systems" className="py-32 bg-background relative border-t border-white/5">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="text-4xl sm:text-5xl font-bold mb-6">Systems Built for Speed</h2>
-                    <p className="text-xl text-textSecondary">
-                        One-time payment. Lifetime value. No monthly recurring fees for the core systems.
+        <section className="py-20 bg-[#0B0F14] text-[#F8FAFC]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        All Systems Available
+                    </h2>
+                    <p className="text-gray-400">
+                        Mix and match based on your needs. We bundle them into packages that make sense. Custom workflows available for your specific restaurant.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {products.map((product) => (
-                        <div key={product.id} className="group relative bg-surface border border-white/10 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,224,255,0.1)]">
-                            <div className="flex justify-between items-start mb-6">
-                                <h3 className="text-2xl font-bold text-textPrimary">{product.title}</h3>
-                                <div className="text-right">
-                                    <div className="text-3xl font-bold text-primary">${product.price}</div>
-                                    <div className="text-xs text-textSecondary uppercase tracking-wider">One-time</div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                    {systems.map((system, index) => {
+                        const IconComponent = system.icon;
+                        return (
+                            <div
+                                key={index}
+                                className="bg-surface/50 border border-white/10 rounded-xl p-4 md:p-5 hover:border-[#00E0FF]/50 transition-all group text-center"
+                            >
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#00E0FF]/10 flex items-center justify-center mx-auto mb-3 transition-all group-hover:bg-[#00E0FF]/20">
+                                    <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-[#00E0FF] transition-transform group-hover:scale-110" />
                                 </div>
+                                <h3 className="text-sm md:text-base font-semibold mb-1 text-[#F8FAFC]">
+                                    {system.title}
+                                </h3>
+                                <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+                                    {system.description}
+                                </p>
                             </div>
-
-                            <p className="text-textSecondary mb-8 min-h-[3rem]">{product.description}</p>
-
-                            <ul className="space-y-3 mb-8">
-                                {product.features.map((feature, idx) => (
-                                    <li key={idx} className="flex items-center text-sm">
-                                        <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center mr-3">
-                                            <Check className="w-3 h-3 text-secondary" />
-                                        </div>
-                                        <span className="text-textPrimary">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button className="w-full py-4 rounded-lg bg-white/5 border border-white/10 text-white font-semibold group-hover:bg-primary group-hover:text-background group-hover:border-primary transition-all flex items-center justify-center gap-2">
-                                Get Started
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
-
             </div>
-        </div>
+        </section>
     );
 };
 
 export default ShopTheSystems;
-

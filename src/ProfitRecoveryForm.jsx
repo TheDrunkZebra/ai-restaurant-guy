@@ -40,8 +40,8 @@ const ProfitRecoveryForm = () => {
     const file = e.target.files[0];
     if (file) {
       // Validate file type
-      const validTypes = ['application/pdf', 'text/plain', 'application/msword', 
-                         'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      const validTypes = ['application/pdf', 'text/plain', 'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
       if (!validTypes.includes(file.type)) {
         setError('Please upload a PDF, Word document, or text file');
         return;
@@ -75,12 +75,7 @@ const ProfitRecoveryForm = () => {
       formDataToSend.append('contract', contractFile);
 
       // Call API endpoint
-      // Production: Railway API URL (set via environment variable or hardcode)
-      // Development: Local API server
-      const apiUrl = process.env.REACT_APP_API_URL || 
-                     (process.env.NODE_ENV === 'production' 
-                       ? 'https://profit-recovery-api-production.up.railway.app/api/profit-recovery-audit'
-                       : 'http://localhost:5000/api/profit-recovery-audit');
+      const apiUrl = 'https://profit-recovery-api-production.up.railway.app/api/profit-recovery-audit';
       const response = await fetch(apiUrl, {
         method: 'POST',
         body: formDataToSend,
@@ -88,12 +83,12 @@ const ProfitRecoveryForm = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to process audit');
+        throw new Error(errorData.error || 'Failed to process protocol');
       }
 
       const result = await response.json();
       setTeaserReport(result);
-      
+
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.');
     } finally {
@@ -102,42 +97,38 @@ const ProfitRecoveryForm = () => {
   };
 
   return (
-    <section className="py-20 bg-[#0B0F14]" id="profit-recovery">
+    <section className="py-24 bg-background" id="profit-recovery">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Hero Section - Dream Outcome (Hormozi) */}
         <div className="text-center mb-12">
           <div className="inline-block mb-4">
-            <span className="bg-[#9EF01A] text-[#0B0F14] px-4 py-2 rounded-full text-sm font-semibold">
+            <span className="bg-primary/20 text-primary border border-primary/30 px-4 py-2 rounded font-black text-xs uppercase tracking-widest italic">
               60-Day Conversion Guarantee
             </span>
           </div>
-          
-          {/* Hook in First 3 Lines (Maguire) */}
-          <h2 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-4 font-display leading-tight">
-            Find Your Hidden "Lazy Tax" in 48 Hours
+
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 italic tracking-tighter uppercase leading-tight">
+            EXTRACT YOUR <span className="text-primary">"LAZY TAX"</span> IN 48 HOURS
           </h2>
-          <p className="text-xl md:text-2xl text-[#00E0FF] mb-2 font-semibold">
-            Upload Your Vendor Contract. Get a Free Teaser Report.
-          </p>
-          <p className="text-lg text-[#94A3B8] mb-8">
-            See exactly how much you're overpaying—before you sign anything with us.
+          <p className="text-xl text-textSecondary mb-8 max-w-2xl mx-auto font-medium">
+            Upload Your Vendor Contract. Deploy The Profit Protocol. See exactly how much cash is bleeding—before you sign a thing.
           </p>
         </div>
 
-        {/* Value Stack - Grand Slam (Hormozi) */}
+        {/* Value Stack */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-[#0E131B] border border-[#1F2937] rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-[#00E0FF] font-mono mb-2">$50k+</div>
-            <div className="text-[#94A3B8] text-sm">Average Hidden Costs Found</div>
+          <div className="bg-surface border border-white/5 rounded-xl p-6 text-center shadow-xl">
+            <div className="text-3xl font-black text-primary italic tracking-tighter mb-2 uppercase">$50k+</div>
+            <div className="text-textSecondary text-[10px] font-black uppercase tracking-widest">Avg Hidden Costs Found</div>
           </div>
-          <div className="bg-[#0E131B] border border-[#1F2937] rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-[#00E0FF] font-mono mb-2">48hrs</div>
-            <div className="text-[#94A3B8] text-sm">Teaser Report Delivered</div>
+          <div className="bg-surface border border-white/5 rounded-xl p-6 text-center shadow-xl">
+            <div className="text-3xl font-black text-primary italic tracking-tighter mb-2 uppercase">48hrs</div>
+            <div className="text-textSecondary text-[10px] font-black uppercase tracking-widest">Protocol Findings Delivered</div>
           </div>
-          <div className="bg-[#0E131B] border border-[#1F2937] rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-[#00E0FF] font-mono mb-2">100%</div>
-            <div className="text-[#94A3B8] text-sm">Free—No Obligation</div>
+          <div className="bg-surface border border-white/5 rounded-xl p-6 text-center shadow-xl">
+            <div className="text-3xl font-black text-primary italic tracking-tighter mb-2 uppercase">100%</div>
+            <div className="text-textSecondary text-[10px] font-black uppercase tracking-widest">Free Extraction Insight</div>
           </div>
         </div>
 
@@ -145,10 +136,10 @@ const ProfitRecoveryForm = () => {
         {!teaserReport ? (
           <div className="bg-[#0E131B] border border-[#1F2937] rounded-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              
+
               {/* Section 1: Contact Information */}
               <div>
-                <h3 className="text-xl font-semibold text-[#F8FAFC] mb-4">Contact Information</h3>
+                <h3 className="text-xl font-black text-white mb-4 italic tracking-tighter uppercase">Contact Information</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -157,7 +148,7 @@ const ProfitRecoveryForm = () => {
                     onChange={handleChange}
                     placeholder="Full Name *"
                     required
-                    className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                    className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all font-medium"
                   />
                   <input
                     type="email"
@@ -166,7 +157,7 @@ const ProfitRecoveryForm = () => {
                     onChange={handleChange}
                     placeholder="Email Address *"
                     required
-                    className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                    className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all font-medium"
                   />
                   <div className="md:col-span-2">
                     <input
@@ -176,15 +167,15 @@ const ProfitRecoveryForm = () => {
                       onChange={handleChange}
                       placeholder="Phone Number *"
                       required
-                      className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                      className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all font-medium"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Section 2: Restaurant & Vendor Details */}
-              <div className="border-t border-[#1F2937] pt-6">
-                <h3 className="text-xl font-semibold text-[#F8FAFC] mb-4">Restaurant & Vendor Details</h3>
+              <div className="border-t border-white/5 pt-6">
+                <h3 className="text-xl font-black text-white mb-4 italic tracking-tighter uppercase">Restaurant & Vendor Details</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -193,16 +184,16 @@ const ProfitRecoveryForm = () => {
                     onChange={handleChange}
                     placeholder="Restaurant Name *"
                     required
-                    className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                    className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all font-medium"
                   />
                   <input
                     type="text"
                     name="vendorName"
                     value={formData.vendorName}
                     onChange={handleChange}
-                    placeholder="Vendor Name (e.g., Sysco, US Foods) *"
+                    placeholder="Vendor (e.g., Sysco, US Foods) *"
                     required
-                    className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                    className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all font-medium"
                   />
                   <div className="md:col-span-2">
                     <select
@@ -210,7 +201,7 @@ const ProfitRecoveryForm = () => {
                       value={formData.contractType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                      className="w-full px-4 py-3 bg-background border border-white/5 rounded text-textSecondary focus:outline-none focus:border-primary transition-all font-medium"
                     >
                       <option value="">Contract Type *</option>
                       <option value="Linen">Linen Service</option>
@@ -225,11 +216,11 @@ const ProfitRecoveryForm = () => {
               </div>
 
               {/* Section 3: Contract Upload */}
-              <div className="border-t border-[#1F2937] pt-6">
-                <h3 className="text-xl font-semibold text-[#F8FAFC] mb-4">Upload Your Vendor Contract</h3>
+              <div className="border-t border-white/5 pt-6">
+                <h3 className="text-xl font-black text-white mb-4 italic tracking-tighter uppercase">Upload Your Vendor Contract</h3>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-[#94A3B8] mb-2">
+                    <label className="block text-[10px] uppercase font-black text-textSecondary mb-2 ml-1 tracking-widest italic">
                       Contract File (PDF, Word, or Text) *
                     </label>
                     <input
@@ -237,10 +228,10 @@ const ProfitRecoveryForm = () => {
                       accept=".pdf,.doc,.docx,.txt"
                       onChange={handleFileChange}
                       required
-                      className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#00E0FF] file:text-[#0B0F14] hover:file:bg-[#08C7E5]"
+                      className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-[10px] file:font-black file:bg-primary/20 file:text-primary file:uppercase file:italic"
                     />
                     {contractFile && (
-                      <p className="text-sm text-[#94A3B8] mt-2">
+                      <p className="text-[10px] text-primary mt-2 font-black uppercase italic">
                         ✓ Selected: {contractFile.name} ({(contractFile.size / 1024).toFixed(1)} KB)
                       </p>
                     )}
@@ -249,25 +240,27 @@ const ProfitRecoveryForm = () => {
                     name="biggestPainPoint"
                     value={formData.biggestPainPoint}
                     onChange={handleChange}
-                    placeholder="What's your biggest pain point with this vendor? (e.g., Costs keep going up, hidden fees, locked into long contract) *"
+                    placeholder="What's your biggest pain point with this vendor? *"
                     required
                     rows={3}
-                    className="w-full px-4 py-3 bg-[#111827] border border-[#1F2937] rounded-lg text-[#F8FAFC] focus:outline-none focus:border-[#00E0FF] focus:ring-2 focus:ring-[#00E0FF]/20"
+                    className="w-full px-4 py-3 bg-background border border-white/5 rounded text-white focus:outline-none focus:border-primary transition-all font-medium"
                   />
                 </div>
               </div>
 
-              {/* Guarantee Badge (Risk Reversal - Hormozi) */}
-              <div className="bg-[#111827] border border-[#9EF01A]/30 rounded-xl p-6">
-                <div className="flex items-start gap-3">
-                  <div className="text-2xl">🛡️</div>
+              {/* Guarantee Badge */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-primary/20 rounded-lg">
+                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#F8FAFC] mb-2">
+                    <h4 className="text-lg font-black text-white mb-1 italic tracking-tighter uppercase">
                       60-Day Conversion Guarantee
                     </h4>
-                    <p className="text-[#94A3B8] text-sm">
-                      If we don't find at least $10,000 in hidden costs within 60 days, 
-                      we'll refund your audit fee and work with you until we do. No questions asked.
+                    <p className="text-textSecondary text-sm font-medium">
+                      If we don't find at least $10,000 in hidden costs within 60 days,
+                      we'll refund your fee and work with you until we do.
                     </p>
                   </div>
                 </div>
@@ -277,9 +270,9 @@ const ProfitRecoveryForm = () => {
               <button
                 type="submit"
                 disabled={isProcessing || !contractFile}
-                className="w-full bg-[#9EF01A] text-[#0B0F14] hover:bg-[#8ED60A] font-semibold rounded-xl px-8 py-4 text-lg shadow-[0_0_0_2px_rgba(158,240,26,.25),0_8px_30px_-10px_rgba(158,240,26,.6)] hover:translate-y-[-1px] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary text-background font-black rounded py-5 text-xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:translate-y-[-1px] transition-all disabled:opacity-50 disabled:cursor-not-allowed uppercase italic tracking-tighter border border-primary/20"
               >
-                {isProcessing ? 'Processing Your Contract...' : 'Get My Free Teaser Report →'}
+                {isProcessing ? 'Processing Contract...' : 'Get Free Teaser Report →'}
               </button>
 
               {/* Error Display */}
@@ -299,66 +292,62 @@ const ProfitRecoveryForm = () => {
           </div>
         ) : (
           /* Teaser Report Display (Sales Hook) */
-          <div className="bg-[#0E131B] border border-[#1F2937] rounded-2xl p-8">
+          <div className="bg-surface border border-white/5 rounded-2xl p-8 shadow-2xl">
             <div className="text-center mb-8">
               <div className="inline-block mb-4">
-                <span className="bg-[#00E0FF] text-[#0B0F14] px-4 py-2 rounded-full text-sm font-semibold">
-                  Your Teaser Report is Ready
+                <span className="bg-primary/20 text-primary border border-primary/30 px-4 py-2 rounded font-black text-xs uppercase tracking-widest italic">
+                  Protocol Findings Ready
                 </span>
               </div>
-              <h3 className="text-3xl font-bold text-[#F8FAFC] mb-4 font-display">
-                Here's Your "Lazy Tax"
+              <h3 className="text-3xl font-black text-white mb-4 italic tracking-tighter uppercase">
+                YOUR "LAZY TAX" REPORT
               </h3>
-              <p className="text-lg text-[#94A3B8]">
-                This is what we found in your contract. The full audit includes negotiation strategies and vendor communication templates.
+              <p className="text-lg text-textSecondary font-medium">
+                Initial extraction complete. Full protocol deployment covers negotiation strategy and vendor replacement.
               </p>
             </div>
 
             {/* Report Content */}
             <div className="space-y-6">
-              {/* Benchmark Research */}
               {teaserReport.benchmarkResearch && (
-                <div className="bg-[#111827] border border-[#1F2937] rounded-xl p-6">
-                  <h4 className="text-xl font-semibold text-[#F8FAFC] mb-4">📊 Market Benchmark Analysis</h4>
-                  <div className="text-[#94A3B8] whitespace-pre-wrap">
+                <div className="bg-background border border-white/5 rounded-xl p-6">
+                  <h4 className="text-xl font-black text-white mb-4 italic tracking-tighter uppercase">📊 Market Benchmark Analysis</h4>
+                  <div className="text-textSecondary whitespace-pre-wrap font-medium">
                     {teaserReport.benchmarkResearch}
                   </div>
                 </div>
               )}
 
-              {/* Identified Savings */}
               {teaserReport.identifiedSavings && (
-                <div className="bg-[#111827] border border-[#9EF01A]/30 rounded-xl p-6">
-                  <h4 className="text-xl font-semibold text-[#F8FAFC] mb-4">💰 Identified Savings</h4>
-                  <div className="text-[#94A3B8] whitespace-pre-wrap">
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                  <h4 className="text-xl font-black text-primary mb-4 italic tracking-tighter uppercase">💰 Identified Savings</h4>
+                  <div className="text-textSecondary whitespace-pre-wrap font-medium">
                     {teaserReport.identifiedSavings}
                   </div>
                 </div>
               )}
 
-              {/* Estimated Annual Savings */}
               {teaserReport.estimatedSavings && (
-                <div className="bg-[#9EF01A]/10 border border-[#9EF01A] rounded-xl p-6 text-center">
-                  <div className="text-4xl font-bold text-[#9EF01A] font-mono mb-2">
+                <div className="bg-primary border border-primary/20 rounded-xl p-8 text-center shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                  <div className="text-5xl font-black text-background italic tracking-tighter mb-1 uppercase">
                     ${teaserReport.estimatedSavings.toLocaleString()}
                   </div>
-                  <div className="text-[#F8FAFC] font-semibold">Estimated Annual Savings</div>
+                  <div className="text-background font-black uppercase text-[10px] tracking-widest italic opacity-80">Estimated Annual Revenue Recovery</div>
                 </div>
               )}
 
-              {/* CTA to Full Audit */}
-              <div className="bg-[#111827] border border-[#00E0FF]/30 rounded-xl p-6 text-center">
-                <h4 className="text-xl font-semibold text-[#F8FAFC] mb-4">
-                  Want the Full Audit?
+              <div className="bg-background border border-primary/30 rounded-xl p-8 text-center">
+                <h4 className="text-xl font-black text-white mb-4 italic tracking-tighter uppercase">
+                  Fully Deploy Protocol
                 </h4>
-                <p className="text-[#94A3B8] mb-6">
-                  Get the complete negotiation strategy, vendor email templates, and ongoing monitoring for $2,997.
+                <p className="text-textSecondary mb-6 font-medium">
+                  Implement the full negotiation strategy, automated vendor monitoring, and cash recovery engine.
                 </p>
                 <a
-                  href="#financial-engine"
-                  className="inline-block bg-[#00E0FF] text-[#0B0F14] hover:bg-[#08C7E5] font-semibold rounded-xl px-8 py-4 transition-colors"
+                  href="#systems"
+                  className="inline-block bg-primary text-background font-black rounded px-8 py-4 uppercase italic tracking-tighter shadow-xl"
                 >
-                  Get Full Audit - $2,997
+                  View Full Systems
                 </a>
               </div>
             </div>
@@ -367,20 +356,20 @@ const ProfitRecoveryForm = () => {
 
         {/* Social Proof */}
         <div className="mt-12 text-center">
-          <p className="text-[#94A3B8] text-sm mb-4">
-            Trusted by independent restaurant operators across South Florida
+          <p className="text-textSecondary text-[10px] font-black uppercase tracking-[0.2em] mb-6 opacity-50 italic">
+            Military-Grade Profit Enforcement
           </p>
-          <div className="flex justify-center items-center gap-6 text-sm text-[#94A3B8]">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-[11px] font-black text-white/40 uppercase tracking-widest italic">
             <div className="flex items-center gap-2">
-              <span className="text-[#00E0FF]">✓</span>
-              <span>Built in Real Restaurants</span>
+              <div className="w-1.5 h-1.5 bg-primary rounded-sm" />
+              <span>Real-World Tested</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#00E0FF]">✓</span>
-              <span>$50k+ Hidden Costs Found</span>
+              <div className="w-1.5 h-1.5 bg-primary rounded-sm" />
+              <span>$50k+ Avg Recovery</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#00E0FF]">✓</span>
+              <div className="w-1.5 h-1.5 bg-primary rounded-sm" />
               <span>48-Hour Turnaround</span>
             </div>
           </div>

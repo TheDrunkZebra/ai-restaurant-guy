@@ -126,3 +126,11 @@ The hero section uses `/seamus-portrait.jpg` which needs to be added to the `pub
 *The website is now optimized for restaurant owners - clear, impressive, and easy to follow!*
 
 
+
+
+
+
+
+
+
+

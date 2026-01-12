@@ -245,3 +245,11 @@ For production, migrate SQLite to PostgreSQL:
 5. ✅ Deploy to Vercel
 
 
+
+
+
+
+
+
+
+

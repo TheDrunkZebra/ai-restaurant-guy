@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0B0F14',
+        background: '#0B0F14',  // Updated to match Manus site
         surface: '#0E131B',
-        primary: '#00E0FF',
-        secondary: '#9EF01A',
+        primary: '#00E0FF',  // Neon cyan/light blue
+        secondary: '#39FF14',  // Neon green (bright lime)
         textPrimary: '#F8FAFC',
         textSecondary: '#94A3B8',
       },

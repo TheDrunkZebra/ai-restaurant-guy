@@ -1,120 +1,101 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Check } from 'lucide-react';
 import GuaranteeBadge from '../components/GuaranteeBadge';
-import TrustIndicators from '../components/TrustIndicators';
 
-const HeroSection = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        restaurantName: ''
-    });
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add logic to handle submission
-    };
-
+const HeroSection = ({ onOpenModal }) => {
     return (
-        <div className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-            {/* Background gradients */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <section className="relative py-12 md:py-20 overflow-hidden bg-[#0B0F14] text-[#F8FAFC]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
                     {/* Left Column: Content */}
-                    <div className="max-w-2xl">
-                        <div className="mb-8">
-                            <GuaranteeBadge />
+                    <div className="text-center lg:text-left flex flex-col">
+                        {/* Guarantee Badge - Above the fold */}
+                        <div className="mb-4 order-0 flex justify-center lg:justify-start">
+                            <GuaranteeBadge variant="hero" />
                         </div>
 
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6 text-textPrimary">
-                            Recover <span className="text-primary text-shadow-glow">$72k</span> in Hidden Revenue Your First Year
+                        {/* Main Headline - Shows first on mobile */}
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-4 md:mb-6 font-display leading-tight order-1">
+                            <span className="text-[#00E0FF]">Stop Losing $50k/Year</span> to Hidden Margin Leaks
                         </h1>
 
-                        <p className="text-xl text-textSecondary mb-8 leading-relaxed max-w-lg">
-                            Stop margin leaks before they kill your profit. Automate your operations and get 80+ hours back per month.
+                        {/* Subhead */}
+                        <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed order-2">
+                            <strong>I'm Seamus. I own three restaurants.</strong> We audit your contracts, automate your reviews, and systemize your ops—so you get your profit back and your weekends back.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                            <a href="#audit" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-background bg-primary rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(0,224,255,0.3)] hover:shadow-[0_0_30px_rgba(0,224,255,0.5)]">
-                                Get Free Revenue Audit
-                                <ArrowRight className="ml-2 w-5 h-5" />
-                            </a>
-                            <a href="#systems" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-textPrimary bg-surface border border-white/10 rounded-lg hover:bg-white/5 transition-all">
-                                View Systems
-                            </a>
+                        {/* Quote Section - Smaller on mobile, shows after subhead */}
+                        <div className="mb-6 md:mb-8 order-3 lg:order-first bg-white/5 rounded-lg p-4 border-l-4 border-[#00E0FF]">
+                            <p className="text-sm md:text-base lg:text-lg mb-2 italic text-gray-200">
+                                "We found $120k in overhead savings and cut our prime cost to 46%. These systems run 24/7 while I'm with my family."
+                            </p>
+                            <p className="text-xs md:text-sm text-gray-400">
+                                — Seamus O'Brien, Owner of 3 restaurants in Jupiter, FL
+                            </p>
                         </div>
 
-                        <TrustIndicators />
+                        {/* CTA Button - Leads with Savings Audit */}
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12 order-4">
+                            <button
+                                onClick={onOpenModal}
+                                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
+                            >
+                                Start with $500 Savings Audit
+                                <ArrowRight className="ml-2 w-5 h-5" />
+                            </button>
+                            <span className="text-sm text-gray-400 self-center">
+                                Refundable if you sign. Find $5k–$15k in hidden savings.
+                            </span>
+                        </div>
+
+                        {/* Trust Indicators - Short, benefit-focused */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm order-5">
+                            <div className="flex items-center gap-2">
+                                <div className="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0">
+                                    <Check className="w-3 h-3 text-[#39FF14]" />
+                                </div>
+                                <span className="text-gray-300 text-xs md:text-sm">Cut costs fast</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0">
+                                    <Check className="w-3 h-3 text-[#39FF14]" />
+                                </div>
+                                <span className="text-gray-300 text-xs md:text-sm">More profit</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0">
+                                    <Check className="w-3 h-3 text-[#39FF14]" />
+                                </div>
+                                <span className="text-gray-300 text-xs md:text-sm">Less busywork</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0">
+                                    <Check className="w-3 h-3 text-[#39FF14]" />
+                                </div>
+                                <span className="text-gray-300 text-xs md:text-sm">Custom for you</span>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Right Column: Form */}
-                    <div className="bg-surface border border-white/10 rounded-2xl p-8 shadow-2xl backdrop-blur-sm relative">
-                        <div className="absolute -top-4 -right-4 bg-secondary text-background font-bold px-4 py-2 rounded-lg transform rotate-3 shadow-lg">
-                            Limited Availability
+                    {/* Right Column: Portrait */}
+                    <div className="relative group">
+                        <div className="relative">
+                            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-surface">
+                                <img
+                                    src="/seamus-portrait.jpg"
+                                    alt="Seamus O'Brien, The AI Restaurant Guy, restaurant owner and AI automation expert"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
+                            </div>
                         </div>
-
-                        <h3 className="text-2xl font-bold mb-2">Get Your Free Revenue Audit</h3>
-                        <p className="text-textSecondary mb-6">See exactly where you're losing money. No obligation.</p>
-
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium text-textSecondary mb-1">Full Name</label>
-                                <input
-                                    type="text"
-                                    required
-                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary transition-colors"
-                                    placeholder="John Doe"
-                                    value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-textSecondary mb-1">Restaurant Name</label>
-                                <input
-                                    type="text"
-                                    required
-                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary transition-colors"
-                                    placeholder="The Salty Zebra"
-                                    value={formData.restaurantName}
-                                    onChange={(e) => setFormData({ ...formData, restaurantName: e.target.value })}
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-textSecondary mb-1">Email Address</label>
-                                <input
-                                    type="email"
-                                    required
-                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary transition-colors"
-                                    placeholder="john@restaurant.com"
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                />
-                            </div>
-
-                            <button type="submit" className="w-full bg-secondary text-background font-bold text-lg py-4 rounded-lg hover:bg-secondary/90 transition-all shadow-[0_0_20px_rgba(158,240,26,0.3)] hover:shadow-[0_0_30px_rgba(158,240,26,0.5)] flex items-center justify-center gap-2 mt-2">
-                                Get My Free Audit
-                                <ChevronRight className="w-5 h-5" />
-                            </button>
-
-                            <p className="text-center text-xs text-textSecondary mt-4 flex items-center justify-center gap-1">
-                                <CheckCircle2 className="w-3 h-3 text-secondary" />
-                                Your data is 100% secure. No spam.
-                            </p>
-                        </form>
                     </div>
 
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
 export default HeroSection;
-

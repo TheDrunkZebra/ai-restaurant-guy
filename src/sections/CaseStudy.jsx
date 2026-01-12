@@ -2,10 +2,10 @@ import React from 'react';
 import { Quote } from 'lucide-react';
 
 const stats = [
-    { value: "$72k", label: "Agency Fees Eliminated" },
-    { value: "2 Days", label: "On-Site Time / Month" },
-    { value: "3%", label: "Prime Cost Reduction" },
-    { value: "5", label: "Platforms Automated" }
+    { value: "$72,400", label: "Agency Fees Nuked" },
+    { value: "0", label: "Decision Fatigue" },
+    { value: "3.2%", label: "Prime Cost Drop" },
+    { value: "90 Days", label: "Full Recovery Time" }
 ];
 
 const CaseStudy = () => {
@@ -31,13 +31,13 @@ const CaseStudy = () => {
                         <h2 className="text-3xl sm:text-4xl font-bold mb-6">The Lightbulb Moment</h2>
                         <div className="space-y-6 text-textSecondary text-lg leading-relaxed">
                             <p>
-                                I was spending $6,000 a month on agencies that didn't get it. They posted generic content, built websites that broke, and sent me "reports" that meant nothing to my bottom line.
+                                I was cutting $6,000 checks every month to "creative agencies" who didn't know the difference between a waste log and a wine list. They sent me vanity metrics while my margins were bleeding from the back of the house.
                             </p>
                             <p>
-                                When I replaced them with these systems, not only did the work get better—it got done instantly. No waiting for revisions. No "circling back."
+                                When I stopped chasing "likes" and started deploying **The Profit Protocol**, the work didn't just get better—it got automated. No revisions. No "circling back." Just profit on a dashboard.
                             </p>
                             <p>
-                                This isn't about replacing people. It's about replacing the grunt work so you can get back to the floor, the food, and the guests.
+                                This isn't about some fancy culinary journey. It's about getting back to the floor, where the real money is made, while these systems run the grunt work in the background.
                             </p>
                         </div>
                     </div>
@@ -48,10 +48,10 @@ const CaseStudy = () => {
                         </div>
                         <blockquote className="relative bg-background border border-white/10 p-10 rounded-2xl">
                             <p className="text-xl italic text-white mb-6">
-                                "I built these systems because I was tired of being held hostage by tech I didn't understand and vendors who overcharged. Now, I run a tighter ship than ever before."
+                                "I was tired of being held hostage by tech I didn't understand and vendors who overcharged for fluff. Now, I run a tighter ship with 0 decision fatigue. This is how the modern house wins."
                             </p>
                             <footer className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold">
+                                <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary font-black italic uppercase">
                                     SO
                                 </div>
                                 <div>
@@ -69,4 +69,11 @@ const CaseStudy = () => {
 };
 
 export default CaseStudy;
+
+
+
+
+
+
+
 

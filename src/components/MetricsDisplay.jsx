@@ -6,19 +6,19 @@ const metrics = [
         icon: TrendingUp,
         value: "$72k",
         label: "Recovered Year 1",
-        color: "text-primary"
+        color: "text-secondary"
     },
     {
         icon: Clock,
         value: "80+",
         label: "Hours Back/Month",
-        color: "text-secondary"
+        color: "text-primary"
     },
     {
         icon: Percent,
         value: "3%",
         label: "Prime Cost Reduction",
-        color: "text-purple-400"
+        color: "text-secondary"
     }
 ];
 
@@ -39,4 +39,11 @@ const MetricsDisplay = () => {
 };
 
 export default MetricsDisplay;
+
+
+
+
+
+
+
 
