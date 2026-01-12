@@ -17,10 +17,9 @@ const Navbar = ({ onOpenModal }) => {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#0B0F14]/80 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-6'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
-                    {/* Brand */}
-                    <div className="flex items-center gap-3">
+                    {/* Brand - Name removed per request */}
+                    <div className="flex items-center">
                         <h1 className="text-xl font-bold text-[#F8FAFC]">The AI Restaurant Guy</h1>
-                        <span className="text-sm text-gray-400 hidden sm:inline">Seamus O'Brien</span>
                     </div>
 
                     {/* Desktop Nav - ONE primary CTA */}
@@ -29,7 +28,7 @@ const Navbar = ({ onOpenModal }) => {
                             href="#demo"
                             className="text-sm text-gray-400 hover:text-[#00E0FF] transition-colors"
                         >
-                            See Demo
+                            See the System
                         </a>
                         <button
                             onClick={onOpenModal}
@@ -53,7 +52,7 @@ const Navbar = ({ onOpenModal }) => {
                             Start $500 Audit →
                         </button>
                         <a href="#demo" className="text-sm text-gray-400" onClick={() => setIsOpen(false)}>
-                            See Demo
+                            See the System
                         </a>
                     </div>
                 )}

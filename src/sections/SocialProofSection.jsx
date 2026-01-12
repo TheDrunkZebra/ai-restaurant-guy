@@ -5,7 +5,7 @@ const SocialProofSection = () => {
     return (
         <section className="py-12 md:py-16 bg-[#0B0F14] border-t border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Testimonial - Featured */}
                 <div className="max-w-3xl mx-auto mb-12">
                     <div className="bg-white/5 rounded-xl p-6 md:p-8 border border-white/10 relative">
