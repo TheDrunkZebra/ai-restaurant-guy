@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import HeroSection from './sections/HeroSection';
+import SocialProofSection from './sections/SocialProofSection';
 import WeekOneSection from './sections/WeekOneSection';
 import CaseStudyMetrics from './sections/CaseStudyMetrics';
 import ShopTheSystems from './sections/ShopTheSystems';
@@ -23,6 +24,7 @@ function App() {
     <div className="min-h-screen bg-[#0B0F14] text-[#F8FAFC] selection:bg-primary selection:text-background">
       <Navbar onOpenModal={openModal} />
       <HeroSection onOpenModal={openModal} />
+      <SocialProofSection />
       <WeekOneSection />
       <CaseStudyMetrics />
       <ShopTheSystems />
