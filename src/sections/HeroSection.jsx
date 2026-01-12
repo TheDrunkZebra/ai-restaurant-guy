@@ -17,7 +17,7 @@ const HeroSection = ({ onOpenModal }) => {
 
                         {/* Main Headline - Shows first on mobile */}
                         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-4 md:mb-6 font-display leading-tight order-1">
-                            <span className="text-[#00E0FF]">Stop Losing $50k/Year</span> to Hidden Margin Leaks
+                            <span className="text-[#00E0FF]">Hire a 24/7 AI Crew</span> that runs your restaurant.
                         </h1>
 
                         {/* Subhead */}
