@@ -1,0 +1,10 @@
+# Robots.txt for theairestaurantguy.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://theairestaurantguy.com/sitemap.xml
+
+# Disallow admin/api paths if any
+Disallow: /api/
