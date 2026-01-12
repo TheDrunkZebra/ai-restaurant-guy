@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
@@ -29,11 +30,20 @@ const Navbar = ({ onOpenModal }) => {
                 <div className="flex items-center justify-between">
                     {/* Brand */}
                     <div className="flex items-center">
-                        <h1 className="text-xl font-bold text-[#F8FAFC]">{SITE_CONFIG.brandName}</h1>
+                        <Link to="/" className="text-xl font-bold text-[#F8FAFC]">
+                            {SITE_CONFIG.brandName}
+                        </Link>
                     </div>
 
-                    {/* Desktop Nav - ONE primary CTA */}
+                    {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-6">
+                        <Link
+                            to="/blog"
+                            data-nav="owner-stories"
+                            className="text-sm text-gray-400 hover:text-[#4ADE80] transition-colors"
+                        >
+                            Owner Stories
+                        </Link>
                         <a
                             id="nav-see-system"
                             data-nav="see-system"
@@ -47,7 +57,7 @@ const Navbar = ({ onOpenModal }) => {
                             id="nav-cta-primary"
                             data-cta="start-audit"
                             onClick={onOpenModal}
-                            className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
+                            className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-[#0B0F14] bg-[#4ADE80] rounded-lg hover:bg-[#3FCF70] transition-all shadow-lg shadow-[#4ADE80]/30 cursor-pointer"
                         >
                             {SITE_CONFIG.navCTA}
                             <ArrowRight className="ml-2 w-4 h-4" />
@@ -60,16 +70,24 @@ const Navbar = ({ onOpenModal }) => {
                     </button>
                 </div>
 
-                {/* Mobile Menu - ONE primary CTA */}
+                {/* Mobile Menu */}
                 {isOpen && (
                     <div className="md:hidden absolute top-full left-0 w-full bg-[#0B0F14] border-b border-white/10 p-6 flex flex-col gap-4">
                         <button
                             onClick={() => { onOpenModal(); setIsOpen(false); }}
-                            className="text-lg font-semibold text-[#39FF14] text-left"
+                            className="text-lg font-semibold text-[#4ADE80] text-left"
                             data-cta="start-audit"
                         >
                             {SITE_CONFIG.navCTA} →
                         </button>
+                        <Link
+                            to="/blog"
+                            className="text-sm text-gray-400"
+                            onClick={() => setIsOpen(false)}
+                            data-nav="owner-stories"
+                        >
+                            Owner Stories
+                        </Link>
                         <a
                             href="#system"
                             className="text-sm text-gray-400"

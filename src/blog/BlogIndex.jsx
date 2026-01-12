@@ -18,10 +18,10 @@ const BlogIndex = ({ onOpenModal }) => {
     return (
         <>
             <Helmet>
-                <title>Blog | The AI Restaurant Guy</title>
-                <meta name="description" content="Insights on restaurant operations, AI automation, and profitability from a real restaurant owner. Field-tested strategies, not classroom theory." />
-                <meta property="og:title" content="Blog | The AI Restaurant Guy" />
-                <meta property="og:description" content="Insights on restaurant operations, AI automation, and profitability from a real restaurant owner." />
+                <title>Owner Stories | The AI Restaurant Guy</title>
+                <meta name="description" content="Real stories from running three restaurants in Jupiter, FL. Lessons on operations, AI automation, and profitability from an owner-operator." />
+                <meta property="og:title" content="Owner Stories | The AI Restaurant Guy" />
+                <meta property="og:description" content="Real stories from running three restaurants in Jupiter, FL. Lessons on operations, AI automation, and profitability." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://theairestaurantguy.com/blog" />
                 <link rel="canonical" href="https://theairestaurantguy.com/blog" />
@@ -38,7 +38,7 @@ const BlogIndex = ({ onOpenModal }) => {
                             ← Back to Home
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Blog
+                            Owner Stories
                         </h1>
                         <p className="text-lg text-gray-400 max-w-2xl">
                             Lessons from running three restaurants in Jupiter, FL.
