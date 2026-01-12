@@ -12,6 +12,18 @@ const HeroSection = ({ onOpenModal }) => {
 
                     {/* Left Column: Content - MOBILE OPTIMIZED */}
                     <div className="text-center lg:text-left">
+
+                        {/* Mobile Avatar - Small circular headshot above headline */}
+                        <div className="md:hidden flex justify-center mb-5">
+                            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4ADE80]/50 shadow-lg shadow-[#4ADE80]/20">
+                                <img
+                                    src="/seamus-portrait.jpg"
+                                    alt="Seamus, restaurant owner"
+                                    className="w-full h-full object-cover object-top"
+                                />
+                            </div>
+                        </div>
+
                         {/* Main Headline - Mobile: tighter, Desktop: unchanged */}
                         <h1 className="text-[1.75rem] leading-[1.2] md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-6 md:mb-8 font-display md:leading-tight">
                             <span className="text-[#00E0FF]">I Keep 20% of Every Dollar My Restaurants Make.</span>
@@ -31,7 +43,7 @@ const HeroSection = ({ onOpenModal }) => {
                                 id="hero-cta-primary"
                                 data-cta="start-audit"
                                 onClick={onOpenModal}
-                                className="inline-flex items-center justify-center px-6 py-4 md:px-8 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer w-full sm:w-auto"
+                                className="inline-flex items-center justify-center px-6 py-4 md:px-8 text-base font-semibold text-[#0B0F14] bg-[#4ADE80] rounded-lg hover:bg-[#3FCF70] transition-all shadow-lg shadow-[#4ADE80]/30 cursor-pointer w-full sm:w-auto"
                             >
                                 Start $500 Audit
                                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -39,13 +51,13 @@ const HeroSection = ({ onOpenModal }) => {
 
                             {/* Guarantee NEXT to CTA - not at top */}
                             <p className="hidden md:flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400">
-                                <ShieldCheck className="w-4 h-4 text-[#39FF14] flex-shrink-0" />
+                                <ShieldCheck className="w-4 h-4 text-[#4ADE80] flex-shrink-0" />
                                 <span>2× guarantee: find documented savings or we keep working at no extra cost.</span>
                             </p>
                         </div>
                     </div>
 
-                    {/* Right Column: Portrait - Hidden on mobile to keep CTA above fold */}
+                    {/* Right Column: Portrait - Hidden on mobile (avatar above), shown on md+ */}
                     <div className="relative group hidden md:block">
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-surface">
