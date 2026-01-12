@@ -25,9 +25,10 @@ const FinalCTA = ({ onOpenModal }) => {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <button
                                 onClick={onOpenModal}
+                                data-cta="start-audit"
                                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
                             >
-                                Get My AI Build Plan
+                                Start $500 Audit
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </button>
                         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, TrendingUp, TrendingDown } from 'lucide-react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 
 const LightbulbCaseStudy = () => {
     const metrics = [
@@ -35,7 +35,7 @@ const LightbulbCaseStudy = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                     The Lightbulb Moment
                 </h2>
-                
+
                 <div className="grid lg:grid-cols-2 gap-12 mb-12">
                     {/* Image */}
                     <div className="relative">
@@ -83,19 +83,9 @@ const LightbulbCaseStudy = () => {
                     ))}
                 </div>
 
-                <div className="text-center mt-12">
-                    <a 
-                        href="#case-study" 
-                        className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50"
-                    >
-                        Watch 2‑min breakdown →
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                    </a>
-                </div>
             </div>
         </section>
     );
 };
 
 export default LightbulbCaseStudy;
-

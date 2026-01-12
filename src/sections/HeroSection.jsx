@@ -1,68 +1,71 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { getTrustLine } from '../config/siteConfig';
 
 const HeroSection = ({ onOpenModal }) => {
+    const trustLine = getTrustLine();
+
     return (
-        <section className="relative py-20 md:py-24 lg:py-32 overflow-hidden bg-[#0B0F14] text-[#F8FAFC]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-16 items-center">
+        <section className="relative pt-28 pb-16 md:py-24 lg:py-32 overflow-hidden bg-[#0B0F14] text-[#F8FAFC]">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* Left Column: Content - MOBILE OPTIMIZED */}
                     <div className="text-center lg:text-left">
-                        {/* Main Headline - Updated */}
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-8 md:mb-8 font-display leading-tight">
+                        {/* Main Headline - Mobile: tighter, Desktop: unchanged */}
+                        <h1 className="text-[1.75rem] leading-[1.2] md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-6 md:mb-8 font-display md:leading-tight">
                             <span className="text-[#00E0FF]">I Keep 20% of Every Dollar My Restaurants Make.</span>
-                            <br />Now I'll Show You How.
+                            <br className="hidden md:block" />
+                            <span className="md:hidden"> </span>
+                            Now I'll Show You How.
                         </h1>
 
                         {/* ONE line subhead - qualifier baked in */}
-                        <p className="text-lg md:text-xl text-gray-300 mb-10 md:mb-10">
-                            For restaurant owners doing $1M–$5M who want their profit back — and their weekends.
+                        <p className="text-base md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed">
+                            Stop guessing. I'll show you the simple system I use to keep more profit—no tech overwhelm.
                         </p>
 
-                        {/* CTA with inline guarantee */}
-                        <div className="flex flex-col gap-5 mb-8">
+                        {/* CTA with inline guarantee - MOBILE FIRST: Must be visible without scroll */}
+                        <div className="flex flex-col gap-4 md:gap-5 mb-6 md:mb-8">
                             <button
+                                id="hero-cta-primary"
+                                data-cta="start-audit"
                                 onClick={onOpenModal}
-                                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer w-full sm:w-auto"
+                                className="inline-flex items-center justify-center px-6 py-4 md:px-8 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer w-full sm:w-auto"
                             >
-                                Start with $500 Savings Audit
+                                Start $500 Audit
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </button>
 
                             {/* Guarantee NEXT to CTA - not at top */}
-                            <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400">
-                                <ShieldCheck className="w-4 h-4 text-[#39FF14]" />
-                                <span>2x ROI guaranteed or we work free. Most owners find $5k–$15k.</span>
-                            </div>
+                            <p className="hidden md:flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400">
+                                <ShieldCheck className="w-4 h-4 text-[#39FF14] flex-shrink-0" />
+                                <span>2× guarantee: find documented savings or we keep working at no extra cost.</span>
+                            </p>
                         </div>
                     </div>
 
-                    {/* Right Column: Portrait */}
-                    <div className="relative group">
+                    {/* Right Column: Portrait - Hidden on mobile to keep CTA above fold */}
+                    <div className="relative group hidden md:block">
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-surface">
                                 <img
                                     src="/seamus-portrait.jpg"
-                                    alt="Seamus O'Brien, The AI Restaurant Guy, restaurant owner and AI automation expert"
+                                    alt="The AI Restaurant Guy, restaurant owner and AI automation expert"
                                     className="w-full h-auto object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
                             </div>
                         </div>
-                        
-                        {/* Trust bar - AFTER hero image, visible on all sizes */}
-                        <p className="text-sm text-gray-500 mt-6 text-center lg:hidden">
-                            $347K+ in hidden costs exposed for independent restaurants in South Florida
-                        </p>
                     </div>
 
-                    {/* Trust bar - Desktop only, under left column */}
-                    <p className="hidden lg:block text-sm text-gray-500 -mt-8">
-                        $347K+ in hidden costs exposed for independent restaurants in South Florida
-                    </p>
-
                 </div>
+
+                {/* Trust bar - Desktop only, under content */}
+                <p className="hidden lg:block text-sm text-gray-500 mt-8">
+                    {trustLine}
+                </p>
+
             </div>
         </section>
     );

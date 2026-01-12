@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ArrowRight, Check, Loader2 } from 'lucide-react';
+import { X, ArrowRight, Check, Loader2, ShieldCheck } from 'lucide-react';
 
 const AIBuildPlanModal = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
@@ -7,8 +7,6 @@ const AIBuildPlanModal = ({ isOpen, onClose }) => {
         email: '',
         phone: '',
         restaurantName: '',
-        services: [],
-        revenueRange: '',
         painPoint: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,38 +28,9 @@ const AIBuildPlanModal = ({ isOpen, onClose }) => {
         };
     }, [isOpen, onClose]);
 
-    const serviceOptions = [
-        'AI Content Workflows',
-        'Reputation Management',
-        'Google Ads Optimizer',
-        'Budgeting/Financial',
-        'Contract Auditor',
-        'Landing Page Builder',
-        'Social Media Automation',
-        'Email/Newsletter',
-        'Events & Catering',
-        'Custom Build',
-    ];
-
-    const revenueOptions = [
-        'Under $500k',
-        '$500k - $1M',
-        '$1M - $2M',
-        '$2M+',
-    ];
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleServiceToggle = (service) => {
-        setFormData(prev => ({
-            ...prev,
-            services: prev.services.includes(service)
-                ? prev.services.filter(s => s !== service)
-                : [...prev.services, service]
-        }));
     };
 
     const handleSubmit = async (e) => {
@@ -71,19 +40,16 @@ const AIBuildPlanModal = ({ isOpen, onClose }) => {
 
         try {
             // Create mailto link as fallback for now
-            // This can be replaced with Formspree endpoint later
-            const mailtoSubject = encodeURIComponent(`AI Build Plan Request - ${formData.restaurantName}`);
+            const mailtoSubject = encodeURIComponent(`$500 Audit Request - ${formData.restaurantName}`);
             const mailtoBody = encodeURIComponent(`
-New AI Build Plan Request
+$500 Savings Audit Request
 
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Restaurant: ${formData.restaurantName}
-Annual Revenue: ${formData.revenueRange}
-Services Interested In: ${formData.services.join(', ')}
 
-Biggest Pain Point:
+What's happening in your restaurant:
 ${formData.painPoint}
             `.trim());
 
@@ -105,8 +71,6 @@ ${formData.painPoint}
             email: '',
             phone: '',
             restaurantName: '',
-            services: [],
-            revenueRange: '',
             painPoint: '',
         });
         setIsSuccess(false);
@@ -116,7 +80,7 @@ ${formData.painPoint}
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" data-modal="audit-intake">
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-black/80 backdrop-blur-sm"
@@ -124,7 +88,7 @@ ${formData.painPoint}
             />
 
             {/* Modal */}
-            <div className="relative bg-[#0E131B] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="relative bg-[#0E131B] border border-white/10 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
                 {/* Close button */}
                 <button
                     onClick={onClose}
@@ -136,27 +100,30 @@ ${formData.painPoint}
                 {!isSuccess ? (
                     <div className="p-6 md:p-8">
                         {/* Header */}
-                        <div className="text-center mb-8">
-                            <div className="inline-block mb-4">
-                                <span className="bg-[#39FF14]/20 text-[#39FF14] px-4 py-2 rounded-full text-sm font-semibold">
-                                    Free Custom Build Plan
-                                </span>
-                            </div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                                Get Your AI Build Plan
+                        <div className="text-center mb-6">
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                                Start the $500 Audit
                             </h2>
-                            <p className="text-gray-400">
-                                Tell us about your restaurant. We'll design a custom AI system for you.
+                            <p className="text-gray-300 leading-relaxed">
+                                Tell me about your restaurant. I'll run a savings audit using the same system I use in my own spots.
+                            </p>
+                        </div>
+
+                        {/* Guarantee */}
+                        <div className="flex items-start gap-3 bg-[#39FF14]/10 border border-[#39FF14]/30 rounded-lg p-4 mb-6">
+                            <ShieldCheck className="w-5 h-5 text-[#39FF14] flex-shrink-0 mt-0.5" />
+                            <p className="text-sm text-gray-300">
+                                <span className="font-semibold text-[#39FF14]">2× guarantee:</span> if we can't uncover at least 2× your audit fee in documented savings opportunities, we keep working at no extra cost until we do.
                             </p>
                         </div>
 
                         {/* Form */}
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             {/* Contact Info */}
-                            <div className="grid md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                                        Full Name *
+                                        Name *
                                     </label>
                                     <input
                                         type="text"
@@ -164,27 +131,10 @@ ${formData.painPoint}
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#00E0FF] transition-colors"
-                                        placeholder="John Smith"
+                                        className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#39FF14] transition-colors"
+                                        placeholder="Your name"
                                     />
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                                        Email *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#00E0FF] transition-colors"
-                                        placeholder="john@restaurant.com"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-2">
                                         Phone *
@@ -195,76 +145,46 @@ ${formData.painPoint}
                                         value={formData.phone}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#00E0FF] transition-colors"
+                                        className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#39FF14] transition-colors"
                                         placeholder="(555) 123-4567"
                                     />
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                                        Restaurant Name *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="restaurantName"
-                                        value={formData.restaurantName}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#00E0FF] transition-colors"
-                                        placeholder="Your Restaurant"
-                                    />
-                                </div>
                             </div>
 
-                            {/* Services Interest */}
-                            <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-3">
-                                    Which AI systems interest you? (Select all that apply)
-                                </label>
-                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                                    {serviceOptions.map((service) => (
-                                        <button
-                                            key={service}
-                                            type="button"
-                                            onClick={() => handleServiceToggle(service)}
-                                            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                                                formData.services.includes(service)
-                                                    ? 'bg-[#00E0FF]/20 text-[#00E0FF] border border-[#00E0FF]'
-                                                    : 'bg-[#0B0F14] text-gray-400 border border-white/10 hover:border-white/20'
-                                            }`}
-                                        >
-                                            {formData.services.includes(service) && (
-                                                <Check className="w-3 h-3 inline mr-1" />
-                                            )}
-                                            {service}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Revenue Range */}
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    Annual Revenue Range
+                                    Email *
                                 </label>
-                                <select
-                                    name="revenueRange"
-                                    value={formData.revenueRange}
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#00E0FF] transition-colors"
-                                >
-                                    <option value="">Select range...</option>
-                                    {revenueOptions.map((option) => (
-                                        <option key={option} value={option}>
-                                            {option}
-                                        </option>
-                                    ))}
-                                </select>
+                                    required
+                                    className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#39FF14] transition-colors"
+                                    placeholder="you@restaurant.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-300 mb-2">
+                                    Restaurant Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="restaurantName"
+                                    value={formData.restaurantName}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#39FF14] transition-colors"
+                                    placeholder="Your Restaurant"
+                                />
                             </div>
 
                             {/* Pain Point */}
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">
-                                    What's your biggest operational pain point? *
+                                    What's happening in your restaurant right now? *
                                 </label>
                                 <textarea
                                     name="painPoint"
@@ -272,8 +192,8 @@ ${formData.painPoint}
                                     onChange={handleChange}
                                     required
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#00E0FF] transition-colors resize-none"
-                                    placeholder="E.g., Spending too much time on social media, can't keep up with reviews, marketing costs are too high..."
+                                    className="w-full px-4 py-3 bg-[#0B0F14] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#39FF14] transition-colors resize-none"
+                                    placeholder="E.g., Food costs feel high, not sure where money is going, vendors keep raising prices..."
                                 />
                             </div>
 
@@ -288,6 +208,7 @@ ${formData.painPoint}
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
+                                data-cta="start-audit"
                                 className="w-full bg-[#39FF14] text-[#0B0F14] font-bold py-4 px-6 rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                                 {isSubmitting ? (
@@ -297,15 +218,11 @@ ${formData.painPoint}
                                     </>
                                 ) : (
                                     <>
-                                        Get My Build Plan
+                                        Start My $500 Audit
                                         <ArrowRight className="w-5 h-5" />
                                     </>
                                 )}
                             </button>
-
-                            <p className="text-center text-xs text-gray-500">
-                                We'll respond within 24 hours.
-                            </p>
                         </form>
                     </div>
                 ) : (
@@ -318,20 +235,9 @@ ${formData.painPoint}
                             Request Sent!
                         </h2>
                         <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                            Thanks for your interest, <strong className="text-white">{formData.name}</strong>!
-                            We'll review your restaurant details and send your custom AI build plan within 24 hours.
+                            Thanks, <strong className="text-white">{formData.name}</strong>!
+                            I'll review your info and reach out within 24 hours to get started on your savings audit.
                         </p>
-                        <div className="bg-[#0B0F14] border border-white/10 rounded-lg p-4 mb-6">
-                            <p className="text-sm text-gray-400">
-                                <strong className="text-[#00E0FF]">What happens next:</strong>
-                            </p>
-                            <ul className="text-sm text-gray-300 mt-2 space-y-1 text-left max-w-sm mx-auto">
-                                <li>1. We analyze your restaurant's needs</li>
-                                <li>2. Design custom AI workflows for you</li>
-                                <li>3. Send your build plan with pricing</li>
-                                <li>4. Schedule a call to walk through it</li>
-                            </ul>
-                        </div>
                         <button
                             onClick={() => {
                                 resetForm();

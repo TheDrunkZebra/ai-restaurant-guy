@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 const stats = [
     { value: "$72,400", label: "Agency Fees Nuked" },
     { value: "0", label: "Decision Fatigue" },
-    { value: "3.2%", label: "Prime Cost Drop" },
+    { value: "3.2%", label: "Food + Labor Drop" },
     { value: "90 Days", label: "Full Recovery Time" }
 ];
 
@@ -69,11 +69,3 @@ const CaseStudy = () => {
 };
 
 export default CaseStudy;
-
-
-
-
-
-
-
-

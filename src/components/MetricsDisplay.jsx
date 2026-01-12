@@ -17,7 +17,7 @@ const metrics = [
     {
         icon: Percent,
         value: "3%",
-        label: "Prime Cost Reduction",
+        label: "Food + Labor Reduction",
         color: "text-secondary"
     }
 ];
@@ -39,11 +39,3 @@ const MetricsDisplay = () => {
 };
 
 export default MetricsDisplay;
-
-
-
-
-
-
-
-

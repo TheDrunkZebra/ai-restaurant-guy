@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import HeroSection from './sections/HeroSection';
 import SocialProofSection from './sections/SocialProofSection';
+import TestimonialSection from './sections/TestimonialSection';
 import WeekOneSection from './sections/WeekOneSection';
 import CaseStudyMetrics from './sections/CaseStudyMetrics';
 import ShopTheSystems from './sections/ShopTheSystems';
@@ -25,6 +26,7 @@ function App() {
       <Navbar onOpenModal={openModal} />
       <HeroSection onOpenModal={openModal} />
       <SocialProofSection />
+      <TestimonialSection />
       <WeekOneSection />
       <CaseStudyMetrics />
       <ShopTheSystems />

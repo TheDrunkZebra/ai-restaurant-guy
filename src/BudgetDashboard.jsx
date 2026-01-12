@@ -11,7 +11,7 @@ const BudgetDashboard = () => {
   const [dashboardData, setDashboardData] = useState({
     breakEvenTarget: 15000, // Daily break-even point
     currentSales: 8750, // Current daily sales
-    primeCost: 58.5, // Prime cost percentage
+    primeCost: 58.5, // Food + labor percentage
     laborCost: 32.1, // Labor cost percentage
     foodCost: 26.4, // Food cost percentage
     netMargin: 18.2, // Net margin percentage
@@ -20,8 +20,8 @@ const BudgetDashboard = () => {
 
   // Calculate break-even progress (0-100%)
   const breakEvenProgress = Math.min((dashboardData.currentSales / dashboardData.breakEvenTarget) * 100, 100);
-  
-  // Determine if prime cost is critical (>60%)
+
+  // Determine if food + labor is critical (>60%)
   const isPrimeCostCritical = dashboardData.primeCost > 60;
 
   // Break-Even Meter - Circular Radial Gauge
@@ -29,7 +29,7 @@ const BudgetDashboard = () => {
     const circumference = 2 * Math.PI * 90; // radius = 90
     const strokeDasharray = circumference;
     const strokeDashoffset = circumference - (progress / 100) * circumference;
-    
+
     return (
       <div className="relative w-64 h-64 mx-auto">
         <svg className="transform -rotate-90 w-full h-full" viewBox="0 0 200 200">
@@ -72,12 +72,12 @@ const BudgetDashboard = () => {
     );
   };
 
-  // Prime Cost Card Component
+  // Food + Labor Card Component
   const PrimeCostCard = ({ title, value, label, isCritical = false }) => {
     return (
       <div className={`bg-[#0E131B] border-2 rounded-xl p-6 transition-all ${
-        isCritical 
-          ? 'border-red-500 animate-pulse' 
+        isCritical
+          ? 'border-red-500 animate-pulse'
           : 'border-[#1F2937] hover:border-[#00E0FF]/30'
       }`}>
         <div className="text-sm text-[#94A3B8] mb-2 font-mono uppercase tracking-wider">
@@ -102,11 +102,11 @@ const BudgetDashboard = () => {
 
     useEffect(() => {
       if (!directive) return;
-      
+
       setIsTyping(true);
       setDisplayedText('');
       let currentIndex = 0;
-      
+
       const typeInterval = setInterval(() => {
         if (currentIndex < directive.length) {
           setDisplayedText(directive.substring(0, currentIndex + 1));
@@ -145,7 +145,7 @@ const BudgetDashboard = () => {
             Blueprint for Predictable Profits
           </p>
           <p className="text-lg text-[#64748B] max-w-3xl mx-auto">
-            Your Strategic Command Center for long-term survival and scale. Real-time break-even analysis, prime cost mapping, and AI-powered variance detection.
+            Your Strategic Command Center for long-term survival and scale. Real-time break-even analysis, food + labor mapping, and AI-powered variance detection.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ const BudgetDashboard = () => {
               <h3 className="text-xl font-bold text-[#F8FAFC] mb-6 text-center font-mono uppercase tracking-wider">
                 Break-Even Meter
               </h3>
-              <BreakEvenMeter 
+              <BreakEvenMeter
                 progress={breakEvenProgress}
                 target={dashboardData.breakEvenTarget}
                 current={dashboardData.currentSales}
@@ -170,11 +170,11 @@ const BudgetDashboard = () => {
             </div>
           </div>
 
-          {/* Center: Prime Cost Cards */}
+          {/* Center: Food + Labor Cards */}
           <div className="lg:col-span-2">
             <div className="bg-[#0E131B] border border-[#1F2937] rounded-xl p-8">
               <h3 className="text-xl font-bold text-[#F8FAFC] mb-6 font-mono uppercase tracking-wider">
-                Prime Cost Dashboard
+                Food + Labor Dashboard
               </h3>
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <PrimeCostCard
@@ -188,7 +188,7 @@ const BudgetDashboard = () => {
                   label="Of Revenue"
                 />
                 <PrimeCostCard
-                  title="Prime Cost"
+                  title="Food + Labor"
                   value={dashboardData.primeCost}
                   label="Labor + COGS"
                   isCritical={isPrimeCostCritical}
@@ -222,7 +222,7 @@ const BudgetDashboard = () => {
           </div>
           <div className="bg-[#0E131B] border border-[#1F2937] rounded-xl p-6">
             <div className="text-2xl mb-3">📊</div>
-            <h4 className="text-lg font-bold text-[#F8FAFC] mb-2">Prime Cost Mapping</h4>
+            <h4 className="text-lg font-bold text-[#F8FAFC] mb-2">Food + Labor Mapping</h4>
             <p className="text-sm text-[#94A3B8]">
               Live KPI dashboard aggregating labor and food costs.
             </p>
@@ -389,12 +389,3 @@ const BudgetDashboard = () => {
 };
 
 export default BudgetDashboard;
-
-
-
-
-
-
-
-
-

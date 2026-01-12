@@ -10,7 +10,7 @@ const PricingSection = ({ onOpenModal }) => {
             period: "/mo",
             commitment: "6-month minimum",
             target: "$1.5M–$2.5M revenue",
-            promise: "2x monthly fee in savings—or we work free",
+            promise: "2× your monthly fee in documented savings—or we keep working",
             popular: false,
             features: [
                 { icon: FileSearch, text: "Profit Hunter (Contract Audits + Invoice Processing)" },
@@ -26,7 +26,7 @@ const PricingSection = ({ onOpenModal }) => {
             period: "/mo",
             commitment: "6-month minimum",
             target: "$2.5M–$4M revenue",
-            promise: "Find $10k+ savings + systemize ops in 60 days",
+            promise: "2× your monthly fee in documented savings—or we keep working",
             popular: true,
             features: [
                 { icon: Check, text: "Everything in Foundation" },
@@ -44,7 +44,7 @@ const PricingSection = ({ onOpenModal }) => {
             period: "/mo",
             commitment: "6-month minimum",
             target: "Multi-unit / Absentee Owners",
-            promise: "30% time reduction + full ops visibility in 90 days",
+            promise: "2× your monthly fee in documented savings—or we keep working",
             popular: false,
             features: [
                 { icon: Check, text: "Everything in Growth" },
@@ -76,14 +76,14 @@ const PricingSection = ({ onOpenModal }) => {
                             </span>
                         </div>
                         <p className="text-gray-300 mb-4 max-w-lg mx-auto">
-                            We audit your vendor contracts and deliver a Found Money Report.
-                            Typical finds: $5k–$15k in year-one savings. If we find nothing, you pay nothing.
+                            We audit your vendor contracts and deliver a Found Money Report with documented savings opportunities.
                         </p>
                         <button
                             onClick={onOpenModal}
+                            data-cta="start-audit"
                             className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#0B0F14] bg-[#00E0FF] rounded-lg hover:bg-[#00C4E0] transition-all"
                         >
-                            Get Your Savings Audit
+                            Start $500 Audit
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </button>
                     </div>
@@ -156,13 +156,14 @@ const PricingSection = ({ onOpenModal }) => {
 
                             <button
                                 onClick={onOpenModal}
+                                data-cta="start-audit"
                                 className={`w-full py-3 rounded-lg font-semibold transition-all ${
                                     pkg.popular
                                         ? 'bg-[#39FF14] text-[#0B0F14] hover:bg-[#2FE010] shadow-lg shadow-[#39FF14]/30'
                                         : 'bg-white/10 text-white hover:bg-white/20'
                                 }`}
                             >
-                                {pkg.cta}
+                                Start $500 Audit
                             </button>
                         </div>
                     ))}

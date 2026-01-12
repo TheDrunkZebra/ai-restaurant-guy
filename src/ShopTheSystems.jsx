@@ -28,8 +28,8 @@ const ShopTheSystems = () => {
       id: 3,
       title: "Financial Intelligence",
       price: "2997",
-      description: "Real-time prime cost tracking and automated vendor invoice auditing.",
-      features: ["Prime cost alerts", "Vendor audit", "Break-even analysis"],
+      description: "Real-time food + labor tracking and automated vendor invoice auditing.",
+      features: ["Food + labor alerts", "Vendor audit", "Break-even analysis"],
       buttonHref: "#audit",
       buttonText: "Get Started"
     },
@@ -56,7 +56,7 @@ const ShopTheSystems = () => {
             Battle-tested automation built in real restaurants
           </p>
         </div>
-        
+
         {/* Product Grid */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {products.map((product) => (

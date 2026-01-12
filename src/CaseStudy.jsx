@@ -30,7 +30,7 @@ const CaseStudy = () => {
           </div>
           <div className="bg-[#0E131B]/40 backdrop-blur-sm border border-[#1F2937]/50 rounded-2xl p-10 text-center hover:border-[#9EF01A]/30 transition-all duration-300">
             <div className="text-6xl font-bold text-[#9EF01A] mb-4 font-mono leading-none">3%</div>
-            <div className="text-[#94A3B8] text-lg">Prime cost reduction</div>
+            <div className="text-[#94A3B8] text-lg">Food + labor reduction</div>
           </div>
           <div className="bg-[#0E131B]/40 backdrop-blur-sm border border-[#1F2937]/50 rounded-2xl p-10 text-center hover:border-[#00E0FF]/30 transition-all duration-300">
             <div className="text-6xl font-bold text-[#00E0FF] mb-4 font-mono leading-none">5</div>
@@ -48,7 +48,7 @@ const CaseStudy = () => {
               We deployed the Content Creation Engine to break free from expensive agency retainers. Results were immediate—we generated the volume of platform-perfect content needed for Instagram and Google My Business instantly.
             </p>
             <p>
-              The real breakthrough came when we cross-referenced success with the Financial Intelligence Engine. While sales were up, the system flagged a critical Prime Cost variance—a popular menu item had a hidden margin leak threatening to eliminate all new profit.
+              The real breakthrough came when we cross-referenced success with the Financial Intelligence Engine. While sales were up, the system flagged a critical food + labor variance—a popular menu item had a hidden margin leak threatening to eliminate all new profit.
             </p>
             <p className="text-[#F8FAFC] font-semibold text-xl">
               We adjusted vendors and prices immediately, protecting the bottom line instead of reacting 90 days later. We weren't just marketing better—we were operating smarter.

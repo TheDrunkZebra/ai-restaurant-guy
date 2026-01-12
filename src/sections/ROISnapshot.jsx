@@ -1,76 +1,72 @@
 import React from 'react';
-import { ArrowRight, TrendingDown, TrendingUp } from 'lucide-react';
+import { ArrowRight, FileSearch, BarChart3, ShieldCheck } from 'lucide-react';
 
 const ROISnapshot = ({ onOpenModal }) => {
     return (
         <section className="py-20 bg-[#0B0F14] text-[#F8FAFC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                    Your ROI Potential
+                    How the Audit Works
                 </h2>
                 <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-                    Real results from our contract auditor and budget systems
+                    Simple process, documented savings
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                    <div className="bg-surface/50 border border-white/10 rounded-lg p-8">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-[#39FF14]/20 flex items-center justify-center">
-                                <TrendingDown className="w-5 h-5 text-[#39FF14]" />
-                            </div>
-                            <h3 className="text-2xl font-semibold text-[#F8FAFC]">
-                                Cost Savings
-                            </h3>
+                {/* How it works steps */}
+                <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+                    <div className="text-center">
+                        <div className="w-14 h-14 rounded-full bg-[#39FF14]/20 flex items-center justify-center mx-auto mb-4">
+                            <span className="text-2xl font-bold text-[#39FF14]">1</span>
                         </div>
-                        <ul className="space-y-3 text-gray-300">
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#39FF14]">$120k/year</span> overhead reduced via contract audits
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#39FF14]">$72k/year</span> saved on social media management
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#39FF14]">8%</span> drop in food costs
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#39FF14]">10%</span> labor cost reduction
-                            </li>
-                        </ul>
+                        <h3 className="text-lg font-semibold text-[#F8FAFC] mb-2">
+                            Start the $500 audit
+                        </h3>
+                        <p className="text-sm text-gray-400">
+                            Tell me about your restaurant and share your vendor contracts
+                        </p>
                     </div>
-
-                    <div className="bg-surface/50 border border-white/10 rounded-lg p-8">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-[#00E0FF]/20 flex items-center justify-center">
-                                <TrendingUp className="w-5 h-5 text-[#00E0FF]" />
-                            </div>
-                            <h3 className="text-2xl font-semibold text-[#F8FAFC]">
-                                Operational Wins
-                            </h3>
+                    <div className="text-center">
+                        <div className="w-14 h-14 rounded-full bg-[#39FF14]/20 flex items-center justify-center mx-auto mb-4">
+                            <span className="text-2xl font-bold text-[#39FF14]">2</span>
                         </div>
-                        <ul className="space-y-3 text-gray-300">
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#00E0FF]">46%</span> prime cost achieved
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#00E0FF]">20+ hours/week</span> saved on admin tasks
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-[#00E0FF]">Faster decisions</span> with real-time data
-                            </li>
-                        </ul>
+                        <h3 className="text-lg font-semibold text-[#F8FAFC] mb-2">
+                            We map where money is leaking
+                        </h3>
+                        <p className="text-sm text-gray-400">
+                            Same system I use in my own spots—contract audits, invoice review, vendor benchmarks
+                        </p>
+                    </div>
+                    <div className="text-center">
+                        <div className="w-14 h-14 rounded-full bg-[#39FF14]/20 flex items-center justify-center mx-auto mb-4">
+                            <span className="text-2xl font-bold text-[#39FF14]">3</span>
+                        </div>
+                        <h3 className="text-lg font-semibold text-[#F8FAFC] mb-2">
+                            Get a prioritized savings plan
+                        </h3>
+                        <p className="text-sm text-gray-400">
+                            Found Money Report with documented savings opportunities + next steps
+                        </p>
                     </div>
                 </div>
 
-                <p className="text-center text-lg text-gray-300 mb-8">
-                    Foundation tier ($2,000/mo) typically pays for itself in Week 2. Growth tier ($4,000/mo) in Month 1.
-                </p>
+                {/* Guarantee box */}
+                <div className="bg-[#39FF14]/10 border border-[#39FF14]/30 rounded-xl p-6 max-w-2xl mx-auto mb-8">
+                    <div className="flex items-start gap-4">
+                        <ShieldCheck className="w-6 h-6 text-[#39FF14] flex-shrink-0 mt-1" />
+                        <p className="text-gray-300">
+                            <span className="font-semibold text-[#39FF14]">2× guarantee:</span> if we can't uncover at least 2× your audit fee in documented savings opportunities, we keep working at no extra cost until we do.
+                        </p>
+                    </div>
+                </div>
 
                 <div className="text-center">
                     <button
+                        id="roi-cta-primary"
+                        data-cta="start-audit"
                         onClick={onOpenModal}
                         className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
                     >
-                        Start with $500 Savings Audit
+                        Start $500 Audit
                         <ArrowRight className="ml-2 w-5 h-5" />
                     </button>
                 </div>

@@ -72,11 +72,11 @@ const HowItWorks = () => {
                             <Check className="w-6 h-6 text-[#39FF14]" />
                         </div>
                         <h3 className="text-xl md:text-2xl font-semibold text-[#F8FAFC]">
-                            Our Guarantee: 2x ROI or We Work Free
+                            2× Guarantee
                         </h3>
                     </div>
                     <p className="text-base md:text-lg text-gray-300">
-                        We find 2x your monthly fee in documented savings within 30 days—or we keep working until you hit it. No weasel words. No fine print. We've never had to invoke it.
+                        If we can't uncover at least 2× your audit fee in documented savings opportunities, we keep working at no extra cost until we do.
                     </p>
                 </div>
             </div>

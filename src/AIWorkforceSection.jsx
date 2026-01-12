@@ -88,7 +88,7 @@ const AIWorkforceSection = () => {
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <div className="text-[#64748B] font-mono text-xs mb-1">Prime Cost %</div>
+                    <div className="text-[#64748B] font-mono text-xs mb-1">Food + Labor %</div>
                     <div className="text-3xl font-bold text-[#9EF01A] font-mono">62.4</div>
                   </div>
                   <div>
@@ -192,12 +192,3 @@ const AIWorkforceSection = () => {
 };
 
 export default AIWorkforceSection;
-
-
-
-
-
-
-
-
-

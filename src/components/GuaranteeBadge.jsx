@@ -8,19 +8,19 @@ const GuaranteeBadge = ({ variant = 'default' }) => {
             bg: 'bg-[#39FF14]/10',
             border: 'border-[#39FF14]/30',
             text: 'text-[#39FF14]',
-            message: '2x ROI OR WE WORK FREE'
+            message: '2× GUARANTEE'
         },
         hero: {
             bg: 'bg-[#39FF14]/15',
             border: 'border-[#39FF14]/40',
             text: 'text-[#39FF14]',
-            message: '2x YOUR MONTHLY FEE IN SAVINGS — GUARANTEED'
+            message: '2× YOUR AUDIT FEE IN SAVINGS — GUARANTEED'
         },
         compact: {
             bg: 'bg-[#39FF14]/10',
             border: 'border-[#39FF14]/20',
             text: 'text-[#39FF14]',
-            message: '2x ROI GUARANTEE'
+            message: '2× GUARANTEE'
         }
     };
 

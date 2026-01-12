@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 const Navbar = ({ onOpenModal }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -13,28 +14,42 @@ const Navbar = ({ onOpenModal }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleSystemClick = (e) => {
+        e.preventDefault();
+        const systemSection = document.getElementById('system');
+        if (systemSection) {
+            systemSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsOpen(false);
+    };
+
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#0B0F14]/80 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-6'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
-                    {/* Brand - Name removed per request */}
+                    {/* Brand */}
                     <div className="flex items-center">
-                        <h1 className="text-xl font-bold text-[#F8FAFC]">The AI Restaurant Guy</h1>
+                        <h1 className="text-xl font-bold text-[#F8FAFC]">{SITE_CONFIG.brandName}</h1>
                     </div>
 
                     {/* Desktop Nav - ONE primary CTA */}
                     <div className="hidden md:flex items-center gap-6">
                         <a
-                            href="#demo"
+                            id="nav-see-system"
+                            data-nav="see-system"
+                            href="#system"
+                            onClick={handleSystemClick}
                             className="text-sm text-gray-400 hover:text-[#00E0FF] transition-colors"
                         >
                             See the System
                         </a>
                         <button
+                            id="nav-cta-primary"
+                            data-cta="start-audit"
                             onClick={onOpenModal}
                             className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
                         >
-                            Start $500 Audit
+                            {SITE_CONFIG.navCTA}
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </button>
                     </div>
@@ -48,10 +63,19 @@ const Navbar = ({ onOpenModal }) => {
                 {/* Mobile Menu - ONE primary CTA */}
                 {isOpen && (
                     <div className="md:hidden absolute top-full left-0 w-full bg-[#0B0F14] border-b border-white/10 p-6 flex flex-col gap-4">
-                        <button onClick={() => { onOpenModal(); setIsOpen(false); }} className="text-lg font-semibold text-[#39FF14] text-left">
-                            Start $500 Audit →
+                        <button
+                            onClick={() => { onOpenModal(); setIsOpen(false); }}
+                            className="text-lg font-semibold text-[#39FF14] text-left"
+                            data-cta="start-audit"
+                        >
+                            {SITE_CONFIG.navCTA} →
                         </button>
-                        <a href="#demo" className="text-sm text-gray-400" onClick={() => setIsOpen(false)}>
+                        <a
+                            href="#system"
+                            className="text-sm text-gray-400"
+                            onClick={handleSystemClick}
+                            data-nav="see-system"
+                        >
                             See the System
                         </a>
                     </div>

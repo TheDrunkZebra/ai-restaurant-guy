@@ -250,7 +250,7 @@ const ProfitProtocolAudit = () => {
                                 <div className="space-y-4 pt-6 mt-6 border-t border-white/5">
                                     <h4 className="text-[10px] uppercase tracking-[0.2em] text-primary font-black italic">Operational Audit Matrix</h4>
 
-                                    {/* Prime Costs Row */}
+                                    {/* Food + Labor Row */}
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <label className="block text-[9px] uppercase font-black text-textSecondary tracking-widest ml-1 italic">Food Cost %</label>
