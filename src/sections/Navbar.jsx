@@ -23,21 +23,21 @@ const Navbar = ({ onOpenModal }) => {
                         <span className="text-sm text-gray-400 hidden sm:inline">Seamus O'Brien</span>
                     </div>
 
-                    {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-4">
+                    {/* Desktop Nav - ONE primary CTA */}
+                    <div className="hidden md:flex items-center gap-6">
+                        <a
+                            href="#demo"
+                            className="text-sm text-gray-400 hover:text-[#00E0FF] transition-colors"
+                        >
+                            See Demo
+                        </a>
                         <button
                             onClick={onOpenModal}
                             className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
                         >
-                            Get My AI Build Plan
-                        </button>
-                        <a
-                            href="#demo"
-                            className="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-[#0B0F14] bg-[#00E0FF] rounded-lg hover:bg-[#00C4E0] transition-all shadow-lg shadow-[#00E0FF]/50"
-                        >
-                            See the 2‑min Demo
+                            Start $500 Audit
                             <ArrowRight className="ml-2 w-4 h-4" />
-                        </a>
+                        </button>
                     </div>
 
                     {/* Mobile Toggle */}
@@ -46,14 +46,14 @@ const Navbar = ({ onOpenModal }) => {
                     </button>
                 </div>
 
-                {/* Mobile Menu */}
+                {/* Mobile Menu - ONE primary CTA */}
                 {isOpen && (
                     <div className="md:hidden absolute top-full left-0 w-full bg-[#0B0F14] border-b border-white/10 p-6 flex flex-col gap-4">
-                        <button onClick={() => { onOpenModal(); setIsOpen(false); }} className="text-lg font-semibold text-[#F8FAFC] text-left">
-                            Get My AI Build Plan
+                        <button onClick={() => { onOpenModal(); setIsOpen(false); }} className="text-lg font-semibold text-[#39FF14] text-left">
+                            Start $500 Audit →
                         </button>
-                        <a href="#demo" className="text-lg font-semibold text-[#00E0FF]" onClick={() => setIsOpen(false)}>
-                            See the 2‑min Demo
+                        <a href="#demo" className="text-sm text-gray-400" onClick={() => setIsOpen(false)}>
+                            See Demo
                         </a>
                     </div>
                 )}
