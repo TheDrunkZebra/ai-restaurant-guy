@@ -151,12 +151,15 @@ const BlogPost = ({ onOpenModal }) => {
                 <meta name="description" content={post.description} />
                 <meta property="og:title" content={post.title} />
                 <meta property="og:description" content={post.description} />
+                <meta property="og:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="article:published_time" content={post.date} />
                 {post.tags.map(tag => (
                     <meta key={tag} property="article:tag" content={tag} />
                 ))}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <link rel="canonical" href={canonicalUrl} />
             </Helmet>
 

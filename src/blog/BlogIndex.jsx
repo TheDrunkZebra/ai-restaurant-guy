@@ -22,8 +22,11 @@ const BlogIndex = ({ onOpenModal }) => {
                 <meta name="description" content="Real stories from running three restaurants in Jupiter, FL. Lessons on operations, AI automation, and profitability from an owner-operator." />
                 <meta property="og:title" content="Owner Stories | The AI Restaurant Guy" />
                 <meta property="og:description" content="Real stories from running three restaurants in Jupiter, FL. Lessons on operations, AI automation, and profitability." />
+                <meta property="og:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://theairestaurantguy.com/blog" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <link rel="canonical" href="https://theairestaurantguy.com/blog" />
             </Helmet>
 
