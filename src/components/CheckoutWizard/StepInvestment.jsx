@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, Check, Shield, Calendar, TrendingUp, Clock, DollarSign } from 'lucide-react';
 
 const StepInvestment = ({ formData, updateFormData, totals, onBack, onClose }) => {
@@ -18,18 +18,41 @@ const StepInvestment = ({ formData, updateFormData, totals, onBack, onClose }) =
     const totalLowROI = roi.vendorSavings.low + roi.laborOptimization.low + roi.reviewDriven.low;
     const totalHighROI = roi.vendorSavings.high + roi.laborOptimization.high + roi.reviewDriven.high;
 
-    const handleFullCheckout = () => {
-        // TODO: Integrate with Stripe Checkout
-        // For now, show alert with next steps
-        alert('Stripe integration coming soon! For now, book a Discovery Audit to get started.');
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleCheckout = async (type) => {
+        setIsLoading(true);
+        try {
+            const response = await fetch('/api/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: type === 'audit' ? 'discovery-audit' : 'package',
+                    package: type === 'audit' ? null : formData.selectedPackage,
+                    addOns: formData.addOns,
+                    customerEmail: formData.email,
+                    customerName: formData.name,
+                    restaurantName: formData.restaurantName,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                throw new Error(data.error || 'Failed to create checkout session');
+            }
+        } catch (error) {
+            console.error('Checkout error:', error);
+            alert('Something went wrong. Please try again or contact us directly.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
-    const handleDiscoveryAudit = () => {
-        // TODO: Redirect to Stripe for $1,000 audit
-        // For now, close modal and trigger the main CTA modal
-        onClose();
-        // The main site modal will handle booking
-    };
+    const handleFullCheckout = () => handleCheckout('package');
+    const handleDiscoveryAudit = () => handleCheckout('audit');
 
     return (
         <div className="space-y-8">
