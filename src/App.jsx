@@ -12,6 +12,7 @@ import HowSystemsWork from './sections/HowSystemsWork';
 import PricingSection from './sections/PricingSection';
 import ROISnapshot from './sections/ROISnapshot';
 import LightbulbCaseStudy from './sections/LightbulbCaseStudy';
+import AboutSection from './sections/AboutSection';
 import HowItWorks from './sections/HowItWorks';
 import FAQ from './sections/FAQ';
 import FinalCTA from './sections/FinalCTA';
@@ -39,6 +40,7 @@ function LandingPage({ onOpenModal }) {
       <PricingSection onOpenModal={onOpenModal} />
       <ROISnapshot onOpenModal={onOpenModal} />
       <LightbulbCaseStudy />
+      <AboutSection onOpenModal={onOpenModal} />
       <HowItWorks />
       <FAQ />
       <FinalCTA onOpenModal={onOpenModal} />
