@@ -64,10 +64,10 @@ const HeroSection = ({ onOpenModal }) => {
 
                         {/* Main Headline */}
                         <h1 className="text-[1.75rem] leading-[1.2] md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-6 md:mb-8 font-display md:leading-tight">
-                            I Figured Out
+                            The AI Systems Behind
                             <br className="hidden md:block" />
                             <span className="md:hidden"> </span>
-                            <span className="text-[#39FF14]">AI for Restaurants.</span>
+                            <span className="text-[#39FF14]">20%+ Profit.</span>
                         </h1>
 
                         {/* Subhead */}
