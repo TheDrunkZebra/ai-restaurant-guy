@@ -75,7 +75,7 @@ const HeroSection = ({ onOpenModal }) => {
                             <img
                                 src="/seamus-portrait.jpg"
                                 alt="Seamus O'Brien"
-                                className="w-14 h-14 rounded-full object-cover border-2 border-[#39FF14]/50"
+                                className="w-14 h-14 rounded-full object-cover object-top border-2 border-[#39FF14]/50"
                             />
                             <p className="text-base md:text-lg text-gray-300 leading-relaxed text-left">
                                 I built these systems for my own 3 restaurants.
