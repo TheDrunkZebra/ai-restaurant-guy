@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 const Navbar = ({ onOpenModal }) => {
@@ -32,7 +33,7 @@ const Navbar = ({ onOpenModal }) => {
                         <h1 className="text-xl font-bold text-[#F8FAFC]">{SITE_CONFIG.brandName}</h1>
                     </div>
 
-                    {/* Desktop Nav - ONE primary CTA */}
+                    {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-6">
                         <a
                             id="nav-see-system"
@@ -43,6 +44,22 @@ const Navbar = ({ onOpenModal }) => {
                         >
                             See the System
                         </a>
+                        <a
+                            href="#about"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="text-sm text-gray-400 hover:text-[#00E0FF] transition-colors"
+                        >
+                            My Story
+                        </a>
+                        <Link
+                            to="/blog"
+                            className="text-sm text-gray-400 hover:text-[#00E0FF] transition-colors"
+                        >
+                            Blog
+                        </Link>
                         <button
                             id="nav-cta-primary"
                             data-cta="start-audit"
@@ -60,7 +77,7 @@ const Navbar = ({ onOpenModal }) => {
                     </button>
                 </div>
 
-                {/* Mobile Menu - ONE primary CTA */}
+                {/* Mobile Menu */}
                 {isOpen && (
                     <div className="md:hidden absolute top-full left-0 w-full bg-[#0B0F14] border-b border-white/10 p-6 flex flex-col gap-4">
                         <button
@@ -78,6 +95,24 @@ const Navbar = ({ onOpenModal }) => {
                         >
                             See the System
                         </a>
+                        <a
+                            href="#about"
+                            className="text-sm text-gray-400"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                                setIsOpen(false);
+                            }}
+                        >
+                            My Story
+                        </a>
+                        <Link
+                            to="/blog"
+                            className="text-sm text-gray-400"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Blog
+                        </Link>
                     </div>
                 )}
             </div>
