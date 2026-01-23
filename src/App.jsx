@@ -4,7 +4,6 @@ import { HelmetProvider } from 'react-helmet-async';
 
 // Landing Page Sections
 import HeroSection from './sections/HeroSection';
-import SocialProofSection from './sections/SocialProofSection';
 import TestimonialSection from './sections/TestimonialSection';
 import WeekOneSection from './sections/WeekOneSection';
 import CaseStudyMetrics from './sections/CaseStudyMetrics';
@@ -35,7 +34,6 @@ function LandingPage({ onOpenModal }) {
     <>
       <Navbar onOpenModal={onOpenModal} />
       <HeroSection onOpenModal={onOpenModal} />
-      <SocialProofSection />
       <TestimonialSection />
       <WeekOneSection />
       <CaseStudyMetrics />

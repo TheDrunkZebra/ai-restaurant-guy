@@ -113,6 +113,34 @@ const HeroSection = ({ onOpenModal }) => {
                                 </div>
                             ))}
                         </div>
+
+                        {/* Mobile Venue Selector */}
+                        <div className="md:hidden mt-8 pt-6 border-t border-white/10">
+                            <p className="text-xs text-gray-500 text-center mb-3">Tap a venue to see the real numbers</p>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => setSelectedVenue('bagel-boyz')}
+                                    className="flex-1 bg-[#39FF14]/20 border border-[#39FF14]/30 rounded-lg px-3 py-3 text-center active:bg-[#39FF14]/30 transition-all"
+                                >
+                                    <div className="text-xs font-medium text-[#39FF14]">Bagel Boyz</div>
+                                    <div className="text-[10px] text-gray-500">Deli</div>
+                                </button>
+                                <button
+                                    onClick={() => setSelectedVenue('salty-zebra')}
+                                    className="flex-1 bg-[#00E0FF]/20 border border-[#00E0FF]/30 rounded-lg px-3 py-3 text-center active:bg-[#00E0FF]/30 transition-all"
+                                >
+                                    <div className="text-xs font-medium text-[#00E0FF]">Salty Zebra</div>
+                                    <div className="text-[10px] text-gray-500">Bistro</div>
+                                </button>
+                                <button
+                                    onClick={() => setSelectedVenue('locals-pub')}
+                                    className="flex-1 bg-[#FBBF24]/20 border border-[#FBBF24]/30 rounded-lg px-3 py-3 text-center active:bg-[#FBBF24]/30 transition-all"
+                                >
+                                    <div className="text-xs font-medium text-[#FBBF24]">Locals Pub</div>
+                                    <div className="text-[10px] text-gray-500">Bar</div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Right Column: Portfolio Dashboard Preview */}

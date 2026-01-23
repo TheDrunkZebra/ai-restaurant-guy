@@ -72,11 +72,11 @@ const HowItWorks = () => {
                             <Check className="w-6 h-6 text-[#39FF14]" />
                         </div>
                         <h3 className="text-xl md:text-2xl font-semibold text-[#F8FAFC]">
-                            2× Guarantee
+                            60-Day Visibility Guarantee
                         </h3>
                     </div>
                     <p className="text-base md:text-lg text-gray-300">
-                        If we can't uncover at least 2× your audit fee in documented savings opportunities, we keep working at no extra cost until we do.
+                        If you don't have clearer visibility into your operations after 60 days—real dashboards, real insights, real time saved—I'll refund your setup fee. No hoops.
                     </p>
                 </div>
             </div>

@@ -54,7 +54,7 @@ const ROISnapshot = ({ onOpenModal }) => {
                     <div className="flex items-start gap-4">
                         <ShieldCheck className="w-6 h-6 text-[#39FF14] flex-shrink-0 mt-1" />
                         <p className="text-gray-300">
-                            <span className="font-semibold text-[#39FF14]">2× guarantee:</span> if we can't uncover at least 2× your audit fee in documented savings opportunities, we keep working at no extra cost until we do.
+                            <span className="font-semibold text-[#39FF14]">60-Day Visibility Guarantee:</span> If you don't have clearer visibility into your operations after 60 days—real dashboards, real insights, real time saved—I'll refund your setup fee. No hoops.
                         </p>
                     </div>
                 </div>
