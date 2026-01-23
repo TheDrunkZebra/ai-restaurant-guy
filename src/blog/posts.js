@@ -14,6 +14,192 @@
 
 export const posts = [
     {
+        slug: '94-percent-forecast-accuracy-how-ai-predicts-weekly-sales',
+        title: "94% Forecast Accuracy: How AI Predicts My Weekly Sales",
+        description: "Most owners guess at next week's sales. I stopped guessing and built a system that hits within 6% every week. Here's how it works.",
+        date: '2026-01-23',
+        tags: ['AI Systems', 'Operations', 'Forecasting'],
+        readTime: 7,
+        youtubeId: null,
+        content: `
+## I Used to Guess Like Everyone Else
+
+Every Sunday night, same ritual: stare at last week's numbers, think about the weather, remember that big party coming in, and write down a sales target for the week.
+
+Sometimes I was close. Mostly I wasn't.
+
+Labor scheduling was a disaster. I'd overstaff slow days and scramble on busy ones. Food orders were either too much (waste) or too little (86'd items and angry guests).
+
+Then I built a forecasting system that changed everything.
+
+## What 94% Accuracy Actually Means
+
+When I say 94% accuracy, I mean: **my predicted weekly sales land within 6% of actual sales, every week.**
+
+That's not a one-time lucky guess. That's consistent, reliable forecasting across three different restaurant concepts.
+
+Here's a recent example from Bagel Boyz:
+
+- **Predicted:** $48,200
+- **Actual:** $49,847
+- **Variance:** 3.4%
+
+That level of precision means:
+- Labor schedules that actually match demand
+- Food orders that minimize waste
+- Cash flow projections I can trust
+- Less stress on Monday morning
+
+## The Old Way vs. The New Way
+
+**How most restaurants forecast:**
+
+1. Look at last year's same week
+2. Adjust for "feel" (weather, events, gut)
+3. Hope for the best
+4. React when it's wrong
+
+**How my AI system forecasts:**
+
+1. Analyze 3+ years of historical data by day
+2. Factor in seasonality patterns (13-week rolling)
+3. Adjust for day-of-week trends
+4. Weight recent performance vs. historical
+5. Flag anomalies (holidays, local events)
+6. Generate confidence intervals
+
+The difference isn't just accuracy—it's the ability to know *why* the forecast is what it is.
+
+## The Data That Powers It
+
+The system needs clean data to work. Here's what feeds into my forecasts:
+
+**From Toast/POS:**
+- Daily sales by revenue center
+- Hourly sales patterns
+- Day-of-week performance
+- Product mix data
+
+**Historical Context:**
+- Same week last year
+- Same week two years ago
+- 13-week rolling average
+- Trend direction (up/down/flat)
+
+**Manual Inputs:**
+- Known large parties
+- Local events (concerts, sports)
+- Weather extremes
+- Marketing pushes
+
+## How I Built It
+
+I'm not a data scientist. I'm a restaurant operator who got obsessed with spreadsheets and then discovered AI tools that could do the heavy lifting.
+
+The core system runs on:
+
+1. **Data extraction** from Toast (automated weekly export)
+2. **Historical database** tracking 3+ years of daily sales
+3. **AI analysis** that finds patterns I'd never see manually
+4. **Forecast generation** every Sunday for the coming week
+5. **Variance tracking** to continuously improve accuracy
+
+The first version was a mess of spreadsheets. The current version runs mostly automatically—I review and adjust, but I'm not building formulas anymore.
+
+## What I Learned About Restaurant Patterns
+
+Building this system taught me things about my own business I'd never noticed:
+
+**Bagel Boyz patterns:**
+- 55.8% of revenue happens by 9 AM
+- Thursdays outperform Fridays by 12%
+- Week 1 of the month is always strongest
+
+**Salty Zebra patterns:**
+- Saturday dinner is 3x any weeknight
+- Weather impacts Tuesday more than Friday
+- Holiday weekends destroy our forecasts (need special handling)
+
+**Locals Pub patterns:**
+- Live music nights add exactly 34% on average
+- Football Sundays are their own category
+- Wednesday is mysteriously strong (wing special working)
+
+You can't see these patterns by glancing at a P&L. You need to track daily, over years, and let the data speak.
+
+## The Labor Scheduling Payoff
+
+Here's where forecasting pays off most: **labor**.
+
+Before accurate forecasts:
+- Overstaffed Mondays (slow, paying people to stand around)
+- Understaffed Saturdays (chaos, bad service, burnt-out team)
+- Labor cost swinging between 22% and 31%
+
+After accurate forecasts:
+- Schedule matches predicted demand
+- Labor cost holds between 17-19% at Bagel Boyz
+- Staff prefer it (consistent hours, less chaos)
+
+At a 10-point labor cost improvement on $2.5M revenue, that's **$250K annually** in savings. Just from knowing what's coming.
+
+## Why Most "Forecasting Tools" Fail
+
+POS companies love to sell forecasting features. Most are useless because:
+
+1. **They only use your data** - No context from similar restaurants
+2. **They ignore your business patterns** - Generic algorithms, not your reality
+3. **They don't learn** - Same dumb predictions even when wrong
+4. **No human review** - Garbage in, garbage out
+
+My system works because it combines AI pattern recognition with human judgment. I review every forecast before it becomes the target. The AI does the math; I apply the context.
+
+## Building This For Other Restaurants
+
+When I install AI systems for other operators, forecasting is usually the first module.
+
+Here's what it takes:
+
+**Week 1:** Data audit and extraction setup
+- Pull historical sales data (need 12+ months minimum)
+- Clean and structure for analysis
+- Identify data gaps or quality issues
+
+**Week 2:** Pattern analysis
+- AI analyzes historical trends
+- Identifies seasonality, day-of-week, anomalies
+- Creates baseline forecast model
+
+**Week 3:** Calibration
+- Run predictions against recent actuals
+- Adjust model weights
+- Add business-specific factors
+
+**Week 4+:** Live forecasting
+- Weekly forecasts delivered Sunday
+- Variance tracking and continuous improvement
+- Quarterly model refinement
+
+Most operators see 80%+ accuracy within the first month. 90%+ within three months.
+
+## The Real Point
+
+Forecasting isn't about predicting the future perfectly. It's about **making better decisions with imperfect information**.
+
+When you know—with reasonable confidence—that next Tuesday will be slow, you can:
+- Schedule lighter
+- Run a targeted special
+- Focus prep on high-margin items
+- Plan your own time better
+
+When you're guessing, you're reacting. When you're forecasting, you're operating.
+
+---
+
+*If you're tired of guessing at next week's sales, this is one of the first systems I install in the Discovery Audit. We'll pull your historical data, build a forecasting baseline, and show you what 90%+ accuracy looks like in your restaurant.*
+        `.trim()
+    },
+    {
         slug: 'how-we-decide-which-specials-to-run',
         title: "How We Decide Which Specials to Run (It's Not Guessing)",
         description: "Tuesday was dying at Salty Zebra. Then we pulled the data, found the right item, and watched sales jump 56% year-over-year. Here's the exact process.",
