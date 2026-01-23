@@ -18,15 +18,12 @@ const BlogIndex = ({ onOpenModal }) => {
     return (
         <>
             <Helmet>
-                <title>Owner Stories | The AI Restaurant Guy</title>
-                <meta name="description" content="Real stories from running three restaurants in Jupiter, FL. Lessons on operations, AI automation, and profitability from an owner-operator." />
-                <meta property="og:title" content="Owner Stories | The AI Restaurant Guy" />
-                <meta property="og:description" content="Real stories from running three restaurants in Jupiter, FL. Lessons on operations, AI automation, and profitability." />
-                <meta property="og:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
+                <title>Blog | The AI Restaurant Guy</title>
+                <meta name="description" content="Insights on restaurant operations, AI automation, and profitability from a real restaurant owner. Field-tested strategies, not classroom theory." />
+                <meta property="og:title" content="Blog | The AI Restaurant Guy" />
+                <meta property="og:description" content="Insights on restaurant operations, AI automation, and profitability from a real restaurant owner." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://theairestaurantguy.com/blog" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <link rel="canonical" href="https://theairestaurantguy.com/blog" />
             </Helmet>
 
@@ -34,17 +31,17 @@ const BlogIndex = ({ onOpenModal }) => {
                 {/* Header */}
                 <header className="pt-24 pb-12 md:pt-32 md:pb-16 border-b border-white/5">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <Link
-                            to="/"
+                        <Link 
+                            to="/" 
                             className="inline-flex items-center text-sm text-gray-400 hover:text-[#4ADE80] mb-6 transition-colors"
                         >
                             ← Back to Home
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Owner Stories
+                            Blog
                         </h1>
                         <p className="text-lg text-gray-400 max-w-2xl">
-                            Lessons from running three restaurants in Jupiter, FL.
+                            Lessons from running three restaurants in Jupiter, FL. 
                             Real operations, real numbers, real talk.
                         </p>
                     </div>
@@ -60,7 +57,7 @@ const BlogIndex = ({ onOpenModal }) => {
                         ) : (
                             <div className="space-y-8">
                                 {posts.map((post) => (
-                                    <article
+                                    <article 
                                         key={post.slug}
                                         className="group bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 hover:border-[#4ADE80]/50 transition-all"
                                     >
@@ -68,7 +65,7 @@ const BlogIndex = ({ onOpenModal }) => {
                                             {/* Tags */}
                                             <div className="flex flex-wrap gap-2 mb-4">
                                                 {post.tags.map((tag) => (
-                                                    <span
+                                                    <span 
                                                         key={tag}
                                                         className="inline-flex items-center gap-1 text-xs text-[#4ADE80] bg-[#4ADE80]/10 px-2 py-1 rounded-full"
                                                     >
@@ -116,7 +113,7 @@ const BlogIndex = ({ onOpenModal }) => {
                             Ready to find money hiding in your restaurant?
                         </h2>
                         <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                            I use the same systems from these posts in my own restaurants.
+                            I use the same systems from these posts in my own restaurants. 
                             Let me audit yours and show you where the leaks are.
                         </p>
                         <button

@@ -70,10 +70,21 @@ const HeroSection = ({ onOpenModal }) => {
                             <span className="text-[#39FF14]">20%+ Profit.</span>
                         </h1>
 
-                        {/* Subhead */}
-                        <p className="text-base md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed">
-                            I built these systems for my own 3 restaurants. Now I install them for other operators.
-                        </p>
+                        {/* Subhead with photo */}
+                        <div className="flex items-center gap-4 mb-8 md:mb-10 justify-center lg:justify-start">
+                            <img
+                                src="/seamus-portrait.jpg"
+                                alt="Seamus O'Brien"
+                                className="w-14 h-14 rounded-full object-cover border-2 border-[#39FF14]/50"
+                            />
+                            <p className="text-base md:text-lg text-gray-300 leading-relaxed text-left">
+                                I built these systems for my own 3 restaurants.
+                                <br className="hidden sm:block" />
+                                <span className="sm:hidden"> </span>
+                                Now I install them for other operators.
+                                <span className="block text-sm text-gray-500 mt-1">— Seamus O'Brien, Owner-Operator</span>
+                            </p>
+                        </div>
 
                         {/* CTA */}
                         <div className="flex flex-col gap-4 md:gap-5 mb-8">

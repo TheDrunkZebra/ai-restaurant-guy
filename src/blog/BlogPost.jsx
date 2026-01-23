@@ -82,8 +82,8 @@ const renderContent = (content) => {
         if (trimmed.startsWith('> ')) {
             flushList();
             elements.push(
-                <blockquote
-                    key={idx}
+                <blockquote 
+                    key={idx} 
                     className="border-l-4 border-[#4ADE80] pl-4 py-2 my-4 text-gray-300 italic"
                     dangerouslySetInnerHTML={{ __html: processInlineFormatting(trimmed.slice(2)) }}
                 />
@@ -94,8 +94,8 @@ const renderContent = (content) => {
         // Regular paragraph
         flushList();
         elements.push(
-            <p
-                key={idx}
+            <p 
+                key={idx} 
                 className="text-gray-300 leading-relaxed my-4"
                 dangerouslySetInnerHTML={{ __html: processInlineFormatting(trimmed) }}
             />
@@ -151,15 +151,12 @@ const BlogPost = ({ onOpenModal }) => {
                 <meta name="description" content={post.description} />
                 <meta property="og:title" content={post.title} />
                 <meta property="og:description" content={post.description} />
-                <meta property="og:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="article:published_time" content={post.date} />
                 {post.tags.map(tag => (
                     <meta key={tag} property="article:tag" content={tag} />
                 ))}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
                 <link rel="canonical" href={canonicalUrl} />
             </Helmet>
 
@@ -167,8 +164,8 @@ const BlogPost = ({ onOpenModal }) => {
                 {/* Header */}
                 <header className="pt-24 pb-8 md:pt-32 md:pb-12">
                     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <Link
-                            to="/blog"
+                        <Link 
+                            to="/blog" 
                             className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#4ADE80] mb-8 transition-colors"
                         >
                             <ArrowLeft className="w-4 h-4" />
@@ -178,7 +175,7 @@ const BlogPost = ({ onOpenModal }) => {
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2 mb-4">
                             {post.tags.map((tag) => (
-                                <span
+                                <span 
                                     key={tag}
                                     className="inline-flex items-center gap-1 text-xs text-[#4ADE80] bg-[#4ADE80]/10 px-2 py-1 rounded-full"
                                 >
@@ -250,7 +247,7 @@ const BlogPost = ({ onOpenModal }) => {
                 {/* Back to blog link */}
                 <div className="pb-16">
                     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <Link
+                        <Link 
                             to="/blog"
                             className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#4ADE80] transition-colors"
                         >

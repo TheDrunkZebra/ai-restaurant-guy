@@ -19,7 +19,7 @@ const TestimonialSection = () => {
                             "Seamus found $11k in vendor contracts we didn't know we were overpaying. Paid for itself the first month."
                         </p>
                         <p className="text-sm text-gray-400 pl-8">
-                            — Pat O., Restaurant Owner, Palm Beach
+                            — Mike R., Restaurant Owner, Palm Beach
                         </p>
                     </div>
                 </div>

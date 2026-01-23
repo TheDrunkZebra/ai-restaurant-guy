@@ -18,14 +18,14 @@ const Footer = () => {
 
                 {/* Links */}
                 <div className="flex justify-center gap-6 mb-8">
-                    <Link
+                    <Link 
                         to="/blog"
                         className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#4ADE80] transition-colors"
                     >
                         <BookOpen className="w-4 h-4" />
                         Blog
                     </Link>
-                    <a
+                    <a 
                         href="https://www.youtube.com/@TheAIRestaurantGuy"
                         target="_blank"
                         rel="noopener noreferrer"
