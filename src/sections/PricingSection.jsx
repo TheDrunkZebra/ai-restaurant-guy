@@ -1,59 +1,64 @@
 import React from 'react';
-import { ArrowRight, Check, FileSearch, Shield, BarChart3, Megaphone, Phone, Eye } from 'lucide-react';
+import { ArrowRight, Check, Eye, FileSearch, Shield, BarChart3, Megaphone, MapPin, Cpu, Clock } from 'lucide-react';
 
 const PricingSection = ({ onOpenModal }) => {
     const packages = [
         {
-            name: "Foundation",
-            setup: "$2,000",
-            monthly: "$2,000",
+            name: "Essentials",
+            setup: "$2,500",
+            monthly: "$1,500",
             period: "/mo",
-            commitment: "6-month minimum",
-            target: "$1.5M–$2.5M revenue",
-            promise: "2× your monthly fee in documented savings—or we keep working",
+            commitment: "3-month minimum",
+            target: "3-5 locations",
+            description: "Core visibility across all your locations",
             popular: false,
+            timePerMonth: "4-6 hrs of my time",
             features: [
-                { icon: FileSearch, text: "Profit Hunter (Contract Audits + Invoice Processing)" },
-                { icon: Shield, text: "Reputation Shield (Review Automation + Sentiment)" },
-                { icon: BarChart3, text: "Weekly Budget Generation" },
+                { icon: Eye, text: "Weekly dashboard (all locations)" },
+                { icon: BarChart3, text: "Budget tracking + prime cost alerts" },
+                { icon: FileSearch, text: "Contract audit (initial + annual)" },
+                { icon: Shield, text: "Review monitoring + response drafts" },
+                { icon: Check, text: "Monthly strategy call (30 min)" },
             ],
-            cta: "Start Foundation"
+            cta: "Start with Audit"
         },
         {
             name: "Growth",
-            setup: "$3,500",
-            monthly: "$4,000",
+            setup: "$4,000",
+            monthly: "$2,500",
             period: "/mo",
-            commitment: "6-month minimum",
-            target: "$2.5M–$4M revenue",
-            promise: "2× your monthly fee in documented savings—or we keep working",
+            commitment: "3-month minimum",
+            target: "5-8 locations",
+            description: "Full operational intelligence suite",
             popular: true,
+            timePerMonth: "8-10 hrs of my time",
             features: [
-                { icon: Check, text: "Everything in Foundation" },
-                { icon: BarChart3, text: "Full Financial Intelligence Suite" },
-                { icon: Megaphone, text: "AI Content Workflow + Newsletter" },
-                { icon: Check, text: "Revenue Recovery Audit" },
-                { icon: Check, text: "Menu Trends Analysis" },
+                { icon: Check, text: "Everything in Essentials" },
+                { icon: Cpu, text: "Full CFO Agent (weekly P&L analysis)" },
+                { icon: Megaphone, text: "Content Engine (2 campaigns/month)" },
+                { icon: MapPin, text: "Growth Mapper (quarterly deep dive)" },
+                { icon: Check, text: "Bi-weekly strategy calls" },
             ],
-            cta: "Start Growth"
+            cta: "Start with Audit"
         },
         {
             name: "Scale",
-            setup: "$5,000",
-            monthly: "$5,500",
+            setup: "$6,000",
+            monthly: "$4,000",
             period: "/mo",
-            commitment: "6-month minimum",
-            target: "Multi-unit / Absentee Owners",
-            promise: "2× your monthly fee in documented savings—or we keep working",
+            commitment: "3-month minimum",
+            target: "8+ locations",
+            description: "Priority support + custom integrations",
             popular: false,
+            timePerMonth: "12-15 hrs of my time",
             features: [
                 { icon: Check, text: "Everything in Growth" },
-                { icon: Phone, text: "AI Voice Phone System" },
-                { icon: Eye, text: "Vision AI Auditor" },
-                { icon: Megaphone, text: "Google Ads Optimizer" },
-                { icon: Check, text: "Priority Support (same-day response)" },
+                { icon: Check, text: "Custom dashboard integrations" },
+                { icon: Check, text: "Google Ads management" },
+                { icon: Check, text: "Same-day support response" },
+                { icon: Check, text: "Weekly strategy calls + exit planning" },
             ],
-            cta: "Start Scale"
+            cta: "Start with Audit"
         }
     ];
 
@@ -67,35 +72,59 @@ const PricingSection = ({ onOpenModal }) => {
                             Start Here
                         </div>
                         <h3 className="text-2xl md:text-3xl font-bold mb-3">
-                            7-Day Savings Audit
+                            Discovery Audit
                         </h3>
                         <div className="text-4xl font-bold text-[#39FF14] mb-2">
-                            $500
+                            $1,000
                             <span className="text-lg text-gray-400 font-normal ml-2">
-                                (refundable toward setup)
+                                (applied to setup)
                             </span>
                         </div>
                         <p className="text-gray-300 mb-4 max-w-lg mx-auto">
-                            We audit your vendor contracts and deliver a Found Money Report with documented savings opportunities.
+                            I audit one location—contracts, costs, opportunities. You get a findings report
+                            with quantified savings and a dashboard mockup showing what you'd see.
                         </p>
+                        <ul className="text-left max-w-md mx-auto mb-6 space-y-2">
+                            <li className="flex items-center gap-2 text-sm text-gray-300">
+                                <Check className="w-4 h-4 text-[#39FF14]" />
+                                Contract analysis + negotiation scripts
+                            </li>
+                            <li className="flex items-center gap-2 text-sm text-gray-300">
+                                <Check className="w-4 h-4 text-[#39FF14]" />
+                                POS data deep dive (sales, labor, product mix)
+                            </li>
+                            <li className="flex items-center gap-2 text-sm text-gray-300">
+                                <Check className="w-4 h-4 text-[#39FF14]" />
+                                Top 5 opportunities ranked by ROI
+                            </li>
+                            <li className="flex items-center gap-2 text-sm text-gray-300">
+                                <Check className="w-4 h-4 text-[#39FF14]" />
+                                Dashboard mockup for your locations
+                            </li>
+                        </ul>
                         <button
                             onClick={onOpenModal}
-                            data-cta="start-audit"
+                            data-cta="discovery-audit"
                             className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#0B0F14] bg-[#00E0FF] rounded-lg hover:bg-[#00C4E0] transition-all"
                         >
-                            Start $500 Audit
+                            Book Discovery Audit
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </button>
+                        <p className="text-xs text-gray-500 mt-4">
+                            If you sign within 30 days, the $1,000 applies to your setup fee.
+                        </p>
                     </div>
                 </div>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                    Ongoing Partnership Tiers
+                    Monthly Packages
                 </h2>
-                <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-                    Done-for-you AI operations. We process the data. You make better decisions.
-                    <br />
-                    <span className="text-[#39FF14] font-semibold">2x ROI guarantee on every tier.</span>
+                <p className="text-center text-gray-400 mb-4 max-w-2xl mx-auto">
+                    Not SaaS. Not consulting. The same operational intelligence systems running my
+                    $5M restaurant portfolio—installed in your business.
+                </p>
+                <p className="text-center text-sm text-gray-500 mb-12">
+                    All packages start with a Discovery Audit. No commitment until you see the findings.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -118,27 +147,29 @@ const PricingSection = ({ onOpenModal }) => {
                                 <h3 className="text-2xl font-bold mb-1 text-[#F8FAFC]">
                                     {pkg.name}
                                 </h3>
-                                <div className="text-sm text-[#00E0FF] mb-4">
+                                <div className="text-sm text-[#00E0FF] mb-2">
                                     {pkg.target}
                                 </div>
+                                <p className="text-xs text-gray-500 mb-4">
+                                    {pkg.description}
+                                </p>
 
                                 <div className="flex items-baseline justify-center gap-2 mb-1">
                                     <span className="text-4xl font-bold text-[#39FF14]">{pkg.monthly}</span>
                                     <span className="text-gray-400">{pkg.period}</span>
                                 </div>
                                 <div className="text-sm text-gray-500 mb-2">
-                                    + {pkg.setup} setup
+                                    + {pkg.setup} setup (one-time)
                                 </div>
                                 <div className="text-xs text-gray-500">
                                     {pkg.commitment}
                                 </div>
                             </div>
 
-                            {/* Promise Badge */}
-                            <div className="bg-[#39FF14]/10 border border-[#39FF14]/30 rounded-lg px-3 py-2 mb-6 text-center">
-                                <span className="text-sm text-[#39FF14] font-medium">
-                                    {pkg.promise}
-                                </span>
+                            {/* Time indicator */}
+                            <div className="flex items-center justify-center gap-2 mb-4 py-2 px-3 bg-[#00E0FF]/10 rounded-lg">
+                                <Clock className="w-4 h-4 text-[#00E0FF]" />
+                                <span className="text-xs text-[#00E0FF]">{pkg.timePerMonth}</span>
                             </div>
 
                             {/* Features */}
@@ -156,27 +187,46 @@ const PricingSection = ({ onOpenModal }) => {
 
                             <button
                                 onClick={onOpenModal}
-                                data-cta="start-audit"
+                                data-cta="discovery-audit"
                                 className={`w-full py-3 rounded-lg font-semibold transition-all ${
                                     pkg.popular
                                         ? 'bg-[#39FF14] text-[#0B0F14] hover:bg-[#2FE010] shadow-lg shadow-[#39FF14]/30'
                                         : 'bg-white/10 text-white hover:bg-white/20'
                                 }`}
                             >
-                                Start $500 Audit
+                                {pkg.cta}
                             </button>
                         </div>
                     ))}
                 </div>
 
-                {/* Custom Builds */}
+                {/* Value Comparison */}
+                <div className="bg-[#0F1419] border border-white/10 rounded-xl p-8 mb-8">
+                    <h3 className="text-xl font-bold text-center mb-6">Why This Costs Less Than You Think</h3>
+                    <div className="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div className="text-2xl font-bold text-gray-500 line-through mb-1">$150K/yr</div>
+                            <div className="text-sm text-gray-400">Full-time CFO</div>
+                        </div>
+                        <div>
+                            <div className="text-2xl font-bold text-gray-500 line-through mb-1">$10K/project</div>
+                            <div className="text-sm text-gray-400">Restaurant consultant</div>
+                        </div>
+                        <div>
+                            <div className="text-2xl font-bold text-[#39FF14] mb-1">$2,500/mo</div>
+                            <div className="text-sm text-gray-400">Both + the systems</div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Local Demo */}
                 <div className="text-center border-t border-white/10 pt-8">
                     <p className="text-gray-400 mb-2">
-                        Need a custom integration or specific workflow?
+                        Want to see it running live?
                     </p>
                     <p className="text-sm text-gray-500">
-                        <span className="text-white font-medium">Custom Builds:</span> $2k–$20k depending on scope.
-                        We design it. We build it. You own it.
+                        <span className="text-white font-medium">Come to Jupiter, FL.</span>{' '}
+                        I'll walk you through the dashboards at Bagel Boyz or Salty Zebra and show you exactly what you'd get.
                     </p>
                 </div>
             </div>

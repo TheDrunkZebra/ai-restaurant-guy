@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Helmet } from 'react-helmet-async';
 
 // Landing Page Sections
 import HeroSection from './sections/HeroSection';
@@ -9,7 +8,7 @@ import SocialProofSection from './sections/SocialProofSection';
 import TestimonialSection from './sections/TestimonialSection';
 import WeekOneSection from './sections/WeekOneSection';
 import CaseStudyMetrics from './sections/CaseStudyMetrics';
-import ShopTheSystems from './sections/ShopTheSystems';
+import HowSystemsWork from './sections/HowSystemsWork';
 import PricingSection from './sections/PricingSection';
 import ROISnapshot from './sections/ROISnapshot';
 import LightbulbCaseStudy from './sections/LightbulbCaseStudy';
@@ -30,25 +29,13 @@ import BlogPost from './blog/BlogPost';
 function LandingPage({ onOpenModal }) {
   return (
     <>
-      <Helmet>
-        <title>The AI Restaurant Guy | Recover Your Revenue</title>
-        <meta name="description" content="I Keep 20% of Every Dollar My Restaurants Make. Now I'll Show You How. AI automation for independent restaurants." />
-        <meta property="og:title" content="The AI Restaurant Guy | Recover Your Revenue" />
-        <meta property="og:description" content="I Keep 20% of Every Dollar My Restaurants Make. Now I'll Show You How. AI automation for independent restaurants." />
-        <meta property="og:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://theairestaurantguy.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://theairestaurantguy.com/seamus-portrait.jpg" />
-        <link rel="canonical" href="https://theairestaurantguy.com" />
-      </Helmet>
       <Navbar onOpenModal={onOpenModal} />
       <HeroSection onOpenModal={onOpenModal} />
       <SocialProofSection />
       <TestimonialSection />
       <WeekOneSection />
       <CaseStudyMetrics />
-      <ShopTheSystems />
+      <HowSystemsWork onOpenModal={onOpenModal} />
       <PricingSection onOpenModal={onOpenModal} />
       <ROISnapshot onOpenModal={onOpenModal} />
       <LightbulbCaseStudy />
@@ -75,10 +62,10 @@ function BlogLayout({ children, onOpenModal }) {
             </a>
             <button
               onClick={onOpenModal}
-              data-cta="start-audit"
+              data-cta="discovery-audit"
               className="inline-flex items-center px-4 py-2 text-sm font-semibold text-[#0B0F14] bg-[#4ADE80] rounded-lg hover:bg-[#3FCF70] transition-all"
             >
-              Start $500 Audit
+              Book Discovery Audit
             </button>
           </div>
         </div>

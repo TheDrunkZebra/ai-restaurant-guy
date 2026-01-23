@@ -4,7 +4,7 @@
  * TRUST LINE: Always use verified, safe copy. No unverified numeric claims.
  */
 
-export const TRUST_LINE = "Field-tested in real restaurants, not classrooms.";
+export const TRUST_LINE = "Operator of Bagel Boyz ($2.5M), Salty Zebra Bistro ($732K), The Locals Pub ($1.08M)";
 
 // Helper function to get the trust line
 export const getTrustLine = () => TRUST_LINE;
@@ -12,7 +12,7 @@ export const getTrustLine = () => TRUST_LINE;
 // Site metadata
 export const SITE_CONFIG = {
   brandName: "The AI Restaurant Guy",
-  tagline: "I Keep 20% of Every Dollar My Restaurants Make. Now I'll Show You How.",
-  primaryCTA: "Start $500 Audit",
-  navCTA: "Start $500 Audit"
+  tagline: "I'll Install the Same AI Systems Running My $5M Restaurant Portfolio Into Yours.",
+  primaryCTA: "Book Discovery Audit",
+  navCTA: "Book Discovery Audit"
 };

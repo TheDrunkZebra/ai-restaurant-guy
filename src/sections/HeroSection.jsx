@@ -1,9 +1,12 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
-import { getTrustLine } from '../config/siteConfig';
+import { ArrowRight, ShieldCheck, TrendingUp, Target, Eye } from 'lucide-react';
 
 const HeroSection = ({ onOpenModal }) => {
-    const trustLine = getTrustLine();
+    const proofPoints = [
+        { value: "$4.33M", label: "Portfolio Revenue" },
+        { value: "94%", label: "Forecast Accuracy" },
+        { value: "17.7%", label: "Labor Cost (vs 22% avg)" },
+    ];
 
     return (
         <section className="relative pt-28 pb-16 md:py-24 lg:py-32 overflow-hidden bg-[#0B0F14] text-[#F8FAFC]">
@@ -12,70 +15,118 @@ const HeroSection = ({ onOpenModal }) => {
 
                     {/* Left Column: Content - MOBILE OPTIMIZED */}
                     <div className="text-center lg:text-left">
-
-                        {/* Mobile Avatar - Small circular headshot above headline */}
-                        <div className="md:hidden flex justify-center mb-5">
-                            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4ADE80]/50 shadow-lg shadow-[#4ADE80]/20">
-                                <img
-                                    src="/seamus-portrait.jpg"
-                                    alt="Seamus, restaurant owner"
-                                    className="w-full h-full object-cover object-top"
-                                />
-                            </div>
+                        {/* Pre-headline */}
+                        <div className="inline-flex items-center gap-2 bg-[#00E0FF]/10 border border-[#00E0FF]/30 rounded-full px-4 py-1.5 mb-6">
+                            <TrendingUp className="w-4 h-4 text-[#00E0FF]" />
+                            <span className="text-sm text-[#00E0FF] font-medium">For Multi-Unit Operators (3-10 Locations)</span>
                         </div>
 
-                        {/* Main Headline - Mobile: tighter, Desktop: unchanged */}
+                        {/* Main Headline */}
                         <h1 className="text-[1.75rem] leading-[1.2] md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-6 md:mb-8 font-display md:leading-tight">
-                            <span className="text-[#00E0FF]">I Keep 20% of Every Dollar My Restaurants Make.</span>
+                            <span className="text-[#00E0FF]">I'll Install the Same AI Systems</span>
                             <br className="hidden md:block" />
                             <span className="md:hidden"> </span>
-                            Now I'll Show You How.
+                            Running My $5M Restaurant Portfolio Into Yours.
                         </h1>
 
-                        {/* ONE line subhead - qualifier baked in */}
+                        {/* Subhead - The pitch */}
                         <p className="text-base md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed">
-                            Stop guessing. I'll show you the simple system I use to keep more profit—no tech overwhelm.
+                            You'll see your numbers like I see mine—every week, not every quarter.
+                            Real-time prime cost, 94% forecast accuracy, and growth opportunities quantified.
                         </p>
 
-                        {/* CTA with inline guarantee - MOBILE FIRST: Must be visible without scroll */}
-                        <div className="flex flex-col gap-4 md:gap-5 mb-6 md:mb-8">
+                        {/* CTA with inline guarantee */}
+                        <div className="flex flex-col gap-4 md:gap-5 mb-8">
                             <button
                                 id="hero-cta-primary"
-                                data-cta="start-audit"
+                                data-cta="discovery-audit"
                                 onClick={onOpenModal}
-                                className="inline-flex items-center justify-center px-6 py-4 md:px-8 text-base font-semibold text-[#0B0F14] bg-[#4ADE80] rounded-lg hover:bg-[#3FCF70] transition-all shadow-lg shadow-[#4ADE80]/30 cursor-pointer w-full sm:w-auto"
+                                className="inline-flex items-center justify-center px-6 py-4 md:px-8 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer w-full sm:w-auto"
                             >
-                                Start $500 Audit
+                                Book $1,500 Discovery Audit
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </button>
 
-                            {/* Guarantee NEXT to CTA - not at top */}
+                            {/* Guarantee NEXT to CTA */}
                             <p className="hidden md:flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-400">
-                                <ShieldCheck className="w-4 h-4 text-[#4ADE80] flex-shrink-0" />
-                                <span>2× guarantee: find documented savings or we keep working at no extra cost.</span>
+                                <ShieldCheck className="w-4 h-4 text-[#39FF14] flex-shrink-0" />
+                                <span>Applied to setup if you sign within 30 days</span>
                             </p>
+                        </div>
+
+                        {/* Proof Points - Mobile Visible */}
+                        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                            {proofPoints.map((point, index) => (
+                                <div key={index} className="text-center lg:text-left">
+                                    <div className="text-xl md:text-2xl font-bold text-[#39FF14]">{point.value}</div>
+                                    <div className="text-xs md:text-sm text-gray-400">{point.label}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Right Column: Portrait - Hidden on mobile (avatar above), shown on md+ */}
+                    {/* Right Column: Portfolio Dashboard Preview */}
                     <div className="relative group hidden md:block">
                         <div className="relative">
-                            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-surface">
-                                <img
-                                    src="/seamus-portrait.jpg"
-                                    alt="The AI Restaurant Guy, restaurant owner and AI automation expert"
-                                    className="w-full h-auto object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
+                            {/* Dashboard Preview Card */}
+                            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0F1419] p-6">
+                                {/* Dashboard Header */}
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-2">
+                                        <Eye className="w-5 h-5 text-[#00E0FF]" />
+                                        <span className="font-semibold text-[#F8FAFC]">Portfolio Command Center</span>
+                                    </div>
+                                    <span className="text-xs text-gray-500">Live Data</span>
+                                </div>
+
+                                {/* Mini Dashboard Grid */}
+                                <div className="grid grid-cols-2 gap-4 mb-6">
+                                    <div className="bg-[#1A1F26] rounded-lg p-4">
+                                        <div className="text-xs text-gray-400 mb-1">Weekly Revenue</div>
+                                        <div className="text-2xl font-bold text-[#39FF14]">$83.4K</div>
+                                        <div className="text-xs text-green-400">↑ 12% vs forecast</div>
+                                    </div>
+                                    <div className="bg-[#1A1F26] rounded-lg p-4">
+                                        <div className="text-xs text-gray-400 mb-1">Prime Cost</div>
+                                        <div className="text-2xl font-bold text-[#00E0FF]">55.2%</div>
+                                        <div className="text-xs text-green-400">↓ 1.8% vs last week</div>
+                                    </div>
+                                    <div className="bg-[#1A1F26] rounded-lg p-4">
+                                        <div className="text-xs text-gray-400 mb-1">Labor %</div>
+                                        <div className="text-2xl font-bold text-[#F8FAFC]">17.7%</div>
+                                        <div className="text-xs text-gray-500">4pt under industry</div>
+                                    </div>
+                                    <div className="bg-[#1A1F26] rounded-lg p-4">
+                                        <div className="text-xs text-gray-400 mb-1">Opportunities</div>
+                                        <div className="text-2xl font-bold text-[#FBBF24]">$385K</div>
+                                        <div className="text-xs text-gray-500">identified this quarter</div>
+                                    </div>
+                                </div>
+
+                                {/* Venues Bar */}
+                                <div className="flex gap-2">
+                                    <div className="flex-1 bg-[#39FF14]/20 border border-[#39FF14]/30 rounded px-3 py-2 text-center">
+                                        <div className="text-xs text-[#39FF14]">Bagel Boyz</div>
+                                    </div>
+                                    <div className="flex-1 bg-[#00E0FF]/20 border border-[#00E0FF]/30 rounded px-3 py-2 text-center">
+                                        <div className="text-xs text-[#00E0FF]">Salty Zebra</div>
+                                    </div>
+                                    <div className="flex-1 bg-[#FBBF24]/20 border border-[#FBBF24]/30 rounded px-3 py-2 text-center">
+                                        <div className="text-xs text-[#FBBF24]">Locals Pub</div>
+                                    </div>
+                                </div>
                             </div>
+
+                            {/* Glow effect */}
+                            <div className="absolute -inset-4 bg-gradient-to-r from-[#00E0FF]/20 via-transparent to-[#39FF14]/20 rounded-3xl blur-xl opacity-50 -z-10" />
                         </div>
                     </div>
 
                 </div>
 
-                {/* Trust bar - Desktop only, under content */}
+                {/* Trust bar - Desktop only */}
                 <p className="hidden lg:block text-sm text-gray-500 mt-8">
-                    {trustLine}
+                    Operator of Bagel Boyz ($2.5M), Salty Zebra Bistro ($732K), The Locals Pub ($1.08M) in Jupiter, FL
                 </p>
 
             </div>
