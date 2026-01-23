@@ -19,7 +19,7 @@ const ROISnapshot = ({ onOpenModal }) => {
                             <span className="text-2xl font-bold text-[#39FF14]">1</span>
                         </div>
                         <h3 className="text-lg font-semibold text-[#F8FAFC] mb-2">
-                            Start the $500 audit
+                            Start the $1,000 audit
                         </h3>
                         <p className="text-sm text-gray-400">
                             Tell me about your restaurant and share your vendor contracts
@@ -66,7 +66,7 @@ const ROISnapshot = ({ onOpenModal }) => {
                         onClick={onOpenModal}
                         className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#39FF14] rounded-lg hover:bg-[#2FE010] transition-all shadow-lg shadow-[#39FF14]/50 cursor-pointer"
                     >
-                        Start $500 Audit
+                        Start $1,000 Audit
                         <ArrowRight className="ml-2 w-5 h-5" />
                     </button>
                 </div>

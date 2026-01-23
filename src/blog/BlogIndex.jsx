@@ -121,7 +121,7 @@ const BlogIndex = ({ onOpenModal }) => {
                             data-cta="start-audit"
                             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#0B0F14] bg-[#4ADE80] rounded-lg hover:bg-[#3FCF70] transition-all shadow-lg shadow-[#4ADE80]/30"
                         >
-                            Start the $500 Audit
+                            Start the $1,000 Audit
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </button>
                     </div>

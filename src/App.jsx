@@ -18,7 +18,7 @@ import FAQ from './sections/FAQ';
 import FinalCTA from './sections/FinalCTA';
 import Footer from './sections/Footer';
 import Navbar from './sections/Navbar';
-import AIBuildPlanModal from './components/AIBuildPlanModal';
+import CheckoutWizard from './components/CheckoutWizard';
 
 // Blog
 import BlogIndex from './blog/BlogIndex';
@@ -122,8 +122,8 @@ function App() {
             <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
 
-          {/* Modal (available on all pages) */}
-          <AIBuildPlanModal isOpen={isModalOpen} onClose={closeModal} />
+          {/* Checkout Wizard Modal (available on all pages) */}
+          {isModalOpen && <CheckoutWizard onClose={closeModal} />}
         </div>
       </BrowserRouter>
     </HelmetProvider>
