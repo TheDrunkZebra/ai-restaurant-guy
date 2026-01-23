@@ -9,7 +9,6 @@ const PricingSection = ({ onOpenModal }) => {
             monthly: "$1,500",
             period: "/mo",
             commitment: "3-month minimum",
-            target: "3-5 locations",
             description: "Core visibility across all your locations",
             popular: false,
             timePerMonth: "4-6 hrs of my time",
@@ -28,7 +27,6 @@ const PricingSection = ({ onOpenModal }) => {
             monthly: "$2,500",
             period: "/mo",
             commitment: "3-month minimum",
-            target: "5-8 locations",
             description: "Full operational intelligence suite",
             popular: true,
             timePerMonth: "8-10 hrs of my time",
@@ -47,7 +45,6 @@ const PricingSection = ({ onOpenModal }) => {
             monthly: "$4,000",
             period: "/mo",
             commitment: "3-month minimum",
-            target: "8+ locations",
             description: "Priority support + custom integrations",
             popular: false,
             timePerMonth: "12-15 hrs of my time",
@@ -147,10 +144,7 @@ const PricingSection = ({ onOpenModal }) => {
                                 <h3 className="text-2xl font-bold mb-1 text-[#F8FAFC]">
                                     {pkg.name}
                                 </h3>
-                                <div className="text-sm text-[#00E0FF] mb-2">
-                                    {pkg.target}
-                                </div>
-                                <p className="text-xs text-gray-500 mb-4">
+                                <p className="text-sm text-gray-400 mb-4">
                                     {pkg.description}
                                 </p>
 
@@ -217,6 +211,15 @@ const PricingSection = ({ onOpenModal }) => {
                             <div className="text-sm text-gray-400">Both + the systems</div>
                         </div>
                     </div>
+                </div>
+
+                {/* Multi-location note */}
+                <div className="text-center mb-8">
+                    <p className="text-sm text-gray-400">
+                        Running multiple locations?{' '}
+                        <span className="text-[#00E0FF]">All locations included in your package</span>
+                        —no per-location fees.
+                    </p>
                 </div>
 
                 {/* Local Demo */}
