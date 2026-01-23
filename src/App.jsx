@@ -24,6 +24,9 @@ import AIBuildPlanModal from './components/AIBuildPlanModal';
 import BlogIndex from './blog/BlogIndex';
 import BlogPost from './blog/BlogPost';
 
+// Pages
+import ThankYou from './pages/ThankYou';
+
 /**
  * Landing Page Component
  */
@@ -114,6 +117,9 @@ function App() {
                 </BlogLayout>
               }
             />
+
+            {/* Thank You (post-checkout) */}
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
 
           {/* Modal (available on all pages) */}
