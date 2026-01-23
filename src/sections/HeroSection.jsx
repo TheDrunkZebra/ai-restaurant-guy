@@ -64,16 +64,15 @@ const HeroSection = ({ onOpenModal }) => {
 
                         {/* Main Headline */}
                         <h1 className="text-[1.75rem] leading-[1.2] md:text-5xl lg:text-6xl font-bold text-[#F8FAFC] mb-6 md:mb-8 font-display md:leading-tight">
-                            Stop Missing Your
+                            The AI Systems Behind
                             <br className="hidden md:block" />
                             <span className="md:hidden"> </span>
-                            <span className="text-[#39FF14]">Kids' Games.</span>
+                            <span className="text-[#39FF14]">20%+ Profit.</span>
                         </h1>
 
                         {/* Subhead */}
                         <p className="text-base md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed">
-                            I built AI systems that run my 3 restaurants so I don't have to live there.
-                            Now I install them for other operators.
+                            Built by an operator, for operators. I'll show you exactly how it works.
                         </p>
 
                         {/* CTA */}
