@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Restaurant Guy - Strategy Review | PRIVATE</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-hover: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e5e5e5;
+            --text-muted: #888;
+            --accent: #f97316;
+            --accent-dim: #c2410c;
+            --green: #22c55e;
+            --red: #ef4444;
+            --yellow: #eab308;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .header .badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .toc h2 {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            font-size: 1.75rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .section h4 {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 1.25rem 0 0.75rem;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .section ul, .section ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+        
+        th {
+            background: var(--surface-hover);
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .highlight {
+            background: var(--accent-dim);
+            color: white;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .callout {
+            background: rgba(249, 115, 22, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .callout.green {
+            background: rgba(34, 197, 94, 0.1);
+            border-left-color: var(--green);
+        }
+        
+        .callout.yellow {
+            background: rgba(234, 179, 8, 0.1);
+            border-left-color: var(--yellow);
+        }
+        
+        .callout.red {
+            background: rgba(239, 68, 68, 0.1);
+            border-left-color: var(--red);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .price-card {
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .price-card.recommended {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+        }
+        
+        .price-card h4 {
+            margin: 0 0 0.5rem;
+            color: var(--text);
+        }
+        
+        .price-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .price-card .note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        
+        .price-card .badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+        
+        .timeline-item h4 {
+            margin: 0 0 0.5rem;
+            color: var(--accent);
+        }
+        
+        blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .section { padding: 1.5rem; }
+            .header h1 { font-size: 1.75rem; }
+            table { font-size: 0.8rem; }
+            th, td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <span class="badge">Private Review</span>
+            <h1>🤖 AI Restaurant Guy Strategy</h1>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Complete plan review — January 31, 2026</p>
+        </header>
+        
+        <nav class="toc">
+            <h2>Quick Navigation</h2>
+            <ul>
+                <li><a href="#pricing">💰 Pricing Recommendation (START HERE)</a></li>
+                <li><a href="#strategy">📋 Master Strategy → October 2026</a></li>
+                <li><a href="#workshop">🎓 Workshop Curriculum</a></li>
+                <li><a href="#camera">📹 30-Day Camera Warmup</a></li>
+                <li><a href="#youtube">▶️ YouTube Content Pillars</a></li>
+                <li><a href="#competitive">🎯 Competitive Landscape</a></li>
+            </ul>
+        </nav>
+        
+        <!-- PRICING RECOMMENDATION -->
+        <section class="section" id="pricing">
+            <h2>💰 Pricing Recommendation</h2>
+            
+            <div class="callout">
+                <strong>You asked for input on pricing.</strong> Here's my analysis based on the competitive landscape, your value prop, and workshop economics.
+            </div>
+            
+            <h3>Market Context</h3>
+            <table>
+                <tr>
+                    <th>Comparison</th>
+                    <th>Price</th>
+                    <th>Format</th>
+                </tr>
+                <tr>
+                    <td>Ryan Gromfin (Restaurant Boss)</td>
+                    <td>$397</td>
+                    <td>30-min strategy call (Zoom)</td>
+                </tr>
+                <tr>
+                    <td>Online restaurant courses</td>
+                    <td>$25-400</td>
+                    <td>Self-paced video</td>
+                </tr>
+                <tr>
+                    <td>Industry conferences</td>
+                    <td>$75-500</td>
+                    <td>All-day, generic content</td>
+                </tr>
+                <tr>
+                    <td>Consulting discovery calls</td>
+                    <td>Free-$500</td>
+                    <td>Sales-focused</td>
+                </tr>
+            </table>
+            
+            <h3>Your Differentiation (Why You Can Charge More)</h3>
+            <ul>
+                <li>✅ <strong>In-person</strong> at an actual restaurant (not Zoom)</li>
+                <li>✅ <strong>Hands-on</strong> — bring your laptop, do real work</li>
+                <li>✅ <strong>From an operator</strong> running 3 restaurants (not a consultant)</li>
+                <li>✅ <strong>AI-specific</strong> — literally no one else is teaching this</li>
+                <li>✅ <strong>Includes dinner + drinks</strong> (~$50-75 value)</li>
+                <li>✅ <strong>4 hours of content</strong> vs 30-min call</li>
+            </ul>
+            
+            <h3>My Recommendation</h3>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>First Workshop</h4>
+                    <div class="price">$347</div>
+                    <div class="note">Early adopter price. Gets seats filled, generates testimonials.</div>
+                </div>
+                <div class="price-card recommended">
+                    <span class="badge">Recommended</span>
+                    <h4>Standard Price</h4>
+                    <div class="price">$447</div>
+                    <div class="note">After first workshop. Premium but accessible.</div>
+                </div>
+                <div class="price-card">
+                    <h4>Future / Premium</h4>
+                    <div class="price">$497+</div>
+                    <div class="note">Once you have testimonials and waitlists.</div>
+                </div>
+            </div>
+            
+            <h3>Why $447 (Not $297 or $497)</h3>
+            <div class="callout green">
+                <strong>$297 leaves money on the table.</strong> Ryan charges $397 for 30 minutes on Zoom. You're delivering 8x the time, in-person, with food. $297 signals "discount" when your offering is premium.
+            </div>
+            <div class="callout yellow">
+                <strong>$497 is your ceiling for now.</strong> Save this for when you have testimonials, a waitlist, or a "VIP" tier with extra access. Start at $447, prove demand, then raise.
+            </div>
+            
+            <h3>P&L at $447 × 25 Attendees (Wednesday)</h3>
+            <table>
+                <tr>
+                    <th>Line Item</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>Ticket Revenue</td>
+                    <td style="color: var(--green);">+$11,175</td>
+                </tr>
+                <tr>
+                    <td>F&B (25 × $50)</td>
+                    <td style="color: var(--red);">-$1,250</td>
+                </tr>
+                <tr>
+                    <td>Staff (2 people)</td>
+                    <td style="color: var(--red);">-$500</td>
+                </tr>
+                <tr>
+                    <td>LP Buyout (lost revenue)</td>
+                    <td style="color: var(--red);">-$3,000</td>
+                </tr>
+                <tr>
+                    <td>Fees/Misc</td>
+                    <td style="color: var(--red);">-$600</td>
+                </tr>
+                <tr style="background: rgba(249, 115, 22, 0.1);">
+                    <td><strong>Net to AI Restaurant Guy</strong></td>
+                    <td style="color: var(--accent);"><strong>$5,825</strong></td>
+                </tr>
+                <tr>
+                    <td>Upsell: 5 audits @ $500</td>
+                    <td style="color: var(--green);">+$2,500</td>
+                </tr>
+                <tr style="background: rgba(34, 197, 94, 0.1);">
+                    <td><strong>Total Workshop Value</strong></td>
+                    <td style="color: var(--green);"><strong>$8,325+</strong></td>
+                </tr>
+            </table>
+            
+            <p style="color: var(--text-muted); margin-top: 1rem;"><strong>Plus:</strong> Recorded content for YouTube, testimonials, word-of-mouth, consulting pipeline. The real value compounds.</p>
+            
+            <h3>Questions for You</h3>
+            <ol>
+                <li>Does $447 feel right, or do you want to test $397 for Workshop #1?</li>
+                <li>Do you want an "early bird" tier ($50 off for first 10 tickets)?</li>
+                <li>Are you doing Stripe checkout or Eventbrite?</li>
+            </ol>
+        </section>
+        
+        <!-- MASTER STRATEGY -->
+        <section class="section" id="strategy">
+            <h2>📋 Master Strategy → October 2026</h2>
+            
+            <h3>The Goal</h3>
+            <p>By October 2026:</p>
+            <ol>
+                <li>Move to Pennsylvania</li>
+                <li>Restaurants stay in Jupiter (fly down 1x/week initially)</li>
+                <li>Consulting becomes primary income stream</li>
+                <li>Eventually option to exit restaurants entirely</li>
+            </ol>
+            <p><strong>Timeline:</strong> ~8 months from now.</p>
+            
+            <h3>Current State</h3>
+            <table>
+                <tr>
+                    <th>✅ What You Have</th>
+                    <th>❌ What's Missing</th>
+                </tr>
+                <tr>
+                    <td>Polished website with clear positioning</td>
+                    <td>Video content — no YouTube presence</td>
+                </tr>
+                <tr>
+                    <td>Real proof: 3 restaurants, documented results</td>
+                    <td>Personal brand visibility — not on camera</td>
+                </tr>
+                <tr>
+                    <td>Technical systems that actually work</td>
+                    <td>In-person credibility events — no workshops</td>
+                </tr>
+                <tr>
+                    <td>Good blog content (technical, data-driven)</td>
+                    <td>Lead generation beyond organic/referral</td>
+                </tr>
+                <tr>
+                    <td>Unique position: only operator doing AI workflows</td>
+                    <td></td>
+                </tr>
+            </table>
+            
+            <h3>The Two-Track Strategy</h3>
+            <div class="callout">
+                <strong>Track 1: Automate the Commodity</strong><br>
+                Instagram, GMB, blog posts, emails — this gets handled by systems. It just needs to be current and on-brand, not exceptional. This is also what you sell to other restaurants.
+            </div>
+            <div class="callout green">
+                <strong>Track 2: High-Value Personal Content</strong><br>
+                YouTube, workshops, your face/voice — this is what builds the consulting brand. This is what's been pushed off. <em>You can't automate trust.</em> People buy consulting from people they feel they know.
+            </div>
+            
+            <h3>Why Workshops First</h3>
+            <table>
+                <tr>
+                    <th>Benefit</th>
+                    <th>Why It Matters</th>
+                </tr>
+                <tr>
+                    <td>Lead quality</td>
+                    <td>People paying $300+ are serious, not tire-kickers</td>
+                </tr>
+                <tr>
+                    <td>Content creation</td>
+                    <td>Record it → YouTube content → Clips for social</td>
+                </tr>
+                <tr>
+                    <td>Local network effect</td>
+                    <td>Jupiter restaurant scene is tight. 20 people creates word-of-mouth</td>
+                </tr>
+                <tr>
+                    <td>Upsell path</td>
+                    <td>Workshop ($350) → Audit ($1k) → Package ($2.5k/mo)</td>
+                </tr>
+                <tr>
+                    <td>Proof point</td>
+                    <td>"I've trained 50 restaurant owners" > "I do Zoom calls"</td>
+                </tr>
+            </table>
+            
+            <h3>Timeline to October</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>February 2026</h4>
+                    <ul>
+                        <li>Start 30-day camera warmup (Feb 1)</li>
+                        <li>Finalize workshop curriculum</li>
+                        <li>Set workshop date (March 22 or 29)</li>
+                        <li>Start announcing (social, email, word-of-mouth)</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>March 2026</h4>
+                    <ul>
+                        <li>Continue daily recording (start publishing a few)</li>
+                        <li>Sell 15-25 workshop tickets</li>
+                        <li><strong>Workshop #1 at Locals Pub</strong> (record entire event)</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>April 2026</h4>
+                    <ul>
+                        <li>Launch YouTube with workshop footage + first dedicated videos</li>
+                        <li>Start 1-2x/week publishing cadence</li>
+                        <li>Convert workshop attendees → Discovery Audits</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>May-June 2026</h4>
+                    <ul>
+                        <li>YouTube consistency (build library)</li>
+                        <li><strong>Workshop #2</strong> (iterate based on learnings)</li>
+                        <li>Scale consulting (goal: 3-5 active clients)</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>July-September 2026</h4>
+                    <ul>
+                        <li>Multiple consulting clients generating revenue</li>
+                        <li>YouTube audience building</li>
+                        <li>Reduce daily restaurant involvement (delegate more)</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>October 2026</h4>
+                    <ul>
+                        <li><strong>Move to Pennsylvania</strong></li>
+                        <li>Fly to Jupiter 1x/week</li>
+                        <li>Consulting is primary income</li>
+                        <li>Restaurants run with less daily involvement</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WORKSHOP CURRICULUM -->
+        <section class="section" id="workshop">
+            <h2>🎓 Workshop Curriculum</h2>
+            <p><strong>"AI Ops for Restaurant Owners"</strong><br>
+            Duration: 4 hours (5:00 PM - 9:00 PM)<br>
+            Location: The Locals Pub, Jupiter FL<br>
+            Capacity: 15-25 operators</p>
+            
+            <h3>Pre-Workshop (Sent 48 Hours Before)</h3>
+            <ul>
+                <li>Brief questionnaire (POS system, # locations, biggest pain point)</li>
+                <li>Request: Bring laptop or tablet</li>
+                <li>Request: Have login access to your POS reporting</li>
+            </ul>
+            
+            <h3>Agenda</h3>
+            
+            <h4>5:00 - 5:30 PM | Arrival & Setup (30 min)</h4>
+            <ul>
+                <li>Drinks at the bar (tab open)</li>
+                <li>Informal networking</li>
+                <li>Tech setup help (WiFi, logins)</li>
+            </ul>
+            
+            <h4>5:30 - 6:00 PM | Opening: The Operator's Dilemma (30 min)</h4>
+            <ul>
+                <li>Why restaurant margins are getting crushed</li>
+                <li>The corporate advantage vs. indie reality</li>
+                <li>The AI opportunity window (it's early, you can get ahead)</li>
+                <li>Your story: 400% growth, 20%+ margins, how AI changed the game</li>
+            </ul>
+            <p><em>Interactive: Quick round — each person shares name, restaurant, #1 pain point</em></p>
+            
+            <h4>6:00 - 6:45 PM | Module 1: Know Your Numbers (45 min)</h4>
+            <p><strong>The only 5 numbers that matter weekly:</strong></p>
+            <ol>
+                <li>Net Sales</li>
+                <li>Labor %</li>
+                <li>Food Cost %</li>
+                <li>Prime Cost (Labor + Food)</li>
+                <li>Cash in bank</li>
+            </ol>
+            <p><em>Hands-On: Everyone pulls their last week's numbers. Calculate prime cost together.</em></p>
+            <p><strong>Takeaway:</strong> Simple weekly scorecard template (Google Sheet)</p>
+            
+            <h4>6:45 - 7:15 PM | Dinner Break (30 min)</h4>
+            <p>Food served family-style. Informal Q&A. Networking.</p>
+            
+            <h4>7:15 - 8:00 PM | Module 2: AI for Content (45 min)</h4>
+            <p><strong>The content machine:</strong> 1 Photo → Blog → GMB Post → Email → Social</p>
+            <ul>
+                <li>What AI can do (drafts, scheduling, repurposing)</li>
+                <li>What AI can't do (strategy, photos, your voice)</li>
+                <li>Live demo: Generate a week's content in 10 minutes</li>
+            </ul>
+            <p><em>Hands-On: Everyone brings up a food photo. Generate GMB post, IG caption, email snippet.</em></p>
+            <p><strong>Takeaway:</strong> Prompt templates for restaurant content</p>
+            
+            <h4>8:00 - 8:30 PM | Module 3: Contract Killer (30 min)</h4>
+            <ul>
+                <li>The contract audit framework (what to look for)</li>
+                <li>Red flags: auto-renewals, escalation clauses, bundled fees</li>
+                <li>Real example: How you saved $8K on insurance</li>
+            </ul>
+            <p><strong>Takeaway:</strong> Contract audit checklist + negotiation email templates</p>
+            
+            <h4>8:30 - 8:50 PM | Module 4: Your 30-Day Plan (20 min)</h4>
+            <p>Each attendee writes down:</p>
+            <ol>
+                <li>The ONE number they'll track weekly starting Monday</li>
+                <li>The ONE content workflow they'll test this week</li>
+                <li>The ONE contract they'll review this month</li>
+            </ol>
+            <p><em>Share with a neighbor. Accountability buddies.</em></p>
+            
+            <h4>8:50 - 9:00 PM | Close + Special Offer (10 min)</h4>
+            <div class="callout">
+                <strong>Discovery Audit Offer:</strong><br>
+                Normal price: $1,000<br>
+                Workshop attendee price: <strong>$500 (50% off)</strong><br>
+                Valid if booked tonight only.
+            </div>
+            
+            <h3>Questions for You</h3>
+            <ol>
+                <li>Does this flow feel right for your teaching style?</li>
+                <li>Anything you'd add or remove?</li>
+                <li>Is the "Contract Killer" module the right third pillar, or would you rather do something else?</li>
+            </ol>
+        </section>
+        
+        <!-- 30-DAY CAMERA WARMUP -->
+        <section class="section" id="camera">
+            <h2>📹 30-Day Camera Warmup</h2>
+            
+            <div class="callout yellow">
+                <strong>The Problem You Named:</strong><br>
+                "I'm naturally a good speaker. I've never had an issue with those things, but I really don't like it."<br><br>
+                This is resistance, not inability. The fix isn't motivation — it's <strong>systems</strong>.
+            </div>
+            
+            <h3>The Rules</h3>
+            <ul>
+                <li><strong>Short:</strong> 2-3 minutes max (no excuses)</li>
+                <li><strong>Easy:</strong> Phone camera, no editing</li>
+                <li><strong>Low stakes:</strong> First two weeks are private</li>
+                <li><strong>Systematic:</strong> Same time, same place, daily</li>
+            </ul>
+            
+            <h3>Week 1: Just Talk (Days 1-7)</h3>
+            <p><strong>Goal:</strong> Get used to the camera being there. No performance pressure.</p>
+            <p><strong>Format:</strong> 2-3 minutes, stream of consciousness, <strong>DELETE when done</strong>.</p>
+            <table>
+                <tr><td>Day 1</td><td>"Here's what's on my mind for the restaurants this week."</td></tr>
+                <tr><td>Day 2</td><td>"One thing that's annoying me operationally right now."</td></tr>
+                <tr><td>Day 3</td><td>"Something I'm proud of that happened recently."</td></tr>
+                <tr><td>Day 4</td><td>"If I could fix one thing about the restaurant industry..."</td></tr>
+                <tr><td>Day 5</td><td>"What I wish I knew 10 years ago about running a restaurant."</td></tr>
+                <tr><td>Day 6</td><td>"The dumbest mistake I made this month."</td></tr>
+                <tr><td>Day 7</td><td>"Why I think AI matters for restaurant operators."</td></tr>
+            </table>
+            
+            <h3>Week 2: Find Your Voice (Days 8-14)</h3>
+            <p><strong>Goal:</strong> Slightly more structured. SAVE but don't publish.</p>
+            <table>
+                <tr><td>Day 8</td><td>"My #1 tip for cutting labor costs."</td></tr>
+                <tr><td>Day 9</td><td>"The contract clause that cost me $5,000."</td></tr>
+                <tr><td>Day 10</td><td>"Here's what my dashboard looks like this morning."</td></tr>
+                <tr><td>Day 11</td><td>"Why most restaurant 'AI tools' are bullshit."</td></tr>
+                <tr><td>Day 12</td><td>"How I decide what specials to run."</td></tr>
+                <tr><td>Day 13</td><td>"A question I get asked constantly."</td></tr>
+                <tr><td>Day 14</td><td>"What I'm going to teach at my workshop."</td></tr>
+            </table>
+            
+            <h3>Week 3: Publish Something (Days 15-21)</h3>
+            <p><strong>Goal:</strong> Break the "publish" barrier. Put at least 3 out there.</p>
+            <table>
+                <tr><td>Day 15</td><td>"The 5 numbers every restaurant owner should check weekly."</td></tr>
+                <tr><td>Day 16</td><td>"How I use AI to write content without it sounding like AI."</td></tr>
+                <tr><td>Day 17</td><td>"The biggest lie vendors tell restaurant owners."</td></tr>
+                <tr><td>Day 18</td><td>"Morning briefing—here's what I'm looking at today."</td></tr>
+                <tr><td>Day 19</td><td>"Why I'm doing workshops for other restaurant owners."</td></tr>
+                <tr><td>Day 20</td><td>"One thing I changed this week because of my data."</td></tr>
+                <tr><td>Day 21</td><td>"Ask me anything about restaurant AI."</td></tr>
+            </table>
+            
+            <h3>Week 4: Build Momentum (Days 22-30)</h3>
+            <p><strong>Goal:</strong> Recording is now habit. One 5-10 min piece.</p>
+            <table>
+                <tr><td>Day 29</td><td><strong>LONGER VIDEO (5-10 min):</strong> "The AI Operator's Playbook — How I Run 3 Restaurants"</td></tr>
+                <tr><td>Day 30</td><td>"30 days of daily video — here's what I learned."</td></tr>
+            </table>
+            
+            <h3>Question for You</h3>
+            <p>Are you starting this February 1? That gives you 50 days of reps before Workshop #1 (March 22).</p>
+        </section>
+        
+        <!-- YOUTUBE -->
+        <section class="section" id="youtube">
+            <h2>▶️ YouTube Content Pillars</h2>
+            
+            <p><strong>Channel:</strong> The AI Restaurant Guy<br>
+            <strong>Tagline:</strong> "AI systems for restaurant operators—from someone who actually runs restaurants."<br>
+            <strong>Cadence:</strong> 1-2x per week (after launch)</p>
+            
+            <h3>5 Content Pillars</h3>
+            <table>
+                <tr>
+                    <th>Pillar</th>
+                    <th>Purpose</th>
+                    <th>Frequency</th>
+                </tr>
+                <tr>
+                    <td><strong>Behind-the-Scenes</strong></td>
+                    <td>Trust builder — prove you're an operator</td>
+                    <td>1-2x/month</td>
+                </tr>
+                <tr>
+                    <td><strong>Quick Wins</strong></td>
+                    <td>Traffic driver — high search volume tips</td>
+                    <td>2-4x/month</td>
+                </tr>
+                <tr>
+                    <td><strong>Real Talk</strong></td>
+                    <td>Differentiation — honest takes, failures</td>
+                    <td>1-2x/month</td>
+                </tr>
+                <tr>
+                    <td><strong>AI Demos</strong></td>
+                    <td>Authority — show actual systems working</td>
+                    <td>2x/month</td>
+                </tr>
+                <tr>
+                    <td><strong>Workshop Content</strong></td>
+                    <td>Lead gen — tease value, repurpose recordings</td>
+                    <td>As available</td>
+                </tr>
+            </table>
+            
+            <h3>First 10 Video Ideas</h3>
+            <ol>
+                <li>"How I Run 3 Restaurants with AI Systems" — Channel intro</li>
+                <li>"The 5 Numbers I Check Every Monday Morning" — Quick Win</li>
+                <li>"Watch My AI Forecast Next Week's Sales" — Demo</li>
+                <li>"Why I Started Teaching Other Restaurant Owners" — Trust</li>
+                <li>"The Contract Clause That Cost Me $8,000" — Real Talk</li>
+                <li>"How to Cut Food Cost Without Cutting Quality" — Quick Win</li>
+                <li>"Live Workshop: AI Ops for Restaurant Owners" — Full recording</li>
+                <li>"The Lie Your POS Company Is Telling You" — Provocative</li>
+                <li>"Morning Routine: What I Do Before My Restaurants Open" — Behind-the-scenes</li>
+                <li>"How I Automate Instagram Content for 3 Restaurants" — Demo</li>
+            </ol>
+            
+            <h3>Repurposing System</h3>
+            <p>Every long-form YouTube video becomes:</p>
+            <ul>
+                <li>YouTube Short (60-90 sec)</li>
+                <li>Instagram Reel</li>
+                <li>TikTok</li>
+                <li>LinkedIn post</li>
+                <li>Email newsletter</li>
+                <li>Blog post (transcript + expansion)</li>
+            </ul>
+            <p><strong>One video → 7+ pieces of content.</strong></p>
+        </section>
+        
+        <!-- COMPETITIVE LANDSCAPE -->
+        <section class="section" id="competitive">
+            <h2>🎯 Competitive Landscape</h2>
+            
+            <h3>Direct Competitors</h3>
+            <table>
+                <tr>
+                    <th>Player</th>
+                    <th>Model</th>
+                    <th>AI Focus?</th>
+                </tr>
+                <tr>
+                    <td>The Restaurant Boss (Ryan Gromfin)</td>
+                    <td>Online courses + membership</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td>Florida Restaurant Consulting</td>
+                    <td>Traditional consulting + seminars</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td>A2Z Restaurant Consulting</td>
+                    <td>Full-service consulting</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td>TRG Restaurant Consulting</td>
+                    <td>Consulting + "purpose-built tech"</td>
+                    <td>⚠️ Mentions AI, not core</td>
+                </tr>
+                <tr>
+                    <td>Back of House</td>
+                    <td>Tech consulting matchmaking</td>
+                    <td>⚠️ Tech focus, not AI-specific</td>
+                </tr>
+            </table>
+            
+            <div class="callout green">
+                <h3 style="margin-top: 0;">Key Finding: The Gap Is Real</h3>
+                <ul>
+                    <li>❌ No AI-specific workshops for restaurant owners</li>
+                    <li>❌ No operator actively running restaurants AND teaching AI</li>
+                    <li>❌ Lots of "AI for restaurants" articles, zero hands-on training</li>
+                    <li>❌ The Restaurant Boss is closest but doesn't touch AI/automation</li>
+                </ul>
+                <p style="margin-bottom: 0;"><strong>You would own this niche.</strong></p>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>🔒 This page is private and not indexed. Share the URL only with people who need it.</p>
+            <p style="margin-top: 0.5rem;">Generated January 31, 2026 | Review and provide feedback</p>
+        </footer>
+    </div>
+</body>
+</html>
