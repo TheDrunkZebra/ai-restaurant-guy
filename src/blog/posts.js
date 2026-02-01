@@ -14,6 +14,358 @@
 
 export const posts = [
     {
+        slug: 'how-we-4x-private-event-bookings-with-ai',
+        title: "How We're Using AI to 4x Our Private Event Bookings (And Track Every Dollar)",
+        description: "A real-time case study: AI-generated proposals, a Google Ads blitz, and a tracking dashboard that shows actual ROAS. Plus the one Google Ads setting that was silently burning our budget.",
+        date: '2026-02-01',
+        tags: ['AI Systems', 'Marketing', 'Case Study'],
+        readTime: 8,
+        youtubeId: null,
+        content: `
+## The Insight That Started Everything
+
+Three months ago, I noticed something weird in our private events pipeline.
+
+Leads that got a **custom proposal within 2 hours** were converting at nearly **4x the rate** of ones we responded to the next day. Not 2x. Four.
+
+The problem? Custom proposals used to take forever. Pulling menu options, calculating per-person pricing, writing personalized copy about "your rehearsal dinner" or "Sarah's 50th birthday" — it was a 45-minute job minimum. So we'd batch them. Respond the next morning. Lose the momentum.
+
+Then we started using AI to generate proposals in minutes.
+
+Now when someone inquires about a bridal shower at 9pm, they have a beautiful, personalized proposal in their inbox before they go to bed. Same quality. Fraction of the time.
+
+**Result: 4x conversion rate on fast responses.**
+
+That got us thinking — what if we went on offense?
+
+---
+
+## The Private Events Blitz
+
+Instead of waiting for leads to find us, we decided to blitz.
+
+Here's what we deployed in a single weekend:
+
+### 1. Google Ads Campaign Overhaul
+
+We had Google Ads running for private events, but they were underperforming. The campaigns were spending 1.8% of their daily budget. Basically nothing.
+
+**The problems we found:**
+- Keywords too narrow
+- Bids too low for our market
+- Ad copy was generic ("Private Dining Available" — yawn)
+- 7 ads were disapproved and nobody noticed
+- Landing pages didn't match search intent (killing our Quality Score)
+
+**What we fixed:**
+- Added 22 high-intent keywords targeting specific event types (rehearsal dinners, bridal showers, corporate events, celebrations of life)
+- Raised bids from $2.50 to $3.50-4.00
+- Wrote new ad copy with specifics: "65 Seats. One Chef." / "14-Day Dry-Aged Duck" / "Michelin-Trained Chef"
+- Created a dedicated landing page optimized for "fine dining Jupiter FL"
+- Added 48 negative keywords to block budget-wasters ("cheap", "free", "miami", "food truck")
+
+**The gotcha we almost missed:**
+
+When we dug into why our Rehearsal Dinners campaign had zero conversions despite spending budget, we found something infuriating.
+
+The geographic targeting was set to "Presence or interest" instead of "Presence only."
+
+Translation: Google was showing our ads to people in **Milwaukee, San Diego, and San Francisco** who had *searched* for things related to Jupiter, FL — not people actually *in* Jupiter planning a rehearsal dinner.
+
+We're a 65-seat bistro in South Florida. Someone in Wisconsin isn't booking a rehearsal dinner here.
+
+That setting was silently burning budget for who knows how long. One checkbox. Thousands of wasted impressions.
+
+**The fix:** Campaign Settings → Locations → Location options → "Presence only"
+
+This is the kind of thing that hides in plain sight. We only caught it because we actually looked at where clicks were coming from instead of just trusting the defaults.
+
+**Budget allocation:**
+| Campaign | Monthly Budget |
+|----------|----------------|
+| Rehearsal Dinners | $600 |
+| Corporate Events | $500 |
+| Birthday Celebrations | $400 |
+| General Private Events | $350 |
+
+Total: ~$2,000/month. One booked event pays for 3 months of ads.
+
+### 2. PR Editorial Push
+
+We had AI write a complete press release and editorial package about our private events program. Not a rough draft — a finished piece ready for distribution.
+
+**What it included:**
+- Feature article on Chef Michael Luth's approach to private dining
+- Venue photography captions
+- Pull quotes
+- Social media snippets
+- Email pitch to editors
+
+Sent to Seabreeze Communications (our local PR network) the same day.
+
+Time to create: 45 minutes.
+Time it would have taken manually: 4-6 hours.
+
+### 3. Campaign-Specific Landing Pages
+
+Here's where it gets interesting.
+
+We didn't just run ads — we built landing pages that track exactly where every lead comes from:
+
+- \`/fine-dining-jupiter-fl\` — Google Ads for dinner reservations
+- \`/private-events/rehearsal-dinners\` — Rehearsal dinner campaign
+- \`/private-events/corporate\` — Corporate events campaign
+
+Each page captures UTM parameters automatically. When someone fills out our inquiry form, we know:
+- Which campaign they came from
+- Which keyword triggered the ad
+- Which ad variant they clicked
+- Their Google Click ID (for conversion tracking)
+
+**Why this matters:** We can calculate *actual* ROAS. Not "we think ads are working." We know that Campaign X generated Lead Y who booked Event Z for $8,500.
+
+### 4. Real-Time Results Dashboard
+
+We built a dashboard that shows:
+- Pipeline value by campaign
+- Cost per lead
+- True ROAS (booked revenue ÷ ad spend)
+- Lead status (new → contacted → proposal → booked)
+
+No more guessing. No more "I feel like ads are working."
+
+Data.
+
+---
+
+## The AI Advantage (Why This Was Possible in a Weekend)
+
+Let me be clear: none of this is complicated individually.
+
+Google Ads? Been around for 20 years.
+Landing pages? Basic web stuff.
+UTM tracking? Standard marketing practice.
+
+What's different is the **speed**.
+
+In one weekend, with AI assistance, we:
+- Researched 14,000+ words of competitive intelligence
+- Wrote 60+ ad headlines and descriptions
+- Created 3 landing pages
+- Built a tracking dashboard
+- Generated a PR package
+- Deployed everything live
+
+That's not a marketing agency timeline. That's not even a "fast" agency timeline.
+
+That's what happens when AI handles the grunt work and humans make the decisions.
+
+---
+
+## What We're Watching
+
+Here's what we'll know in 30 days:
+
+1. **Quality Score improvement** — Did our landing page fix the QS=1 problem on "fine dining near me"?
+2. **Private event spend rate** — Are campaigns actually spending their budgets now?
+3. **Cost per lead by campaign** — Which event types are cheapest to acquire?
+4. **Conversion rate by source** — Do Google Ads leads convert better or worse than organic?
+5. **True ROAS** — For every $1 in ads, how much booked revenue?
+
+If something's working, we double down.
+If something's not, we kill it.
+
+No more running the same campaigns for 6 months because "that's what we've always done."
+
+---
+
+## The Bottom Line
+
+Private events are high-margin. A single rehearsal dinner can be $5,000-15,000. A corporate buyout can be $8,000+.
+
+If we can acquire those leads for $50-100 each, and convert 30%+ of them, the math is stupid good.
+
+**Current pipeline:** 5 leads, $21,485 in potential value, 2 awaiting deposits.
+
+That's from campaigns that were basically broken a week ago.
+
+AI didn't replace our judgment. It replaced the busywork that was stopping us from executing.
+
+---
+
+## Try This Yourself
+
+If you run a restaurant and you're not tracking private event leads by source, you're flying blind.
+
+Here's the minimum viable version:
+1. Add UTM parameters to every ad link
+2. Capture those parameters in your inquiry form (hidden fields)
+3. Track which leads came from where
+4. Calculate your actual cost per booking
+
+You don't need fancy software. A spreadsheet works.
+
+**And for the love of god, check your Google Ads location targeting.**
+
+Go to Campaign Settings → Locations → Location options right now. If it says "Presence or interest," you're probably showing ads to people who will never walk through your door. Change it to "Presence only."
+
+This one setting has burned more restaurant ad budgets than bad creative ever will.
+
+But you do need to stop guessing.
+
+---
+
+*Seamus O'Brien runs Salty Zebra Bistro, The Locals Pub, and Bagel Boyz in Jupiter, Florida. He writes about AI in restaurants at theairestaurantguy.com.*
+        `.trim()
+    },
+    {
+        slug: 'how-i-made-my-ai-agents-10x-faster-with-one-architecture-change',
+        title: "How I Made My AI Agents 10x Faster With One Architecture Change",
+        description: "My restaurant AI was getting slow and expensive. Then I applied a simple pattern: give workers only what they need. Here's the exact change that cut processing time from minutes to seconds.",
+        date: '2026-01-28',
+        tags: ['AI Systems', 'Operations', 'Technical'],
+        readTime: 5,
+        youtubeId: null,
+        content: `
+## The Problem: Too Much Context
+
+I run three restaurants with an AI agent system handling content, invoices, scheduling, and daily briefings. It worked—but it was getting slow and expensive.
+
+Every time I asked it to write a simple GMB post, it was loading 532 lines of business context. Menu details, financial history, strategic plans, competitor analysis—everything.
+
+For a 50-word social post.
+
+That's like giving someone your entire company handbook when they just need to know the hours of operation.
+
+## The Fix: Scoped Context
+
+I learned this pattern from studying how high-performing AI systems are built: **workers should stay ignorant of the big picture.**
+
+The orchestrator (main AI session) knows everything. The workers know only what they need for their specific task.
+
+Here's what that looks like in practice:
+
+**Before (532 lines):**
+- All three venue details
+- Complete menu with prices
+- Financial history
+- Strategic plans
+- Competitive analysis
+- Staff directory
+- Event calendar
+- Marketing guidelines
+- Brand voice docs
+- ...everything
+
+**After (60 lines):**
+- Venue name and contact info
+- Brand voice guide
+- Banned phrases list
+- The specific topic
+
+That's it. Nothing else.
+
+## Real Example: Sunday Supper GMB Post
+
+I needed a Google My Business post for our new Sunday Supper family-style dinner.
+
+With the old system: 45 seconds, wandering output that mentioned things irrelevant to the post.
+
+With the new system: 6 seconds, focused output that nailed the voice.
+
+Here's what the AI produced:
+
+> Sundays just got better. Starting February 2nd, Chef Michael Luth brings Sunday Supper to the table — family-style dishes meant for sharing, conversation, and slowing down. Think big platters, bold flavors, and the kind of meal that turns strangers into friends. One seating. One menu. All the good stuff.
+>
+> Book your table: OpenTable or (561) 250-6350
+
+No wasted words. Right voice. Clear CTA. Done.
+
+## The Architecture Pattern
+
+Here's how this works:
+
+**Orchestrator (Main Session):**
+- Has full business context
+- Decides what tasks need doing
+- Selects which worker to spawn
+- Passes ONLY relevant context
+- Collects and verifies results
+
+**Workers (Focused Subagents):**
+- Get narrow, specific instructions
+- Know nothing beyond their task
+- Complete one thing and exit
+- No shared state between workers
+
+The key insight: **complexity belongs in the orchestrator, not the workers.**
+
+10,000 dumb agents beats one brilliant agent trying to do everything.
+
+## How I Implemented It
+
+### Step 1: Split the giant context file
+
+I took my 532-line SHARED_CONTEXT.md and broke it into small, focused files:
+
+- \`venue_basics.md\` (20 lines)
+- \`content_writing_guide.md\` (40 lines)
+- \`financial_context.md\` (30 lines)
+- \`events_calendar.md\` (40 lines)
+
+### Step 2: Build a context selector
+
+A simple tool that combines only the files needed for each task type:
+
+- GMB post → venue_basics + content_writing_guide
+- Invoice processing → venue_basics + financial_context
+- Event promotion → venue_basics + content_writing_guide + events_calendar
+
+### Step 3: Spawn focused workers
+
+Instead of one long conversation, I spawn separate workers for each task. They get their scoped context, do their job, and exit.
+
+## The Results
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Context size | 532 lines | 60 lines |
+| Processing time | 30-45 sec | 5-8 sec |
+| Output quality | Wandering | Focused |
+| Cost per task | ~$0.15 | ~$0.03 |
+
+Over hundreds of tasks per week, that adds up.
+
+## Why This Matters for Your Restaurant
+
+If you're using AI tools in your restaurant—even just ChatGPT—you're probably making the same mistake I was.
+
+Copying your entire menu, all your SOPs, and your brand guidelines into every prompt.
+
+Try this instead:
+
+1. **Break your context into small files** by category
+2. **Only include what's relevant** to the specific task
+3. **Be specific about the output format** you want
+
+A simple "write a 50-word Instagram caption for our Tuesday taco special, using casual voice, ending with a CTA to call (555) 123-4567" will outperform a 2000-word prompt with your entire business history.
+
+## The Bigger Lesson
+
+This isn't just about AI efficiency. It's about how we run restaurants.
+
+We tend to over-brief people. New server's first day? Here's a 50-page manual. Line cook's first shift? Here's everything that could possibly go wrong.
+
+Instead: give people exactly what they need for the task at hand. Nothing more.
+
+The best systems—whether AI or human—are the ones where workers can focus on their job without drowning in irrelevant information.
+
+---
+
+*I build AI systems for restaurant operators. If you're curious what focused AI agents could do for your operations, content, or financial tracking, that's what the Discovery Audit is for.*
+        `.trim()
+    },
+    {
         slug: '94-percent-forecast-accuracy-how-ai-predicts-weekly-sales',
         title: "94% Forecast Accuracy: How AI Predicts My Weekly Sales",
         description: "Most owners guess at next week's sales. I stopped guessing and built a system that hits within 6% every week. Here's how it works.",
